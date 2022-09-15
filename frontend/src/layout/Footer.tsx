@@ -28,7 +28,7 @@ function Footer() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          minHeight: '100vh',
+          minHeight: '60vh',
           backgroundColor: theme.palette.grey[800],
         }}>
         <CssBaseline />

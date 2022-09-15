@@ -69,8 +69,9 @@ function Projects() {
             </Grid>
           </Box> */}
           <Box sx={{ display: 'flex' }}>
-            {CardItems.map((project) => (
+            {CardItems.map((project, index) => (
               <CustomCard
+                key={index}
                 title={project.Title}
                 description={project.Description}
                 tech={project.Tech}
@@ -78,8 +79,9 @@ function Projects() {
             ))}
           </Box>
           <Box sx={{ display: 'flex' }}>
-            {CardItems.map((project) => (
+            {CardItems.map((project, index) => (
               <CustomCard
+                key={index}
                 title={project.Title}
                 description={project.Description}
                 tech={project.Tech}

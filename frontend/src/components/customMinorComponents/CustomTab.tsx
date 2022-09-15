@@ -3,6 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import theme from '../../theme';
+import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -21,8 +23,8 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}>
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box sx={{ pt: 0.5, pl: 3, pr: 3 }}>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -31,7 +33,7 @@ function TabPanel(props: TabPanelProps) {
 
 function a11yProps(index: number) {
   return {
-    id: `vertial-tab-${index}`,
+    id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
@@ -47,7 +49,7 @@ export default function CustomTab() {
     <Box
       sx={{
         flexGrow: 1,
-        bgcolor: 'background.paper',
+        bgcolor: 'rgb(33, 43, 54)',
         display: 'flex',
         height: 224,
       }}>
@@ -57,35 +59,58 @@ export default function CustomTab() {
         value={value}
         onChange={handleChange}
         aria-label='Vertical tabs example'
-        sx={{ borderRight: 1, borderColor: 'divider'}}>
-        <Tab label='Item One' {...a11yProps(0)} />
-        <Tab label='Item Two' {...a11yProps(1)} />
-        <Tab label='Item Three' {...a11yProps(2)} />
-        <Tab label='Item Four' {...a11yProps(3)} />
-        <Tab label='Item Five' {...a11yProps(4)} />
-        <Tab label='Item Six' {...a11yProps(5)} />
-        <Tab label='Item Seven' {...a11yProps(6)} />
+        sx={{ borderRight: 1, borderColor: 'divider' }}>
+        <Tab
+          label='Index Coop'
+          {...a11yProps(0)}
+          sx={{ fontSize: '.75rem', padding: '.5em' }}
+        />
+        <Tab
+          label='Item Two'
+          {...a11yProps(1)}
+          sx={{ fontSize: '.75rem', padding: '.5em' }}
+        />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Typography> Item One</Typography>
+        <Typography variant='subtitle1'>
+          Software Engineer @ Index Coop
+        </Typography>
+        <Typography variant='caption'> May 2018 - Present</Typography>
+          <ul>
+            <li>
+              <Typography variant='body2'>
+                Automated the collection, recording and calculations of
+                community monthly contributions for the Finance group.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant='body2'>
+                Created technical documentation on Solidity, Web3.js and
+                Hardhat.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant='body2'>
+                Contributed to the creation of the engineering on-boarding
+                process for new developers.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant='body2'>
+                Helped develop the Engineering Bronze Owl Quest for new Solidity
+                Developers.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant='body2'>
+                Created technical documentation about Solidity for on boarding
+                new engineers.
+              </Typography>
+            </li>
+          </ul>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
       </TabPanel>
     </Box>
   );

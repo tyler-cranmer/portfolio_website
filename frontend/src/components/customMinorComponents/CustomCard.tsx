@@ -34,7 +34,14 @@ function CustomCard({ title, description, tech }: props) {
           }
           action={
             <IconButton>
-              <GitHubIcon />
+              <GitHubIcon
+                sx={{
+                  color: theme.palette.text.primary,
+                  '&:hover': {
+                    color: theme.palette.grey[500],
+                  },
+                }}
+              />
             </IconButton>
           }>
           <FolderOpenIcon fontSize='small' />
