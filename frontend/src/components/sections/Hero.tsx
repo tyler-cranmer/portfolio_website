@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import theme from '../theme';
+import theme from '../../theme';
 import { Stack, Container } from '@mui/material';
 
 function Hero() {

@@ -1,30 +1,53 @@
+// import { createTheme } from '@mui/material/styles';
+// import { red } from '@mui/material/colors';
+
+// // Create a theme instance.
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: '#556cd6',
+//     },
+//     secondary: {
+//       main: '#19857b',
+//     },
+//     error: {
+//       main: red.A400,
+//     },
+//   },
+// });
+
+// export default theme;
+
+
+
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 // Create a theme instance.
 const theme = createTheme({
-  mode: 'dark',
+  // mode: 'dark',
   palette: {
     primary: {
       // lighter: '#C8FACD',
       light: '#5BE584',
       main: '#00AB55',
       dark: '#007B55',
-      darker: '#005249',
+      contrastText: '#ffffff',
+      // darker: '#005249',
     },
     secondary: {
       // lighter: '#D6E4FF',
       light: '#84A9FF',
       main: '#3366FF',
       dark: '#1939B7',
-      darker: '#091A7A',
+      // darker: '#091A7A',
     },
     info: {
       // lighter: '#D0F2FF',
       light: '#74CAFF',
       main: '#1890FF',
       dark: '#0C53B7',
-      darker: '#04297A',
+      // darker: '#04297A',
     },
     text: {
       primary: '#ffffff',

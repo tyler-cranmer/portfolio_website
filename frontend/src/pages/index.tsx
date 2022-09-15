@@ -1,9 +1,10 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
 import Navbar from '../layout/Navbar';
-import Hero from '../components/Hero';
+import Hero from '../components/sections/Hero';
 import Footer from '../layout/Footer';
-import Projects from '../components/Projects';
+import Projects from '../components/sections/Projects';
+import Work from '../components/sections/Work';
 
 
 const Home: NextPage = () => {
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
     <>
       <Navbar />
       <Hero />
+      <Work/>
       <Projects />
       <Footer />
     </>
