@@ -52,7 +52,7 @@ function Hero() {
                 sx={{ fontWeight: 500, color: 'white' }}
                 variant='h2'
                 gutterBottom>
-                I build software for the web.
+                I build things for the web.
               </Typography>
             </Box>
             <Box>

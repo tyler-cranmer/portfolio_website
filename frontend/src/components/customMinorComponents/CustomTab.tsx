@@ -76,7 +76,7 @@ export default function CustomTab() {
           Software Engineer @ Index Coop
         </Typography>
         <Typography variant='caption'> May 2018 - Present</Typography>
-          <ul>
+          {/* <ul>
             <li>
               <Typography variant='body2'>
                 Automated the collection, recording and calculations of
@@ -95,7 +95,7 @@ export default function CustomTab() {
                 process for new developers.
               </Typography>
             </li>
-            <li>
+            <li>s
               <Typography variant='body2'>
                 Helped develop the Engineering Bronze Owl Quest for new Solidity
                 Developers.
@@ -107,7 +107,7 @@ export default function CustomTab() {
                 new engineers.
               </Typography>
             </li>
-          </ul>
+          </ul> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
