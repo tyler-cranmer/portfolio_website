@@ -5,6 +5,14 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
+import CodeIcon from '@mui/icons-material/Code';
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  Grid,
+} from '@mui/material';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,6 +53,14 @@ export default function CustomTab() {
     setValue(newValue);
   };
 
+  const WorkBullets = [
+    'Automated the collection, recording and calculations of community monthly contributions for the Finance group.',
+    'Created technical documentation on Solidity, Web3.js and Hardhat.',
+    'Contributed to the creation of the engineering on-boarding process for new developers.',
+    'Helped develop the Engineering Bronze Owl training program for new Solidity developers.',
+    'Created technical documentation about Solidity for on boarding new engineers.',
+  ];
+
   return (
     <>
       <Box
@@ -52,7 +68,7 @@ export default function CustomTab() {
           flexGrow: 1,
           bgcolor: 'rgb(33, 43, 54)',
           display: 'flex',
-          height: 224,
+          paddingBottom: '.5em',
         }}>
         <Tabs
           orientation='vertical'
@@ -64,19 +80,44 @@ export default function CustomTab() {
           <Tab
             label='Index Coop'
             {...a11yProps(0)}
-            sx={{ fontSize: '.75rem', padding: '.5em' }}
-          />
-          <Tab
-            label='Item Two'
-            {...a11yProps(1)}
-            sx={{ fontSize: '.75rem', padding: '.5em' }}
+            sx={{
+              fontSize: '.7rem',
+              padding: '.5em .75em .5em .5em',
+            }}
           />
         </Tabs>
         <TabPanel value={value} index={0}>
-          <Typography variant='subtitle1'>
-            Software Engineer @ Index Coop
-          </Typography>
-          <Typography variant='caption'> May 2018 - Present</Typography>
+          <Box pl={1}>
+            <Box display={'flex'}>
+              <Typography variant='subtitle1'>Software Engineer</Typography>
+              <Typography
+                variant='subtitle1'
+                sx={{ paddingLeft: '.25em', color: theme.palette.primary.main }}>
+                @ Index Coop
+              </Typography>
+            </Box>
+            <Typography variant='caption'> May 2021 - June 2022</Typography>
+          </Box>
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <List dense>
+                {WorkBullets.map((bullet, index) => (
+                  <ListItem sx={{ paddingLeft: 0 }} key={index}>
+                    <ListItemIcon sx={{ minWidth: '1.75em' }}>
+                      <ArrowRightOutlinedIcon
+                        fontSize='small'
+                        sx={{ color: theme.palette.primary.main }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      sx={{ fontSize: '.25rem' }}
+                      primary={bullet}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </Grid>
+          </Grid>
         </TabPanel>
         <TabPanel value={value} index={1}>
           Item Two
@@ -85,39 +126,3 @@ export default function CustomTab() {
     </>
   );
 }
-
-
-          {
-            /* <ul>
-            <li>
-              <Typography variant='body2'>
-                Automated the collection, recording and calculations of
-                community monthly contributions for the Finance group.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant='body2'>
-                Created technical documentation on Solidity, Web3.js and
-                Hardhat.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant='body2'>
-                Contributed to the creation of the engineering on-boarding
-                process for new developers.
-              </Typography>
-            </li>
-            <li>s
-              <Typography variant='body2'>
-                Helped develop the Engineering Bronze Owl Quest for new Solidity
-                Developers.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant='body2'>
-                Created technical documentation about Solidity for on boarding
-                new engineers.
-              </Typography>
-            </li>
-          </ul> */
-          }

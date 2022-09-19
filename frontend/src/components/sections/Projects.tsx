@@ -1,10 +1,10 @@
-import { Container, Box, Typography, Grid, Paper, styled } from '@mui/material';
+import { Container, Box, Typography, Grid} from '@mui/material';
 import theme from '../../theme';
 import CustomCard from '../customMinorComponents/CustomCard';
 
 const CardItems = [
   {
-    Title: 'Project Title 1',
+    Title: 'Project Title{1',
     Description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
     Tech: ['Python', 'Typescript', 'Next.js'],
