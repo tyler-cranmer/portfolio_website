@@ -15,10 +15,12 @@ import CustomButton from '../components/customMinorComponents/CustomButton';
 function Navbar() {
   const MenuItems = [
     { Name: 'About', Link: '#home' },
-    { Name: 'Tech', Link: '#home' },
     { Name: 'Work', Link: '#home' },
+    { Name: 'Projects', Link: '#home' },
     { Name: 'Contact', Link: '#home' },
   ];
+
+  const name: string = 'TeeWhy._'
 
   return (
     <>
@@ -38,7 +40,7 @@ function Navbar() {
                     flexGrow: 1,
                     color: theme.palette.text.primary,
                   }}>
-                  Tyler's Portfolio
+                  {name}
                 </Typography>
               </Box>
             </IconButton>
@@ -52,7 +54,7 @@ function Navbar() {
             {MenuItems.map((item, index) => (
               <div key={index}>
                 <CustomButton href={item.Link} text={item.Name} />
-             </div>
+              </div>
             ))}
             <Button sx={{ ml: '15px' }} variant='contained'>
               Resume

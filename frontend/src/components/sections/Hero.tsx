@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
-import { Stack, Container } from '@mui/material';
+import { Stack, Container, Button } from '@mui/material';
 
 function Hero() {
   return (
@@ -64,6 +64,9 @@ function Hero() {
                 soluta sit illum dignissimos magni iusto rem ab laudantium.
                 Ratione.
               </Typography>
+            </Box>
+            <Box sx={{ display: 'flex', alignSelf:'center'}}>
+              <Button variant='contained' size='large'> Projects</Button>
             </Box>
           </Stack>
         </Box>

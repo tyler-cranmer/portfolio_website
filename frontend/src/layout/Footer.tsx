@@ -53,7 +53,7 @@ function Footer() {
           }}>
           <Container maxWidth='sm'>
             <Copyright />
-            <Typography variant='body2'>made by Tyler Cranmer</Typography>
+            <Typography variant='body2'>built by Tyler Cranmer</Typography>
           </Container>
           <Container>
             <IconButton>
