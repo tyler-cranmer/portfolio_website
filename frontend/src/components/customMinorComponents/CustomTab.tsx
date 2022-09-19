@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
-import CodeIcon from '@mui/icons-material/Code';
+
 import {
   List,
   ListItem,
@@ -47,7 +47,7 @@ function a11yProps(index: number) {
 }
 
 export default function CustomTab() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -57,7 +57,7 @@ export default function CustomTab() {
     'Automated the collection, recording and calculations of community monthly contributions for the Finance group.',
     'Created technical documentation on Solidity, Web3.js and Hardhat.',
     'Contributed to the creation of the engineering on-boarding process for new developers.',
-    'Helped develop the Engineering Bronze Owl training program for new Solidity developers.',
+    'Helped develop the Engineering training program for new Solidity developers.',
     'Created technical documentation about Solidity for on boarding new engineers.',
   ];
 
@@ -92,7 +92,10 @@ export default function CustomTab() {
               <Typography variant='subtitle1'>Software Engineer</Typography>
               <Typography
                 variant='subtitle1'
-                sx={{ paddingLeft: '.25em', color: theme.palette.primary.main }}>
+                sx={{
+                  paddingLeft: '.25em',
+                  color: theme.palette.primary.main,
+                }}>
                 @ Index Coop
               </Typography>
             </Box>
