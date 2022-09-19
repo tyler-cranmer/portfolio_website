@@ -5,9 +5,10 @@ import { useTheme } from '@mui/material/styles';
 type props = {
   href: string;
   text: string;
+
 }
 
-const CustomButton = ({ href, text }: props) => {
+const CustomButton = ({ href, text}: props) => {
   const theme = useTheme();
 
   return (
@@ -18,7 +19,7 @@ const CustomButton = ({ href, text }: props) => {
       variant='text'
       sx={{
         color: theme.palette.text.primary,
-        mx: .25,
+        mx: 0.25,
         // marginLeft: '15px',
         '&:active': {
           color: theme.palette.primary.main,

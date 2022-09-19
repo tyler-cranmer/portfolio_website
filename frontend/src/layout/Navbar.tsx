@@ -13,7 +13,6 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import CustomButton from '../components/customMinorComponents/CustomButton';
 
 function Navbar() {
-  
   const MenuItems = [
     { Name: 'About', Link: '#home' },
     { Name: 'Tech', Link: '#home' },
@@ -50,8 +49,10 @@ function Navbar() {
               alignItems: 'center',
               display: { lg: 'flex' },
             }}>
-            {MenuItems.map((item) => (
-              <CustomButton href={item.Link} text={item.Name}></CustomButton>
+            {MenuItems.map((item, index) => (
+              <div key={index}>
+                <CustomButton href={item.Link} text={item.Name} />
+             </div>
             ))}
             <Button sx={{ ml: '15px' }} variant='contained'>
               Resume

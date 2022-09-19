@@ -11,10 +11,9 @@ type props = {
   // github: string
 }
 
-function CustomCard({ title, description, tech }: props) {
+function CustomCard({ title, description, tech}: props) {
 
   return (
-    <Box sx={{ margin: '.5em' }}>
       <Card
         sx={{
           minWidth: 250,
@@ -60,15 +59,14 @@ function CustomCard({ title, description, tech }: props) {
               paddingBottom: '.5em',
               paddingTop: '1em',
             }}>
-            {tech.map((item) => (
-              <Typography variant='caption' pr={1.5}>
+            {tech.map((item, index) => (
+              <Typography variant='caption' pr={1.5} key={index}>
                 {item}
               </Typography>
             ))}
           </Box>
         </CardContent>
       </Card>
-    </Box>
   );
 }
 

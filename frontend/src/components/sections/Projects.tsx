@@ -4,37 +4,48 @@ import CustomCard from '../customMinorComponents/CustomCard';
 
 const CardItems = [
   {
-    Title: 'Project Title',
+    Title: 'Project Title 1',
     Description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
     Tech: ['Python', 'Typescript', 'Next.js'],
     // github: 'url',
   },
   {
-    Title: 'Project Title',
+    Title: 'Project Title 2',
     Description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
     Tech: ['Python', 'Typescript', 'Next.js'],
     // github: 'url',
   },
   {
-    Title: 'Project Title',
+    Title: 'Project Title 3',
     Description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
     Tech: ['Python', 'Typescript', 'Next.js'],
-    // github: 'url'
+    // github: 'url',
   },
-
+  {
+    Title: 'Project Title 4',
+    Description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
+    Tech: ['Python', 'Typescript', 'Next.js'],
+    // github: 'url',
+  },
+  {
+    Title: 'Project Title 5',
+    Description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
+    Tech: ['Python', 'Typescript', 'Next.js'],
+    // github: 'url',
+  },
+  {
+    Title: 'Project Title 6',
+    Description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
+    Tech: ['Python', 'Typescript', 'Next.js'],
+    // github: 'url',
+  },
 ];
-
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(2),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
 
 function Projects() {
   return (
@@ -47,18 +58,18 @@ function Projects() {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-            <Typography sx={{fontWeight: 'Bold'}} variant='h4' gutterBottom>
+            <Typography sx={{ fontWeight: 'Bold' }} variant='h4' gutterBottom>
               Noteworthy Projects
             </Typography>
             <Typography gutterBottom>view the archive - link</Typography>
           </Box>
-          {/* <Box>
+          <Box sx={{ flexGrow: 1 }}>
             <Grid
               container
-              spacing={{ xs: 2, md: 3 }}
-              columns={{ xs: 1, sm: 2, md: 3 }}>
-              {CardItems.map((project) => (
-                <Grid xs={6}>
+              spacing={{ xs: 2, md: 2 }}
+              columns={{ xs: 4, sm: 8, md: 12 }}>
+              {CardItems.map((project, index) => (
+                <Grid item xs={2} sm={4} md={4} key={index}>
                   <CustomCard
                     title={project.Title}
                     description={project.Description}
@@ -67,26 +78,6 @@ function Projects() {
                 </Grid>
               ))}
             </Grid>
-          </Box> */}
-          <Box sx={{ display: 'flex' }}>
-            {CardItems.map((project, index) => (
-              <CustomCard
-                key={index}
-                title={project.Title}
-                description={project.Description}
-                tech={project.Tech}
-              />
-            ))}
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            {CardItems.map((project, index) => (
-              <CustomCard
-                key={index}
-                title={project.Title}
-                description={project.Description}
-                tech={project.Tech}
-              />
-            ))}
           </Box>
         </Container>
       </Box>

@@ -46,37 +46,49 @@ export default function CustomTab() {
   };
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        bgcolor: 'rgb(33, 43, 54)',
-        display: 'flex',
-        height: 224,
-      }}>
-      <Tabs
-        orientation='vertical'
-        variant='scrollable'
-        value={value}
-        onChange={handleChange}
-        aria-label='Vertical tabs example'
-        sx={{ borderRight: 1, borderColor: 'divider' }}>
-        <Tab
-          label='Index Coop'
-          {...a11yProps(0)}
-          sx={{ fontSize: '.75rem', padding: '.5em' }}
-        />
-        <Tab
-          label='Item Two'
-          {...a11yProps(1)}
-          sx={{ fontSize: '.75rem', padding: '.5em' }}
-        />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <Typography variant='subtitle1'>
-          Software Engineer @ Index Coop
-        </Typography>
-        <Typography variant='caption'> May 2018 - Present</Typography>
-          {/* <ul>
+    <>
+      <Box
+        sx={{
+          flexGrow: 1,
+          bgcolor: 'rgb(33, 43, 54)',
+          display: 'flex',
+          height: 224,
+        }}>
+        <Tabs
+          orientation='vertical'
+          variant='scrollable'
+          value={value}
+          onChange={handleChange}
+          aria-label='Vertical tabs example'
+          sx={{ borderRight: 1, borderColor: 'divider' }}>
+          <Tab
+            label='Index Coop'
+            {...a11yProps(0)}
+            sx={{ fontSize: '.75rem', padding: '.5em' }}
+          />
+          <Tab
+            label='Item Two'
+            {...a11yProps(1)}
+            sx={{ fontSize: '.75rem', padding: '.5em' }}
+          />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <Typography variant='subtitle1'>
+            Software Engineer @ Index Coop
+          </Typography>
+          <Typography variant='caption'> May 2018 - Present</Typography>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Item Two
+        </TabPanel>
+      </Box>
+    </>
+  );
+}
+
+
+          {
+            /* <ul>
             <li>
               <Typography variant='body2'>
                 Automated the collection, recording and calculations of
@@ -107,11 +119,5 @@ export default function CustomTab() {
                 new engineers.
               </Typography>
             </li>
-          </ul> */}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-    </Box>
-  );
-}
+          </ul> */
+          }
