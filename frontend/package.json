@@ -18,7 +18,8 @@
     "@mui/material": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-simple-typewriter": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "latest",

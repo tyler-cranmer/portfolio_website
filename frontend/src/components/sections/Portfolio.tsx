@@ -44,20 +44,20 @@ function Portfolio() {
 
               {[
                 ...new Set(portfolioData.projects2.map((item) => item.tag)),
-              ].map((tag) => (
-                <Tab label={tag} value={tag} />
+              ].map((tag, index) => (
+                <Tab key={index} label={tag} value={tag} />
               ))}
             </Tabs>
           </Grid>
           {/* projects */}
           <Grid item xs={12}>
             <Grid container spacing={2}>
-              {portfolioData.projects2.map((project) => (
+              {portfolioData.projects2.map((project, index) => (
                 <>
                   {tabValue == project.tag || tabValue == 'All' ? (
                     <Grid item xs={2} sm={4} md={4}>
                       <Grow in timeout={1000}>
-                        <Card sx={{ backgroundColor: theme.palette.grey[800] }}>
+                        <Card key={index}  sx={{ backgroundColor: theme.palette.grey[800] }}>
                           <CardActionArea>
                             <CardMedia
                               component='img'

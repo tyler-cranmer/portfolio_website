@@ -3,8 +3,21 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
 import { Stack, Container, Button } from '@mui/material';
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
 
 function Hero() {
+  const [text, count] = useTypewriter({
+    words: [
+      'I build things for the web.',
+      'I teach machines to learn.',
+      '<BlockChainGain/>',
+    ],
+    loop: 3,
+    // loop: true,
+    onLoopDone: () => console.log(`loop completed after 3 runs.`),
+    delaySpeed: 2000,
+  });
+
   return (
     <Box
       sx={{
@@ -52,7 +65,8 @@ function Hero() {
                 sx={{ fontWeight: 500, color: 'white' }}
                 variant='h2'
                 gutterBottom>
-                I build things for the web.
+                {text}
+                <Cursor cursorStyle='_'/>
               </Typography>
             </Box>
             <Box>
@@ -65,8 +79,11 @@ function Hero() {
                 Ratione.
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignSelf:'center'}}>
-              <Button variant='contained' size='large'> Projects</Button>
+            <Box sx={{ display: 'flex', alignSelf: 'center' }}>
+              <Button variant='contained' size='large'>
+                {' '}
+                Projects
+              </Button>
             </Box>
           </Stack>
         </Box>
