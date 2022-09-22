@@ -48,7 +48,7 @@ export default {
 
   projects2: [
     {
-      tag: 'web development',
+      tag: 'Web Development',
 
       image:
         'https://twt-thumbs.washtimes.com/media/image/2020/03/24/chargers_logo_football_26584_c0-47-2918-1748_s885x516.jpg?59d2cd3ec462f608e6dce720d95845aa74747b52',

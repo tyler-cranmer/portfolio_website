@@ -14,6 +14,8 @@ import {
 import theme from '../../theme';
 import { Container } from '@mui/system';
 import portfolioData from '../../utils/tempData';
+import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
+
 
 function Portfolio() {
   const [tabValue, setTabValue] = useState('All');
@@ -36,18 +38,19 @@ function Portfolio() {
           <Grid item></Grid>
           {/* Tabs */}
           <Grid item xs={12}>
-            <Tabs
+            <StyledTabs
               value={tabValue}
-              indicatorColor='primary'
-              onChange={(event, newValue) => setTabValue(newValue)}>
-              <Tab label='All' value='All' />
-
+              onChange={(event: React.SyntheticEvent, newValue) =>
+                setTabValue(newValue)
+              }
+              >
+              <StyledTab label='All' value='All' />
               {[
                 ...new Set(portfolioData.projects2.map((item) => item.tag)),
               ].map((tag, index) => (
-                <Tab key={index} label={tag} value={tag} />
+                <StyledTab key={index} label={tag} value={tag} />
               ))}
-            </Tabs>
+            </StyledTabs>
           </Grid>
           {/* projects */}
           <Grid item xs={12}>
@@ -57,7 +60,9 @@ function Portfolio() {
                   {tabValue == project.tag || tabValue == 'All' ? (
                     <Grid item xs={2} sm={4} md={4}>
                       <Grow in timeout={1000}>
-                        <Card key={index}  sx={{ backgroundColor: theme.palette.grey[800] }}>
+                        <Card
+                          key={index}
+                          sx={{ backgroundColor: theme.palette.grey[800] }}>
                           <CardActionArea>
                             <CardMedia
                               component='img'
@@ -69,7 +74,7 @@ function Portfolio() {
                               <Typography gutterBottom>
                                 {project.title}
                               </Typography>
-                              <Typography variant='caption' >
+                              <Typography variant='caption'>
                                 {project.description}
                               </Typography>
                               {/* {project.tech.map((item) => (

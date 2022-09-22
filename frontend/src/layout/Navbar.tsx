@@ -11,9 +11,11 @@ import {
 import theme from '../theme';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import CustomButton from '../components/customMinorComponents/CustomButton';
+import { Container } from '@mui/system';
 
 function Navbar() {
   const MenuItems = [
+    { Name: 'Home', Link: '#home' },
     { Name: 'About', Link: '#home' },
     { Name: 'Work', Link: '#home' },
     { Name: 'Projects', Link: '#home' },
@@ -45,21 +47,20 @@ function Navbar() {
               </Box>
             </IconButton>
           </Link>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box
-            sx={{
-              alignItems: 'center',
-              display: { lg: 'flex' },
-            }}>
-            {MenuItems.map((item, index) => (
-              <div key={index}>
-                <CustomButton href={item.Link} text={item.Name} />
-              </div>
-            ))}
-            <Button sx={{ ml: '15px' }} variant='contained'>
-              Resume
-            </Button>
-          </Box>
+          <Container maxWidth='sm'>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box
+              sx={{
+                alignItems: 'center',
+                display: { lg: 'flex' },
+              }}>
+              {MenuItems.map((item, index) => (
+                <div key={index}>
+                  <CustomButton href={item.Link} text={item.Name} />
+                </div>
+              ))}
+            </Box>
+          </Container>
         </Toolbar>
       </AppBar>
     </>
