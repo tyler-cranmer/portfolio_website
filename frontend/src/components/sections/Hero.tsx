@@ -8,13 +8,14 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 function Hero() {
   const [text, count] = useTypewriter({
     words: [
-      'I build things for the web.',
-      'I teach machines to learn.',
-      '<BlockChainGain/>',
+      'things for the internet.',
+      'web3 Dapps.',
+      'smart contracts.',
+      'machine learning models.',
     ],
-    loop: 3,
-    // loop: true,
-    onLoopDone: () => console.log(`loop completed after 3 runs.`),
+    // loop: 3,
+    loop: true,
+    // onLoopDone: () => console.log(`loop completed after 3 runs.`),
     delaySpeed: 2000,
   });
 
@@ -29,7 +30,7 @@ function Hero() {
         height: '100%',
         width: '100%',
       }}>
-      <Container maxWidth='md'>
+      <Container maxWidth='lg'>
         <Box
           sx={{
             minHeight: '100vh',
@@ -37,18 +38,19 @@ function Hero() {
             alignitems: 'flex-start',
             flexDirection: 'column',
             padding: '0px',
-            justifyContent: 'center',
+            // justifyContent: 'center',
             margin: '0 auto',
           }}>
           <Stack
+            mt={28}
             direction='column'
             justifyContent='flex-start'
             alignItems='flex-start'
             spacing={2}
-            maxWidth='md'>
+             maxWidth='md'>
             <Box>
               <Typography
-                variant='body1'
+                variant='h5'
                 component='h1'
                 gutterBottom
                 sx={{ color: theme.palette.primary.light }}>
@@ -56,7 +58,7 @@ function Hero() {
               </Typography>
             </Box>
             <Box>
-              <Typography sx={{ fontWeight: 500, color: 'white' }} variant='h2'>
+              <Typography sx={{ fontWeight: 500, color: 'white' }} variant='h1'>
                 Tyler Cranmer.
               </Typography>
             </Box>
@@ -65,7 +67,7 @@ function Hero() {
                 sx={{ fontWeight: 500, color: 'white' }}
                 variant='h2'
                 gutterBottom>
-                {text}
+                I build {text}
                 <Cursor cursorStyle='_'/>
               </Typography>
             </Box>
@@ -78,12 +80,6 @@ function Hero() {
                 soluta sit illum dignissimos magni iusto rem ab laudantium.
                 Ratione.
               </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignSelf: 'center' }}>
-              <Button variant='contained' size='large'>
-                {' '}
-                Projects
-              </Button>
             </Box>
           </Stack>
         </Box>
