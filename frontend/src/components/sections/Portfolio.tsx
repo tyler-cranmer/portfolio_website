@@ -18,7 +18,7 @@ import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
 
 
 function Portfolio() {
-  const [tabValue, setTabValue] = useState('All');
+  const [tabValue, setTabValue] = useState('Aggregate');
 
   return (
     <Box
