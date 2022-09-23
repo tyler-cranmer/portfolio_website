@@ -6,7 +6,7 @@ function About() {
   return (
     <Box sx={{ backgroundColor: theme.palette.grey[900], minHeight: '50vh' }}>
       <Container maxWidth='md'>
-        <Typography variant='h4' sx={{ fontWeight: 'Bold' }} gutterBottom>
+        <Typography variant='h4' sx={{ fontWeight: 'Bold'}} gutterBottom>
           About Me
         </Typography>
         <Grid container spacing={2}>

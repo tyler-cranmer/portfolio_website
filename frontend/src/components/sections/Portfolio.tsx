@@ -21,14 +21,21 @@ function Portfolio() {
   const [tabValue, setTabValue] = useState('All');
 
   return (
-    <Box sx={{ backgroundColor: theme.palette.grey[900], minHeight: '50vh' }}>
-      <Container maxWidth='md'>
+    <Box
+      sx={{
+        backgroundColor: theme.palette.grey[900],
+        minHeight: '50vh',
+        PaddingTop: '6.25em',
+      }}>
+      <Container maxWidth='lg'>
         <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
+          sx={
+            {
+              // display: 'flex',
+              // flexDirection: 'column',
+              // alignItems: 'center',
+            }
+          }>
           <Typography sx={{ fontWeight: 'Bold' }} variant='h4' gutterBottom>
             My Work
           </Typography>
@@ -42,8 +49,7 @@ function Portfolio() {
               value={tabValue}
               onChange={(event: React.SyntheticEvent, newValue) =>
                 setTabValue(newValue)
-              }
-              >
+              }>
               <StyledTab label='All' value='All' />
               {[
                 ...new Set(portfolioData.projects2.map((item) => item.tag)),
@@ -66,22 +72,25 @@ function Portfolio() {
                           <CardActionArea>
                             <CardMedia
                               component='img'
-                              height='194'
+                              height='260'
                               image={project.image}
                               alt={project.title}
                             />
                             <CardContent>
-                              <Typography gutterBottom>
+                              <Typography
+                                sx={{ fontWeight: 'bold' }}
+                                variant='h6'
+                                gutterBottom>
                                 {project.title}
                               </Typography>
-                              <Typography variant='caption'>
+                              <Typography variant='body1' gutterBottom>
                                 {project.description}
                               </Typography>
-                              {/* {project.tech.map((item) => (
-                                <Typography variant='caption' pr={1.5}>
+                              {project.tech.map((item) => (
+                                <Typography variant='caption' pr={1.5} pt={2}>
                                   {item}
                                 </Typography>
-                              ))} */}
+                              ))}
                             </CardContent>
                           </CardActionArea>
                         </Card>
