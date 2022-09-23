@@ -52,11 +52,14 @@ function CustomAccordian({}: Props) {
                 paddingRight: '2em',
               }}>
               <Box sx={{ display: 'flex' }}>
-                <Typography>{item.title}</Typography>
+                <Typography sx={{ fontWeight: 'bold' }}>
+                  {item.title}
+                </Typography>
                 <Typography
                   sx={{
                     paddingLeft: '.25em',
                     color: theme.palette.primary.main,
+                    fontWeight: 'bold',
                   }}>
                   @ {item.company}
                 </Typography>

@@ -49,7 +49,6 @@ export default {
   projects2: [
     {
       tag: 'Web Development',
-
       image:
         'https://twt-thumbs.washtimes.com/media/image/2020/03/24/chargers_logo_football_26584_c0-47-2918-1748_s885x516.jpg?59d2cd3ec462f608e6dce720d95845aa74747b52',
       title: 'Project 1',
@@ -59,7 +58,6 @@ export default {
     },
     {
       tag: 'Blockchain',
-
       image:
         'https://twt-thumbs.washtimes.com/media/image/2020/03/24/chargers_logo_football_26584_c0-47-2918-1748_s885x516.jpg?59d2cd3ec462f608e6dce720d95845aa74747b52',
       title: 'Project 2',
@@ -112,7 +110,7 @@ export default {
       website: 'colorado.edu',
       bullets: [
         'Graduated with a Bachelors Degree in Applied Computer Science.',
-        'My degree focused on core computer science principals. i.e algorithms, data structures and computer systems.',
+        'Developed core Computer Science principals. i.e Data Structures, Algorithms and Computer Systems.',
         'Specialized in Data Science, Analytics, Visualization and Machine Learning.',
       ],
       logo: '/ralphie.png',
