@@ -13,7 +13,7 @@ const CustomButton = ({ href, text}: props) => {
 
   return (
     <Button
-      component='a'
+
       color='primary'
       href={href}
       variant='text'
