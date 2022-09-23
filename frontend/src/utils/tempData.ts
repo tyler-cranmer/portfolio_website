@@ -102,6 +102,7 @@ export default {
       ],
       logo: '/index-token.png',
       alt: 'index logo',
+      panel: 'panel1',
     },
     {
       title: 'Applied Computer Science',
@@ -116,6 +117,7 @@ export default {
       ],
       logo: '/ralphie.png',
       alt: 'ralphie buffalo logo',
+      panel: 'panel2',
     },
     {
       title: 'Sr. IT Account Manager',
@@ -124,12 +126,13 @@ export default {
       location: 'Denver, Colorado',
       website: 'infinity-cs.com',
       bullets: [
-        'Gather technical requirements from business stakeholders to provide end-to-end recruitment and hiring solutions for start-up, mid-size and fortune 100 technology clients.',
-        'Managing full life-cycle technical recruiting processes for various engineering teams.',
+        'Gathered technical requirements from business stakeholders to provide end-to-end recruitment and hiring solutions for start-up, mid-size and fortune 100 technology clients.',
+        'Managed the full life-cycle technical recruiting processes for various engineering teams.',
         'Recruited a varitey of candidates including: Web Developers, DevOps Engineers and Cloud Infrastructure Engineers.',
       ],
       logo: '/ralphie.png',
       alt: 'ICS logo',
+      panel: 'panel3',
     },
   ],
 };

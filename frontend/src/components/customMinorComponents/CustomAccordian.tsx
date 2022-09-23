@@ -17,16 +17,11 @@ import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LaunchIcon from '@mui/icons-material/Launch';
 import Image from 'next/image';
+import experienceData from '../../utils/tempData';
 
 type Props = {};
 
 function CustomAccordian({}: Props) {
-  const WorkBullets = [
-    'Automated the collection, recording and calculations of community monthly contributions for the Finance group.',
-    'Created technical documentation on Solidity, Ethers.js and Hardhat.',
-    'Contributed to the creation of the engineering on-boarding process and training for new Solidity developers.',
-    'Built Index Coop Subgraph using graph QL and the graph protocol',
-  ];
 
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
@@ -37,240 +32,84 @@ function CustomAccordian({}: Props) {
 
   return (
     <div>
-      {/* INDEX COOP */}
-      <Accordion
-        expanded={expanded === 'panel1'}
-        onChange={handleChange('panel1')}
-        sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
-        <AccordionSummary
-          expandIcon={
-            <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
-          }
-          aria-controls='panel1bh-content'
-          id='panel1bh-header'>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              paddingRight: '2em',
-            }}>
-            <Box sx={{ display: 'flex' }}>
-              <Typography>Software Enginer</Typography>
-              <Typography
-                sx={{
-                  paddingLeft: '.25em',
-                  color: theme.palette.primary.main,
-                }}>
-                @ Index Coop
+      {experienceData.experience.map((item, index) => (
+        <Accordion
+          key={index}
+          expanded={expanded === item.panel}
+          onChange={handleChange(item.panel)}
+          sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
+          <AccordionSummary
+            expandIcon={
+              <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
+            }
+            aria-controls={item.panel + 'content'}
+            id={item.panel + 'header'}>
+            <Box
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                paddingRight: '2em',
+              }}>
+              <Box sx={{ display: 'flex' }}>
+                <Typography>{item.title}</Typography>
+                <Typography
+                  sx={{
+                    paddingLeft: '.25em',
+                    color: theme.palette.primary.main,
+                  }}>
+                  @ {item.company}
+                </Typography>
+              </Box>
+              <Typography sx={{ color: 'text.secondary' }}>
+                {item.duration}
               </Typography>
             </Box>
-            <Typography sx={{ color: 'text.secondary' }}>
-              May 2021 - June 2022
-            </Typography>
-          </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-            <Box sx={{ display: 'flex' }}>
-              <LocationOnIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                Remote
-              </Typography>
-              <LaunchIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                indexcoop.com
-              </Typography>
-            </Box>
-            <Grid container spacing={1}>
-              <Grid item xs={10}>
-                <List dense>
-                  {WorkBullets.map((bullet, index) => (
-                    <ListItem sx={{ paddingLeft: 0 }} key={index}>
-                      <ListItemIcon sx={{ minWidth: '1.75em' }}>
-                        <ArrowRightOutlinedIcon
-                          fontSize='small'
-                          sx={{ color: theme.palette.primary.main }}
+          </AccordionSummary>
+          <AccordionDetails>
+            <Box>
+              <Box sx={{ display: 'flex' }}>
+                <LocationOnIcon fontSize='small' />
+                <Typography ml={1} mr={2}>
+                  {item.location}
+                </Typography>
+                <LaunchIcon fontSize='small' />
+                <Typography ml={1} mr={2}>
+                  {item.location}
+                </Typography>
+              </Box>
+              <Grid container spacing={1}>
+                <Grid item xs={10}>
+                  <List dense>
+                    {item.bullets.map((bullet, index) => (
+                      <ListItem sx={{ paddingLeft: 0 }} key={index}>
+                        <ListItemIcon sx={{ minWidth: '1.75em' }}>
+                          <ArrowRightOutlinedIcon
+                            fontSize='small'
+                            sx={{ color: theme.palette.primary.main }}
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          sx={{ fontSize: '.25rem' }}
+                          primary={bullet}
                         />
-                      </ListItemIcon>
-                      <ListItemText
-                        sx={{ fontSize: '.25rem' }}
-                        primary={bullet}
-                      />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
-              <Grid item xs={2}>
-                <Image
-                  alt='index logo'
-                  src='/index-token.png'
-                  width={'100%'}
-                  height={'100%'}
-                />
-              </Grid>
-            </Grid>
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-      {/* CU BOULDER */}
-      <Accordion
-        expanded={expanded === 'panel2'}
-        onChange={handleChange('panel2')}
-        sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
-        <AccordionSummary
-          expandIcon={
-            <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
-          }
-          aria-controls='panel1bh-content'
-          id='panel1bh-header'>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              paddingRight: '2em',
-            }}>
-            <Box sx={{ display: 'flex' }}>
-              <Typography>Applied Computer Science</Typography>
-              <Typography
-                sx={{
-                  paddingLeft: '.25em',
-                  color: theme.palette.primary.main,
-                }}>
-                @ University of Colorado, Boulder
-              </Typography>
-            </Box>
-            <Typography sx={{ color: 'text.secondary' }}>
-              Sept 2018 - August 2022
-            </Typography>
-          </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-            <Box sx={{ display: 'flex' }}>
-              <LocationOnIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                Boulder, Colorado
-              </Typography>
-              <LaunchIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                colorado.edu
-              </Typography>
-            </Box>
-            <Grid container spacing={1}>
-              <Grid item xs={10}>
-                <List dense>
-                  {WorkBullets.map((bullet, index) => (
-                    <ListItem sx={{ paddingLeft: 0 }} key={index}>
-                      <ListItemIcon sx={{ minWidth: '1.75em' }}>
-                        <ArrowRightOutlinedIcon
-                          fontSize='small'
-                          sx={{ color: theme.palette.primary.main }}
-                        />
-                      </ListItemIcon>
-                      <ListItemText
-                        sx={{ fontSize: '.25rem' }}
-                        primary={bullet}
-                      />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
-              <Grid item xs={2}>
-                <Box>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Grid>
+                <Grid item xs={2}>
                   <Image
-                    alt='CU Boulder logo'
-                    src='/ralphie.png'
-                    height={350}
-                    width={250}
-                    layout='responsive'
+                    alt={item.alt}
+                    src={item.logo}
+                    width={'100%'}
+                    height={'100%'}
                   />
-                </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-      {/* INFINITY CONSULTING SOLUTIONS */}
-      <Accordion
-        expanded={expanded === 'panel2'}
-        onChange={handleChange('panel2')}
-        sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
-        <AccordionSummary
-          expandIcon={
-            <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
-          }
-          aria-controls='panel1bh-content'
-          id='panel1bh-header'>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              paddingRight: '2em',
-            }}>
-            <Box sx={{ display: 'flex' }}>
-              <Typography>Sr. IT Account Manager</Typography>
-              <Typography
-                sx={{
-                  paddingLeft: '.25em',
-                  color: theme.palette.primary.main,
-                }}>
-                @ Infinity Consulting Solutions
-              </Typography>
             </Box>
-            <Typography sx={{ color: 'text.secondary' }}>
-              Sept 2015 - Sept 2020
-            </Typography>
-          </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-            <Box sx={{ display: 'flex' }}>
-              <LocationOnIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                Denver, Colorado
-              </Typography>
-              <LaunchIcon fontSize='small' />
-              <Typography ml={1} mr={2}>
-                infinity-cs.com
-              </Typography>
-            </Box>
-            <Grid container spacing={1}>
-              <Grid item xs={10}>
-                <List dense>
-                  {WorkBullets.map((bullet, index) => (
-                    <ListItem sx={{ paddingLeft: 0 }} key={index}>
-                      <ListItemIcon sx={{ minWidth: '1.75em' }}>
-                        <ArrowRightOutlinedIcon
-                          fontSize='small'
-                          sx={{ color: theme.palette.primary.main }}
-                        />
-                      </ListItemIcon>
-                      <ListItemText
-                        sx={{ fontSize: '.25rem' }}
-                        primary={bullet}
-                      />
-                    </ListItem>
-                  ))}
-                </List>
-              </Grid>
-              <Grid item xs={2}>
-                <Box>
-                  <Image
-                    alt='CU Boulder logo'
-                    src='/ralphie.png'
-                    height={350}
-                    width={250}
-                    layout='responsive'
-                  />
-                </Box>
-              </Grid>
-            </Grid>
-          </Box>
-        </AccordionDetails>
-      </Accordion>
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </div>
   );
 }
