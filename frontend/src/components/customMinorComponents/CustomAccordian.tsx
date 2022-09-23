@@ -37,6 +37,7 @@ function CustomAccordian({}: Props) {
 
   return (
     <div>
+      {/* INDEX COOP */}
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
@@ -112,10 +113,11 @@ function CustomAccordian({}: Props) {
           </Box>
         </AccordionDetails>
       </Accordion>
+      {/* CU BOULDER */}
       <Accordion
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
-        sx={{ backgroundColor: 'rgb(33, 43, 54)' }}>
+        sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
         <AccordionSummary
           expandIcon={
             <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
@@ -154,6 +156,85 @@ function CustomAccordian({}: Props) {
               <LaunchIcon fontSize='small' />
               <Typography ml={1} mr={2}>
                 colorado.edu
+              </Typography>
+            </Box>
+            <Grid container spacing={1}>
+              <Grid item xs={10}>
+                <List dense>
+                  {WorkBullets.map((bullet, index) => (
+                    <ListItem sx={{ paddingLeft: 0 }} key={index}>
+                      <ListItemIcon sx={{ minWidth: '1.75em' }}>
+                        <ArrowRightOutlinedIcon
+                          fontSize='small'
+                          sx={{ color: theme.palette.primary.main }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText
+                        sx={{ fontSize: '.25rem' }}
+                        primary={bullet}
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </Grid>
+              <Grid item xs={2}>
+                <Box>
+                  <Image
+                    alt='CU Boulder logo'
+                    src='/ralphie.png'
+                    height={350}
+                    width={250}
+                    layout='responsive'
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </AccordionDetails>
+      </Accordion>
+      {/* INFINITY CONSULTING SOLUTIONS */}
+      <Accordion
+        expanded={expanded === 'panel2'}
+        onChange={handleChange('panel2')}
+        sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
+        <AccordionSummary
+          expandIcon={
+            <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
+          }
+          aria-controls='panel1bh-content'
+          id='panel1bh-header'>
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              paddingRight: '2em',
+            }}>
+            <Box sx={{ display: 'flex' }}>
+              <Typography>Sr. IT Account Manager</Typography>
+              <Typography
+                sx={{
+                  paddingLeft: '.25em',
+                  color: theme.palette.primary.main,
+                }}>
+                @ Infinity Consulting Solutions
+              </Typography>
+            </Box>
+            <Typography sx={{ color: 'text.secondary' }}>
+              Sept 2015 - Sept 2020
+            </Typography>
+          </Box>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box>
+            <Box sx={{ display: 'flex' }}>
+              <LocationOnIcon fontSize='small' />
+              <Typography ml={1} mr={2}>
+                Denver, Colorado
+              </Typography>
+              <LaunchIcon fontSize='small' />
+              <Typography ml={1} mr={2}>
+                infinity-cs.com
               </Typography>
             </Box>
             <Grid container spacing={1}>
