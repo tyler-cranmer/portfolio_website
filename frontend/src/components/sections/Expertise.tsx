@@ -66,7 +66,7 @@ function Expertise({}: Props) {
         <Grid container columns={{ xs: 3, md: 12 }} columnSpacing={10}>
           <Grid item xs={4}>
             <Paper
-              elevation={2}
+              elevation={6}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',
@@ -88,14 +88,14 @@ function Expertise({}: Props) {
                 Blockchain
               </Typography>
               <Typography variant='body1'>
-                Experienced web3 developer: Solidity, Typescript,
-                Ether.js, hardhat, graph protocol.
+                Experienced web3 developer: Solidity, Typescript, Ether.js,
+                hardhat, graph protocol.
               </Typography>
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper
-              elevation={3}
+              elevation={24}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',
@@ -125,7 +125,7 @@ function Expertise({}: Props) {
           </Grid>
           <Grid item xs={4}>
             <Paper
-              elevation={2}
+              elevation={6}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',
