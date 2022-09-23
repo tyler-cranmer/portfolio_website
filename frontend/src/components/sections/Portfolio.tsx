@@ -28,21 +28,14 @@ function Portfolio() {
       }}>
       <Box pt={20}>
         <Container maxWidth='lg'>
-          <Box
-            sx={
-              {
-                // display: 'flex',
-                // flexDirection: 'column',
-                // alignItems: 'center',
-              }
-            }>
-            <Typography sx={{ fontWeight: 'Bold', fontSize: '76px' }} gutterBottom>
+          <Box>
+            <Typography
+              sx={{ fontWeight: 'Bold', fontSize: '76px' }}
+              gutterBottom>
               My Work
             </Typography>
           </Box>
           <Grid container>
-            {/* {Title} */}
-            <Grid item></Grid>
             {/* Tabs */}
             <Grid item xs={12}>
               <StyledTabs
@@ -50,7 +43,10 @@ function Portfolio() {
                 onChange={(event: React.SyntheticEvent, newValue) =>
                   setTabValue(newValue)
                 }>
-                <StyledTab label='All' value='All' />
+                <Typography mr={1} sx={{ alignSelf: 'center' }}>
+                  Filter by:
+                </Typography>
+                <StyledTab label='Aggregate' value='Aggregate' />
                 {[
                   ...new Set(portfolioData.projects2.map((item) => item.tag)),
                 ].map((tag, index) => (
@@ -63,7 +59,7 @@ function Portfolio() {
               <Grid container spacing={2}>
                 {portfolioData.projects2.map((project, index) => (
                   <>
-                    {tabValue == project.tag || tabValue == 'All' ? (
+                    {tabValue == project.tag || tabValue == 'Aggregate' ? (
                       <Grid item xs={2} sm={4} md={4}>
                         <Grow in timeout={1000}>
                           <Card
@@ -87,7 +83,11 @@ function Portfolio() {
                                   {project.description}
                                 </Typography>
                                 {project.tech.map((item, index) => (
-                                  <Typography key={index} variant='caption' pr={1.5} pt={2}>
+                                  <Typography
+                                    key={index}
+                                    variant='caption'
+                                    pr={1.5}
+                                    pt={2}>
                                     {item}
                                   </Typography>
                                 ))}
