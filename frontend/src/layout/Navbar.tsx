@@ -9,7 +9,6 @@ import {
   Button,
 } from '@mui/material';
 import theme from '../theme';
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import CustomButton from '../components/customMinorComponents/CustomButton';
 import { Container } from '@mui/system';
 
@@ -22,27 +21,35 @@ function Navbar() {
     { Name: 'Contact', Link: '#home' },
   ];
 
-  const name: string = 'TeeWhy._'
+  const name: string = 'TeeWhy.'
+  const underScore: string = '_'
 
   return (
     <>
       <AppBar sx={{ background: theme.palette.grey[900] }} position='static'>
-        <Toolbar sx={{ minHeight: '80px' }}>
+        <Toolbar sx={{ height: '6em' }}>
           <Link href='/' sx={{ textDecoration: 'none' }}>
             <IconButton
               size='large'
               edge='start'
               aria-label='logo'
               sx={{ color: theme.palette.primary.light }}>
-              <DeveloperModeIcon />
-              <Box sx={{ display: { md: 'inline', xs: 'none' } }}>
+              <Box mx={5} sx={{ display: { md: 'flex', xs: 'none' } }}>
                 <Typography
-                  variant='h6'
+                  variant='h4'
                   sx={{
                     flexGrow: 1,
                     color: theme.palette.text.primary,
                   }}>
                   {name}
+                </Typography>
+                <Typography
+                  variant='h4'
+                  sx={{
+                    flexGrow: 1,
+                    // color: theme.palette.text.primary,
+                  }}>
+                  {underScore}
                 </Typography>
               </Box>
             </IconButton>
