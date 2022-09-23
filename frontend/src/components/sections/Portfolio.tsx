@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Tabs,
@@ -15,7 +15,6 @@ import theme from '../../theme';
 import { Container } from '@mui/system';
 import portfolioData from '../../utils/tempData';
 import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
-
 
 function Portfolio() {
   const [tabValue, setTabValue] = useState('Aggregate');
@@ -43,27 +42,34 @@ function Portfolio() {
                 onChange={(event: React.SyntheticEvent, newValue) =>
                   setTabValue(newValue)
                 }>
-                <Typography mr={1} sx={{ alignSelf: 'center' }}>
-                  Filter by:
-                </Typography>
-                <StyledTab label='Aggregate' value='Aggregate' />
+                <StyledTab label='Filter by:' value='none' disabled={true} />
+                <StyledTab
+                  label='Aggregate'
+                  value='Aggregate'
+                  disabled={false}
+                />
                 {[
                   ...new Set(portfolioData.projects2.map((item) => item.tag)),
                 ].map((tag, index) => (
-                  <StyledTab key={index} label={tag} value={tag} />
+                  <StyledTab
+                    key={index}
+                    label={tag}
+                    value={tag}
+                    disabled={false}
+                  />
                 ))}
               </StyledTabs>
             </Grid>
             {/* projects */}
             <Grid item xs={12}>
               <Grid container spacing={2}>
-                {portfolioData.projects2.map((project, index) => (
-                  <>
+                {portfolioData.projects2.map((project, i) => (
+                  <React.Fragment key={i}>
                     {tabValue == project.tag || tabValue == 'Aggregate' ? (
                       <Grid item xs={2} sm={4} md={4}>
                         <Grow in timeout={1000}>
                           <Card
-                            key={index}
+                            key={i}
                             sx={{ backgroundColor: theme.palette.grey[800] }}>
                             <CardActionArea>
                               <CardMedia
@@ -97,7 +103,7 @@ function Portfolio() {
                         </Grow>
                       </Grid>
                     ) : null}
-                  </>
+                  </React.Fragment>
                 ))}
               </Grid>
             </Grid>

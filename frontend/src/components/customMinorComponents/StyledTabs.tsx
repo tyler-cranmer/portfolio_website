@@ -9,8 +9,8 @@ interface StyledTabsProps {
 }
 
 export const StyledTabs = styled((props: StyledTabsProps) => (
-    <Tabs
-    sx={{marginBottom: '1em'}}
+  <Tabs
+    sx={{ marginBottom: '1em' }}
     {...props}
     TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }}
   />
@@ -28,8 +28,9 @@ export const StyledTabs = styled((props: StyledTabsProps) => (
 });
 
 interface StyledTabProps {
-    label: string;
-    value: string;
+  label: string;
+  value: string;
+  disabled: boolean;
 }
 
 export const StyledTab = styled((props: StyledTabProps) => (
@@ -45,5 +46,8 @@ export const StyledTab = styled((props: StyledTabProps) => (
   },
   '&.Mui-focusVisible': {
     backgroundColor: 'rgba(100, 95, 228, 0.32)',
+  },
+  '&.Mui-disabled': {
+    color: '#fff',
   },
 }));
