@@ -19,6 +19,8 @@ function Hero() {
     delaySpeed: 2000,
   });
 
+  const i_build: string = 'I build'
+
   return (
     <Box
       sx={{
@@ -47,7 +49,7 @@ function Hero() {
             justifyContent='flex-start'
             alignItems='flex-start'
             spacing={2}
-             maxWidth='md'>
+            maxWidth='md'>
             <Box>
               <Typography
                 variant='h5'
@@ -67,8 +69,8 @@ function Hero() {
                 sx={{ fontWeight: 500, color: 'white' }}
                 variant='h2'
                 gutterBottom>
-                I build {text}
-                <Cursor cursorStyle='_'/>
+                {i_build} {text}
+                <Cursor cursorStyle='_' />
               </Typography>
             </Box>
             <Box>

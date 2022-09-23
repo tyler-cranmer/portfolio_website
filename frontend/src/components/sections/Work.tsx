@@ -2,6 +2,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import theme from "../../theme";
 import CustomAccordian from "../customMinorComponents/CustomAccordian";
+
 function Work() {
     return (
       <Box
@@ -16,10 +17,7 @@ function Work() {
             pb={2.5}
             sx={{ display: 'flex', flexDirection: 'column', alignItems:'center' }}>
             <Typography variant='h2' sx={{ fontWeight: 'Bold' }}>
-              Professional
-            </Typography>
-            <Typography variant='h2' sx={{ fontWeight: 'Bold' }}>
-              Experience
+              My Experience
             </Typography>
           </Box>
           <CustomAccordian />
