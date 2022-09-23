@@ -176,12 +176,15 @@ function CustomAccordian({}: Props) {
                 </List>
               </Grid>
               <Grid item xs={2}>
-                <Image
-                  alt='CU Boulder logo'
-                  src='/ralphie.png'
-                  width='100%'
-                  height='100%'
-                />
+                <Box>
+                  <Image
+                    alt='CU Boulder logo'
+                    src='/ralphie.png'
+                    height={350}
+                    width={250}
+                    layout='responsive'
+                  />
+                </Box>
               </Grid>
             </Grid>
           </Box>
