@@ -1,0 +1,66 @@
+.dev-icons {
+  color: #ff6b00;
+}
+
+.cog-icons{
+    color: #00AB55;
+}
+
+.block-icons {
+    color: #1878fe;
+}
+
+/* Expertise Section css */
+.spanIcon {
+  line-height: 1;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.cardCenter {
+    margin-top: -80px;
+    background-color: rgb(33, 43, 54);
+    box-shadow: rgb(0 0 0 / 40%) -40px 40px 80px 0px;
+}
+
+.css-avmrvc{
+    background-color: rgb(33, 43, 54);
+    color: rgb(255, 255, 255);
+    background-image: none;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 12px 24px -4px;
+}
+
+.code-avmrvc{
+    filter:  drop-shadow(1.5px 1.5px 1.5px rgba(255, 72, 66, 0.48));
+}
+
+.cogs-avmrvc {
+    filter: drop-shadow(1.5px 1.5px 1.5px rgba(0, 171, 85, 0.48));
+}
+
+.block-avmrvc {
+    filter: drop-shadow(1.5px 1.5px 1.5px rgba(24, 144, 255, 0.48));
+}
+
+.cardCenter::before {
+    inset: 0px;
+    z-index: -1;
+    content: "";
+    margin: auto;
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 16px;
+    background-color: rgb(33, 43, 54);
+    box-shadow: rgb(0 0 0 / 12%) -20px 20px 40px 0px;
+}
+
+
