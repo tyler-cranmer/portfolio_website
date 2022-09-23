@@ -51,17 +51,22 @@ function Expertise({}: Props) {
       sx={{
         backgroundColor: theme.palette.grey[900],
         minHeight: '80vh',
+        paddingBottom: '7.5em',
       }}>
       <Container>
-        <Box mb={25} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Typography variant='h1' sx={{ fontWeight: 'Bold' }}>
+        <Box mb={22} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Typography
+            sx={{
+              fontWeight: 'Bold',
+              fontSize: '75px',
+            }}>
             My Expertise
           </Typography>
         </Box>
         <Grid container columns={{ xs: 3, md: 12 }} columnSpacing={10}>
           <Grid item xs={4}>
             <Paper
-              elevation={0}
+              elevation={2}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',
@@ -83,14 +88,14 @@ function Expertise({}: Props) {
                 Blockchain
               </Typography>
               <Typography variant='body1'>
-                Experienced in full stack development: Python, Typescript,
-                Next.js, Django, Flask
+                Experienced web3 developer: Solidity, Typescript,
+                Ether.js, hardhat, graph protocol.
               </Typography>
             </Paper>
           </Grid>
           <Grid item xs={4}>
             <Paper
-              elevation={0}
+              elevation={3}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',
@@ -120,7 +125,7 @@ function Expertise({}: Props) {
           </Grid>
           <Grid item xs={4}>
             <Paper
-              elevation={0}
+              elevation={2}
               sx={{
                 padding: '70px 40px 0px',
                 maxWidth: '380px',

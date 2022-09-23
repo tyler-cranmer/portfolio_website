@@ -14,9 +14,12 @@ function Work() {
             pt={12.5}
             mb={2.5}
             pb={2.5}
-            sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant='h4' sx={{ fontWeight: 'Bold' }}>
-              Professional Experience
+            sx={{ display: 'flex', flexDirection: 'column', alignItems:'center' }}>
+            <Typography variant='h2' sx={{ fontWeight: 'Bold' }}>
+              Professional
+            </Typography>
+            <Typography variant='h2' sx={{ fontWeight: 'Bold' }}>
+              Experience
             </Typography>
           </Box>
           <CustomAccordian />
