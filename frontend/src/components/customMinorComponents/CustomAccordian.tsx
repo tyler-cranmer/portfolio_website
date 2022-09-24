@@ -35,10 +35,19 @@ function CustomAccordian({}: Props) {
     <div>
       {experienceData.experience.map((item, index) => (
         <Accordion
+          square={true}
           key={index}
           expanded={expanded === item.panel}
           onChange={handleChange(item.panel)}
-          sx={{ backgroundColor: 'rgb(33, 43, 54)', marginBottom: '.5em' }}>
+          sx={{
+            backgroundColor: 'rgb(33, 43, 54)',
+            marginBottom: '.5em',
+            borderTopRightRadius: '15px',
+            borderTopLeftRadius: '15px',
+            borderBottomRightRadius: '15px',
+            borderBottomLeftRadius: '15px',
+            padding: '.25em'
+          }}>
           <AccordionSummary
             expandIcon={
               <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
@@ -78,13 +87,12 @@ function CustomAccordian({}: Props) {
                   {item.location}
                 </Typography>
                 <Link
-                  
                   href={item.slug}
                   color='inherit'
                   underline='none'
                   sx={{ display: 'flex' }}>
                   <LaunchIcon fontSize='small' />
-                  <Typography className='websiteLink'  ml={1} mr={2}>
+                  <Typography className='websiteLink' ml={1} mr={2}>
                     {item.website}
                   </Typography>
                 </Link>
