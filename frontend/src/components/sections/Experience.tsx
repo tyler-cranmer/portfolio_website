@@ -16,8 +16,7 @@ const expVariant: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.9,
-      duration: .5,
+      delay: 0.6,
     },
   },
 };
@@ -59,7 +58,6 @@ function Experience({}: Props) {
                 My Experience
               </Typography>
             </Box>
-
             <CustomAccordian />
           </motion.div>
         </Container>

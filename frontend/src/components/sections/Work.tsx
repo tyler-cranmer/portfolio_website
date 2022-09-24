@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Grid,
@@ -17,13 +17,14 @@ import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
 function Work() {
   const [tabValue, setTabValue] = useState('Aggregate');
 
+
   return (
     <Box
       id='work'
       sx={{
         backgroundColor: theme.palette.grey[900],
       }}>
-      <Box pt={{ md: 10 }} pb={{ md: 15 }}>
+      <Box pt={{ md: 10 }} pb={{ md: 10 }}>
         <Container maxWidth='lg'>
           <Box>
             <Typography
@@ -65,7 +66,7 @@ function Work() {
                   <React.Fragment key={i}>
                     {tabValue == project.tag || tabValue == 'Aggregate' ? (
                       <Grid item xs={2} sm={4} md={4}>
-                        <Grow in timeout={1000}>
+                        <Grow in timeout={1000} >
                           <Card
                             key={i}
                             sx={{

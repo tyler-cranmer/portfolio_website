@@ -83,8 +83,8 @@ function About() {
   return (
     <Box
       id='about'
-      sx={{ backgroundColor: theme.palette.grey[900], minHeight: '90vh' }}>
-      <Box pt={{ md: 12 }} pb={{ md: 15 }}>
+      sx={{ backgroundColor: theme.palette.grey[900] }}>
+      <Box pt={{ md: 8 }} pb={{ md: 15 }}>
         <Container maxWidth='lg'>
           <Box sx={{ display: 'flex' }}>
             <Box sx={{ maxWidth: '50%' }}>

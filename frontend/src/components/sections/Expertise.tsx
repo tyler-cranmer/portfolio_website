@@ -55,7 +55,7 @@ const titleVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.4,
+      delay: 0.6,
     },
   },
 };
@@ -71,7 +71,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: .6,
+      delay: .8,
     },
   },
 };
@@ -87,7 +87,7 @@ const cardVariants2: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: .5,
+      delay: .7,
     },
   },
 };
@@ -110,7 +110,7 @@ function Expertise({}: Props) {
       sx={{
         backgroundColor: theme.palette.grey[900],
       }}>
-      <Box pt={{ md: 10}} pb={{ md: 15 }}>
+      <Box pt={{ md: 8}} pb={{ md: 15 }}>
         <Container>
           <motion.div
             ref={ref}
