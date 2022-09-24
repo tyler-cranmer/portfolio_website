@@ -68,7 +68,10 @@ function Work() {
                         <Grow in timeout={1000}>
                           <Card
                             key={i}
-                            sx={{ backgroundColor: theme.palette.grey[800] }}>
+                            sx={{
+                              backgroundColor: theme.palette.grey[800],
+                              borderRadius: '20px',
+                            }}>
                             <CardActionArea>
                               <CardMedia
                                 component='img'
