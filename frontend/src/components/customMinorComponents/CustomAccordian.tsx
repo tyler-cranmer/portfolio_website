@@ -22,7 +22,6 @@ import experienceData from '../../utils/tempData';
 import { motion, useAnimation, Variants } from 'framer-motion';
 
 type Props = {
-  ref: (node?: Element | null | undefined) => void;
   inView: boolean;
 };
 
@@ -42,7 +41,7 @@ const expVariant: Variants = {
   }),
 };
 
-function CustomAccordian({ ref, inView }: Props) {
+function CustomAccordian({ inView }: Props) {
   const control = useAnimation();
   const [expanded, setExpanded] = useState<string | false>(false);
 
@@ -61,14 +60,13 @@ function CustomAccordian({ ref, inView }: Props) {
     <div>
       {experienceData.experience.map((item, index) => (
         <motion.div
+          key={index}
           custom={index}
-          ref={ref}
           variants={expVariant}
           initial='offscreen'
           animate={control}>
           <Accordion
             square={true}
-            key={index}
             expanded={expanded === item.panel}
             onChange={handleChange(item.panel)}
             sx={{
@@ -114,7 +112,10 @@ function CustomAccordian({ ref, inView }: Props) {
             <AccordionDetails>
               <Box>
                 <Box sx={{ display: 'flex' }}>
-                  <LocationOnIcon fontSize='small' />
+                  <LocationOnIcon
+                    fontSize='small'
+                    sx={{ color: theme.palette.primary.main }}
+                  />
                   <Typography ml={1} mr={2}>
                     {item.location}
                   </Typography>
@@ -123,7 +124,10 @@ function CustomAccordian({ ref, inView }: Props) {
                     color='inherit'
                     underline='none'
                     sx={{ display: 'flex' }}>
-                    <LaunchIcon fontSize='small' />
+                    <LaunchIcon
+                      fontSize='small'
+                      sx={{ color: theme.palette.primary.main }}
+                    />
                     <Typography className='websiteLink' ml={1} mr={2}>
                       {item.website}
                     </Typography>
@@ -155,11 +159,12 @@ function CustomAccordian({ ref, inView }: Props) {
                         width: '100%',
                         display: 'flex',
                         justifyContent: 'center',
+                        padding: '1em',
                       }}>
                       <Image
                         alt={item.alt}
                         src={item.logo}
-                        width='175'
+                        width='255'
                         height='125'
                       />
                     </Box>

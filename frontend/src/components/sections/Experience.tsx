@@ -59,7 +59,7 @@ function Experience({}: Props) {
               </Typography>
             </Box>
           </motion.div>
-          <CustomAccordian ref={ref} inView={inView} />
+          <CustomAccordian inView={inView} />
         </Container>
       </Box>
     </Box>
