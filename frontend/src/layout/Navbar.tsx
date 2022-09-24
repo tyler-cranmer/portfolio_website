@@ -5,20 +5,22 @@ import {
   Toolbar,
   Typography,
   IconButton,
-  Link,
+  Link as Link2,
   Button,
 } from '@mui/material';
 import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
 import { Container } from '@mui/system';
+import { Link } from 'react-scroll/modules';
+
 
 function Navbar() {
   const MenuItems = [
-    { Name: 'Home', Link: '#home' },
-    { Name: 'About', Link: '#home' },
-    { Name: 'Work', Link: '#home' },
-    { Name: 'Projects', Link: '#home' },
-    { Name: 'Contact', Link: '#home' },
+    { Name: 'About', Link: 'about' },
+    {Name: 'Expertise', Link: 'expertise'},
+    { Name: 'Work', Link: 'work' },
+    { Name: 'Projects', Link: 'portfolio' },
+    { Name: 'Contact', Link: 'hero' },
   ];
 
   const name: string = 'TeeWhy.'
@@ -28,7 +30,7 @@ function Navbar() {
     <>
       <AppBar sx={{ background: theme.palette.grey[900] }} position='static'>
         <Toolbar sx={{ height: '6em' }}>
-          <Link href='/' sx={{ textDecoration: 'none' }}>
+          <Link2 href='/' sx={{ textDecoration: 'none' }}>
             <IconButton
               size='large'
               edge='start'
@@ -53,7 +55,7 @@ function Navbar() {
                 </Typography>
               </Box>
             </IconButton>
-          </Link>
+          </Link2>
           <Container maxWidth='sm'>
             <Box sx={{ flexGrow: 1 }} />
             <Box
@@ -63,7 +65,9 @@ function Navbar() {
               }}>
               {MenuItems.map((item, index) => (
                 <div key={index}>
-                  <CustomButton href={item.Link} text={item.Name} />
+                  <Link activeClass='active' to={item.Link} spy={true} smooth={true} offset={0} duration={1000}>
+                    <CustomButton  text={item.Name} />
+                  </Link>
                 </div>
               ))}
             </Box>
@@ -75,5 +79,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// sx={{ background: theme.palette.grey[900] }}

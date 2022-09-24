@@ -3,19 +3,17 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 
 type props = {
-  href: string;
+
   text: string;
 
 }
 
-const CustomButton = ({ href, text}: props) => {
+const CustomButton = ({ text}: props) => {
   const theme = useTheme();
 
   return (
     <Button
-
       color='primary'
-      href={href}
       variant='text'
       sx={{
         color: theme.palette.text.primary,

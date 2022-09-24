@@ -23,6 +23,7 @@ function Hero() {
 
   return (
     <Box
+      id='hero'
       sx={{
         backgroundImage: `url(https://minimals.cc/assets/overlay.svg)`,
         backgroundRepeat: 'no-repeat',

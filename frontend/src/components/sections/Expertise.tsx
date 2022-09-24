@@ -55,7 +55,7 @@ const titleVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.7,
+      delay: 0.4,
     },
   },
 };
@@ -71,7 +71,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 1,
+      delay: .6,
     },
   },
 };
@@ -87,7 +87,7 @@ const cardVariants2: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: .9,
+      delay: .5,
     },
   },
 };
@@ -106,6 +106,7 @@ function Expertise({}: Props) {
 
   return (
     <Box
+      id='expertise'
       sx={{
         backgroundColor: theme.palette.grey[900],
         paddingBottom: '5.5em',

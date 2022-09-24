@@ -6,7 +6,7 @@ import { Stack } from '@mui/system';
 
 function About() {
   return (
-    <Box sx={{ backgroundColor: theme.palette.grey[900], minHeight: '50vh' }}>
+    <Box id='about' sx={{ backgroundColor: theme.palette.grey[900], minHeight: '50vh' }}>
       <Container maxWidth='lg'>
         <Box sx={{ display: 'flex' }}>
           <Box sx={{ maxWidth: '50%'}}>

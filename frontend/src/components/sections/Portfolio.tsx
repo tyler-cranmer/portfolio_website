@@ -21,6 +21,7 @@ function Portfolio() {
 
   return (
     <Box
+      id='portfolio'
       sx={{
         backgroundColor: theme.palette.grey[900],
         minHeight: '50vh',
