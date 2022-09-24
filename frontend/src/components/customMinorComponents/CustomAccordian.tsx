@@ -67,7 +67,6 @@ function CustomAccordian({ inView }: Props) {
             animate={control}>
             <Accordion
               square={true}
-              disableGutters={false}
               expanded={expanded === item.panel}
               onChange={handleChange(item.panel)}
               sx={{
@@ -110,7 +109,7 @@ function CustomAccordian({ inView }: Props) {
                   </Typography>
                 </Box>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails >
                 <Box>
                   <Box sx={{ display: 'flex' }}>
                     <LocationOnIcon
