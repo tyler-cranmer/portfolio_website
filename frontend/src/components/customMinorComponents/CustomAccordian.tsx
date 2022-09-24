@@ -37,7 +37,7 @@ const expVariant: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      delay: i * 0.8,
+      delay: i * 0.6,
     },
   }),
 };

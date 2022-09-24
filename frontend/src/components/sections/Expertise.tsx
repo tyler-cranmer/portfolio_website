@@ -71,7 +71,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: .8,
+      delay: 1,
     },
   },
 };
@@ -87,7 +87,7 @@ const cardVariants2: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: .7,
+      delay: .8,
     },
   },
 };
