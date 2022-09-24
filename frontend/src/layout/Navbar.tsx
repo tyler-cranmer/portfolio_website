@@ -17,9 +17,9 @@ import { Link } from 'react-scroll/modules';
 function Navbar() {
   const MenuItems = [
     { Name: 'About', Link: 'about' },
-    {Name: 'Expertise', Link: 'expertise'},
+    { Name: 'Expertise', Link: 'expertise' },
     { Name: 'Work', Link: 'work' },
-    { Name: 'Projects', Link: 'portfolio' },
+    { Name: 'Experience', Link: 'experience' },
     { Name: 'Contact', Link: 'hero' },
   ];
 

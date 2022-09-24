@@ -109,141 +109,141 @@ function Expertise({}: Props) {
       id='expertise'
       sx={{
         backgroundColor: theme.palette.grey[900],
-        paddingBottom: '5.5em',
       }}>
-      <Container>
-        <motion.div
-          ref={ref}
-          variants={titleVariants}
-          initial='offscreen'
-          animate={control}>
-          <Box
-            mb={{ xs: 8, sm: 8, md: 22 }}
-            pt={{ xs: 10, sm: 10, md: 22 }}
-            sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography
-              sx={{
-                fontWeight: 'Bold',
-                fontSize: '75px',
-              }}>
-              My Expertise
-            </Typography>
-          </Box>
-        </motion.div>
-        <Grid
-          container
-          columns={{ xs: 4, sm: 4, md: 12 }}
-          columnSpacing={{ sm: 10, md: 10 }}
-          spacing={{ xs: 5, sm: 5, md: 0 }}>
-          {/* Blockchain card */}
-          <Grid item xs={4}>
-            <motion.div
-              variants={cardVariants}
-              initial='offscreen'
-              animate={control}>
-              <Paper
-                elevation={6}
+      <Box pt={{ md: 10}} pb={{ md: 15 }}>
+        <Container>
+          <motion.div
+            ref={ref}
+            variants={titleVariants}
+            initial='offscreen'
+            animate={control}>
+            <Box
+              mb={{ xs: 8, sm: 8, md: 22 }}
+              sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Typography
                 sx={{
-                  padding: '70px 40px 0px',
-                  maxWidth: '380px',
-                  minHeight: '440px',
-                  backgroundColor: 'rgb(33, 43, 54)',
-                  textAlign: 'center',
-                  borderRadius: '20px',
-                  margin: 'auto',
+                  fontWeight: 'Bold',
+                  fontSize: '75px',
                 }}>
-                <span className='spanIcon block-avmrvc'>
-                  <BlockIcon
-                    sx={{
-                      height: '46px',
-                      width: '46px',
-                    }}
-                  />
-                </span>
-                <Typography mb={2} variant='h6'>
-                  Blockchain
-                </Typography>
-                <Typography variant='body1'>
-                  Experienced web3 developer: Solidity, Typescript, Ether.js,
-                  hardhat, graph protocol.
-                </Typography>
-              </Paper>
-            </motion.div>
+                My Expertise
+              </Typography>
+            </Box>
+          </motion.div>
+          <Grid
+            container
+            columns={{ xs: 4, sm: 4, md: 12 }}
+            columnSpacing={{ sm: 10, md: 10 }}
+            spacing={{ xs: 5, sm: 5, md: 0 }}>
+            {/* Blockchain card */}
+            <Grid item xs={4}>
+              <motion.div
+                variants={cardVariants}
+                initial='offscreen'
+                animate={control}>
+                <Paper
+                  elevation={6}
+                  sx={{
+                    padding: '70px 40px 0px',
+                    maxWidth: '380px',
+                    minHeight: '440px',
+                    backgroundColor: 'rgb(33, 43, 54)',
+                    textAlign: 'center',
+                    borderRadius: '20px',
+                    margin: 'auto',
+                  }}>
+                  <span className='spanIcon block-avmrvc'>
+                    <BlockIcon
+                      sx={{
+                        height: '46px',
+                        width: '46px',
+                      }}
+                    />
+                  </span>
+                  <Typography mb={2} variant='h6'>
+                    Blockchain
+                  </Typography>
+                  <Typography variant='body1'>
+                    Experienced web3 developer: Solidity, Typescript, Ether.js,
+                    hardhat, graph protocol.
+                  </Typography>
+                </Paper>
+              </motion.div>
+            </Grid>
+            {/* Software Development Card */}
+            <Grid item xs={4}>
+              <motion.div
+                variants={cardVariants2}
+                initial='offscreen'
+                animate={control}>
+                <Paper
+                  elevation={24}
+                  sx={{
+                    padding: '70px 40px 0px',
+                    maxWidth: '380px',
+                    minHeight: '440px',
+                    backgroundColor: 'rgb(33, 43, 54)',
+                    textAlign: 'center',
+                    borderRadius: '20px',
+                    margin: 'auto',
+                    marginTop: { xs: 0, sm: 0, md: -10 },
+                  }}
+                  className='cardCenter css-avmrvc'>
+                  <span className='spanIcon code-avmrvc'>
+                    <CodeIcon
+                      sx={{
+                        height: '46px',
+                        width: '46px',
+                      }}
+                    />
+                  </span>
+                  <Typography mb={2} variant='h6'>
+                    Software Development
+                  </Typography>
+                  <Typography variant='body1'>
+                    Experienced in full stack development: Python, Typescript,
+                    Next.js, Django, Flask
+                  </Typography>
+                </Paper>
+              </motion.div>
+            </Grid>
+            {/* Machine Learning card */}
+            <Grid item xs={4}>
+              <motion.div
+                variants={cardVariants}
+                initial='offscreen'
+                animate={control}>
+                <Paper
+                  elevation={6}
+                  sx={{
+                    padding: '70px 40px 0px',
+                    maxWidth: '380px',
+                    minHeight: '440px',
+                    backgroundColor: 'rgb(33, 43, 54)',
+                    textAlign: 'center',
+                    borderRadius: '20px',
+                    margin: 'auto',
+                  }}>
+                  <span className='spanIcon cogs-avmrvc'>
+                    <CogsIcon
+                      sx={{
+                        height: '46px',
+                        width: '46px',
+                      }}
+                    />
+                  </span>
+                  <Typography mb={2} variant='h6'>
+                    Machine Learning
+                  </Typography>
+                  <Typography variant='body1'>
+                    Experienced in full stack development: Python, Typescript,
+                    Next.js, Django, Flask
+                  </Typography>
+                </Paper>
+              </motion.div>
+            </Grid>
           </Grid>
-          {/* Software Development Card */}
-          <Grid item xs={4}>
-            <motion.div
-              variants={cardVariants2}
-              initial='offscreen'
-              animate={control}>
-              <Paper
-                elevation={24}
-                sx={{
-                  padding: '70px 40px 0px',
-                  maxWidth: '380px',
-                  minHeight: '440px',
-                  backgroundColor: 'rgb(33, 43, 54)',
-                  textAlign: 'center',
-                  borderRadius: '20px',
-                  margin: 'auto',
-                  marginTop: { xs: 0, sm: 0, md: -10 },
-                }}
-                className='cardCenter css-avmrvc'>
-                <span className='spanIcon code-avmrvc'>
-                  <CodeIcon
-                    sx={{
-                      height: '46px',
-                      width: '46px',
-                    }}
-                  />
-                </span>
-                <Typography mb={2} variant='h6'>
-                  Software Development
-                </Typography>
-                <Typography variant='body1'>
-                  Experienced in full stack development: Python, Typescript,
-                  Next.js, Django, Flask
-                </Typography>
-              </Paper>
-            </motion.div>
-          </Grid>
-          {/* Machine Learning card */}
-          <Grid item xs={4}>
-            <motion.div
-              variants={cardVariants}
-              initial='offscreen'
-              animate={control}>
-              <Paper
-                elevation={6}
-                sx={{
-                  padding: '70px 40px 0px',
-                  maxWidth: '380px',
-                  minHeight: '440px',
-                  backgroundColor: 'rgb(33, 43, 54)',
-                  textAlign: 'center',
-                  borderRadius: '20px',
-                  margin: 'auto',
-                }}>
-                <span className='spanIcon cogs-avmrvc'>
-                  <CogsIcon
-                    sx={{
-                      height: '46px',
-                      width: '46px',
-                    }}
-                  />
-                </span>
-                <Typography mb={2} variant='h6'>
-                  Machine Learning
-                </Typography>
-                <Typography variant='body1'>
-                  Experienced in full stack development: Python, Typescript,
-                  Next.js, Django, Flask
-                </Typography>
-              </Paper>
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
     </Box>
   );
 }

@@ -3,13 +3,10 @@ import type { NextPage } from 'next';
 import Navbar from '../layout/Navbar';
 import Hero from '../components/sections/Hero';
 import Footer from '../layout/Footer';
-import Work from '../components/sections/Work';
+import Experience from '../components/sections/Experience';
 import About from '../components/sections/About';
-import Portfolio from '../components/sections/Portfolio';
+import Work from '../components/sections/Work';
 import Expertise from '../components/sections/Expertise';
-
-
-
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +14,9 @@ const Home: NextPage = () => {
       <Navbar />
       <Hero />
       <About />
-      <Expertise/>
-      <Portfolio />
-      <Work />
+      <Expertise />
+      <Work/>
+      <Experience />
       <Footer />
     </>
   );
