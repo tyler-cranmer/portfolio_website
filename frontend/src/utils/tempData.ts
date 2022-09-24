@@ -92,6 +92,7 @@ export default {
       duration: 'May 2021 - June 2022',
       location: 'Remote',
       website: 'indexcoop.com',
+      slug: 'https://indexcoop.com/',
       bullets: [
         'Automated the collection, recording and calculations of community monthly contributions for the Finance group.',
         'Created technical documentation on Solidity, Ethers.js and Hardhat.',
@@ -108,6 +109,7 @@ export default {
       duration: 'Sept 2018 - August 2022',
       location: 'Boulder, Colorado',
       website: 'colorado.edu',
+      slug: 'https://www.colorado.edu/',
       bullets: [
         'Graduated with a Bachelors Degree in Applied Computer Science.',
         'Developed core Computer Science principals. i.e Data Structures, Algorithms and Computer Systems.',
@@ -123,6 +125,7 @@ export default {
       duration: 'Sept 2015 - Sept 2020',
       location: 'Denver, Colorado',
       website: 'infinity-cs.com',
+      slug: 'https://www.infinity-cs.com/',
       bullets: [
         'Gathered technical requirements from business stakeholders to provide end-to-end recruitment and hiring solutions for start-up, mid-size and fortune 100 technology clients.',
         'Managed the full life-cycle technical recruiting processes for various engineering teams.',

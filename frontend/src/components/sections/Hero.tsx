@@ -39,7 +39,7 @@ function Hero() {
             display: 'flex',
             alignitems: 'flex-start',
             flexDirection: 'column',
-            padding: '0px',
+            // padding: '0px',
             // justifyContent: 'center',
             margin: '0 auto',
           }}>
@@ -53,20 +53,21 @@ function Hero() {
             <Box>
               <Typography
                 variant='h5'
-                component='h1'
                 gutterBottom
                 sx={{ color: theme.palette.primary.light }}>
                 Hi, my name is
               </Typography>
             </Box>
             <Box>
-              <Typography sx={{ fontWeight: 500, color: 'white' }} variant='h1'>
+              <Typography
+                sx={{ fontWeight: 500, color: theme.palette.text.primary }}
+                variant='h1'>
                 Tyler Cranmer.
               </Typography>
             </Box>
             <Box>
               <Typography
-                sx={{ fontWeight: 500, color: 'white' }}
+                sx={{ fontWeight: 500, color: theme.palette.text.primary }}
                 variant='h2'
                 gutterBottom>
                 {i_build} {text}
@@ -74,7 +75,10 @@ function Hero() {
               </Typography>
             </Box>
             <Box>
-              <Typography variant='body1' sx={{ color: 'white' }} gutterBottom>
+              <Typography
+                variant='body1'
+                sx={{ color: theme.palette.text.primary }}
+                gutterBottom>
                 I'm a software engineer graduate specializing in building web
                 and machine learning applications. Lorem ipsum dolor, sit amet
                 consectetur adipisicing elit. Repellendus, nobis eos? Aliquam

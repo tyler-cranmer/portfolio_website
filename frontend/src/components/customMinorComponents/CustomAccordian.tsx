@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   ListItemText,
   Box,
+  Link
 } from '@mui/material';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -76,13 +77,20 @@ function CustomAccordian({}: Props) {
                 <Typography ml={1} mr={2}>
                   {item.location}
                 </Typography>
-                <LaunchIcon fontSize='small' />
-                <Typography ml={1} mr={2}>
-                  {item.location}
-                </Typography>
+                <Link
+                  
+                  href={item.slug}
+                  color='inherit'
+                  underline='none'
+                  sx={{ display: 'flex' }}>
+                  <LaunchIcon fontSize='small' />
+                  <Typography className='websiteLink'  ml={1} mr={2}>
+                    {item.website}
+                  </Typography>
+                </Link>
               </Box>
               <Grid container spacing={1}>
-                <Grid item xs={10}>
+                <Grid item xs={9}>
                   <List dense>
                     {item.bullets.map((bullet, index) => (
                       <ListItem sx={{ paddingLeft: 0 }} key={index}>
@@ -100,13 +108,21 @@ function CustomAccordian({}: Props) {
                     ))}
                   </List>
                 </Grid>
-                <Grid item xs={2}>
-                  <Image
-                    alt={item.alt}
-                    src={item.logo}
-                    width={'100%'}
-                    height={'100%'}
-                  />
+                <Grid item xs={3}>
+                  <Box
+                    sx={{
+                      height: '100%',
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                    }}>
+                    <Image
+                      alt={item.alt}
+                      src={item.logo}
+                      width='175'
+                      height='125'
+                    />
+                  </Box>
                 </Grid>
               </Grid>
             </Box>
