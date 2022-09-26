@@ -97,7 +97,7 @@ export default {
         'Automated the collection, recording and calculations of community monthly contributions for the Finance group.',
         'Created technical documentation on Solidity, Ethers.js and Hardhat.',
         'Contributed to the creation of the engineering on-boarding process and training for new Solidity developers.',
-        'Built Index Coop Subgraph using graph QL and the graph protocol',
+        'Built Index Coop Subgraph using graph QL and the graph protocol.',
       ],
       logo: '/index-token.png',
       alt: 'index logo',

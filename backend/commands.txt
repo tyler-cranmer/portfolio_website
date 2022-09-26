@@ -1,0 +1,28 @@
+python3 -m venv venv
+source venv/bin/activate
+pip install django
+django-admin startproject core .
+python manage.py startapp {appname}
+
+in settings:
+
+INSTALLED_APPS: [
+    ...
+    '{appname}.apps.{Appbname}Config',
+    'books.apps.BooksConfig',
+]
+
+python manage.py makemigrations
+python manage.py migrate
+
+install graphene:
+
+pip install graphene-django
+
+run server:
+
+python manage.py runserver
+
+create super user:
+
+python manage.py createsuperuser
