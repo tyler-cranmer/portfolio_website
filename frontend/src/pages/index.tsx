@@ -7,7 +7,6 @@ import Experience from '../components/sections/Experience';
 import About from '../components/sections/About';
 import Work from '../components/sections/Work';
 import Expertise from '../components/sections/Expertise';
-import Hero2 from '../components/sections/Hero2';
 import { Box } from '@mui/material';
 import theme from '../theme';
 const Home: NextPage = () => {
@@ -20,7 +19,7 @@ const Home: NextPage = () => {
           backgroundColor: theme.palette.grey[900],
         }}>
         <Navbar />
-        <Hero2 />
+        <Hero />
         <Expertise />
         <About />
         <Work />

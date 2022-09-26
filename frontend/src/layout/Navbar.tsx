@@ -28,7 +28,7 @@ function Navbar() {
 
   return (
     <>
-      <AppBar sx={{ background: theme.palette.grey[900] }} position='static'>
+      <AppBar sx={{ background: theme.palette.grey[900] }} position='sticky'>
         <Toolbar sx={{ height: '6em' }}>
           <Link2 href='/' sx={{ textDecoration: 'none' }}>
             <IconButton

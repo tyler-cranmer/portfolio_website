@@ -30,6 +30,8 @@ function Footer() {
           flexDirection: 'column',
           minHeight: '60vh',
           backgroundColor: theme.palette.grey[800],
+          overFlow: 'hidden',
+          position: 'relative',
         }}>
         <CssBaseline />
         <Container component='main' sx={{ mt: 8, mb: 2 }} maxWidth='sm'>

@@ -83,7 +83,11 @@ function About() {
   return (
     <Box
       id='about'
-      sx={{ backgroundColor: theme.palette.grey[900] }}>
+      sx={{
+        backgroundColor: theme.palette.grey[900],
+        overFlow: 'hidden',
+        position: 'relative',
+      }}>
       <Box pt={{ md: 8 }} pb={{ md: 15 }}>
         <Container maxWidth='lg'>
           <Box sx={{ display: 'flex' }}>

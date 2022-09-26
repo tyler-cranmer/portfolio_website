@@ -50,6 +50,8 @@ function Work({}: Props) {
       id='work'
       sx={{
         backgroundColor: theme.palette.grey[900],
+        overFlow: 'hidden',
+        position: 'relative',
       }}>
       <Box pt={{ md: 10 }} pb={{ md: 10 }}>
         <Container maxWidth='lg'>

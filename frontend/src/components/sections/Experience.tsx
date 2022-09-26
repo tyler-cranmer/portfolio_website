@@ -38,6 +38,8 @@ function Experience({}: Props) {
       id='experience'
       sx={{
         backgroundColor: theme.palette.grey[900],
+        overFlow: 'hidden',
+        position: 'relative',
       }}>
       <Box pt={{ md: 10 }} pb={{ md: 15 }}>
         <Container maxWidth='md'>
