@@ -20,7 +20,7 @@ function Navbar() {
     { Name: 'Expertise', Link: 'expertise' },
     { Name: 'Work', Link: 'work' },
     { Name: 'Experience', Link: 'experience' },
-    { Name: 'Contact', Link: 'hero' },
+    { Name: 'Contact', Link: 'contact' },
   ];
 
   const name: string = 'TeeWhy.'
@@ -37,22 +37,22 @@ function Navbar() {
               aria-label='logo'
               sx={{ color: theme.palette.primary.light }}>
               <Box mx={5} sx={{ display: { md: 'flex', xs: 'none' } }}>
-                <Typography
+                {/* <Typography
                   variant='h4'
                   sx={{
                     flexGrow: 1,
                     color: theme.palette.text.primary,
                   }}>
                   {name}
-                </Typography>
-                <Typography
+                </Typography> */}
+                {/* <Typography
                   variant='h4'
                   sx={{
                     flexGrow: 1,
                     // color: theme.palette.text.primary,
                   }}>
                   {underScore}
-                </Typography>
+                </Typography> */}
               </Box>
             </IconButton>
           </Link2>

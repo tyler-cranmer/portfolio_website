@@ -16,7 +16,7 @@ const aboutVariant: Variants = {
   offscreenPic: {
     scale: 0,
     opacity: 0,
-    y: 80,
+    y: 0,
   },
   onscreen: {
     scale: 1,

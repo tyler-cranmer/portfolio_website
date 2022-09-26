@@ -36,12 +36,16 @@ function Experience({}: Props) {
   return (
     <Box
       id='experience'
+      className='background'
       sx={{
         backgroundColor: theme.palette.grey[900],
         overFlow: 'hidden',
         position: 'relative',
       }}>
-      <Box pt={{ md: 10 }} pb={{ md: 15 }}>
+      <Box
+        pt={{ md: 10 }}
+        pb={{ md: 15 }}
+        sx={{ zIndex: 10, position: 'relative' }}>
         <Container maxWidth='md'>
           <motion.div
             ref={ref}
