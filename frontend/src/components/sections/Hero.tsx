@@ -2,8 +2,10 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
-import { Stack, Container, Button } from '@mui/material';
+import { Stack, Container } from '@mui/material';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import textData from '../../utils/tempData';
+
 
 function Hero() {
   const [text, count] = useTypewriter({
@@ -80,12 +82,7 @@ function Hero() {
                 variant='body1'
                 sx={{ color: theme.palette.text.primary }}
                 gutterBottom>
-                I'm a software engineer graduate specializing in building web
-                and machine learning applications. Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Repellendus, nobis eos? Aliquam
-                accusamus voluptatem, iure ratione neque, saepe magnam fuga,
-                soluta sit illum dignissimos magni iusto rem ab laudantium.
-                Ratione.
+                  {textData.Hero.text}
               </Typography>
             </Box>
           </Stack>

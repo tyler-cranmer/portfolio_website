@@ -1,3 +1,14 @@
+.circle {
+    border: #ff6b00 solid 1px;
+    border-radius: 9999px;
+    height: 200px;
+    width: 200px;
+    margin-top: 13rem;
+    animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite';
+
+}
+
+
 .dev-icons {
   color: #ff6b00;
 }

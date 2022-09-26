@@ -7,17 +7,26 @@ import Experience from '../components/sections/Experience';
 import About from '../components/sections/About';
 import Work from '../components/sections/Work';
 import Expertise from '../components/sections/Expertise';
-
+import Hero2 from '../components/sections/Hero2';
+import { Box } from '@mui/material';
+import theme from '../theme';
 const Home: NextPage = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Expertise />
-      <Work/>
-      <Experience />
-      <Footer />
+      <Box
+        sx={{
+          padding: 0,
+          margin: 0,
+          backgroundColor: theme.palette.grey[900],
+        }}>
+        <Navbar />
+        <Hero2 />
+        <Expertise />
+        <About />
+        <Work />
+        <Experience />
+        <Footer />
+      </Box>
     </>
   );
 };

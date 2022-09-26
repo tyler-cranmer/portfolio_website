@@ -1,50 +1,14 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default {
-  projects: [
-    {
-      Title: 'Project Title 1',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-    {
-      Title: 'Project Title 2',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-    {
-      Title: 'Project Title 3',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-    {
-      Title: 'Project Title 4',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-    {
-      Title: 'Project Title 5',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-    {
-      Title: 'Project Title 6',
-      Description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis eum maxime quidem cupiditate fuga debitis sequi, cum accusantium recusandae perspiciatis impedit! Corrupti delectus tempore ab aut maxime minus necessitatibus?',
-      Tech: ['Python', 'Typescript', 'Next.js'],
-      // github: 'url',
-    },
-  ],
+  Hero: {
+      text: `I'm a software engineer graduate specializing in building web
+                and machine learning applications. Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Repellendus, nobis eos? Aliquam
+                accusamus voluptatem, iure ratione neque, saepe magnam fuga,
+                soluta sit illum dignissimos magni iusto rem ab laudantium.
+                Ratione.`
+  },
 
   projects2: [
     {
