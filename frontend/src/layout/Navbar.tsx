@@ -30,38 +30,12 @@ function Navbar() {
     <>
       <AppBar sx={{ background: theme.palette.grey[900] }} position='sticky'>
         <Toolbar sx={{ height: '6em' }}>
-          <Link2 href='/' sx={{ textDecoration: 'none' }}>
-            <IconButton
-              size='large'
-              edge='start'
-              aria-label='logo'
-              sx={{ color: theme.palette.primary.light }}>
-              <Box mx={5} sx={{ display: { md: 'flex', xs: 'none' } }}>
-                {/* <Typography
-                  variant='h4'
-                  sx={{
-                    flexGrow: 1,
-                    color: theme.palette.text.primary,
-                  }}>
-                  {name}
-                </Typography> */}
-                {/* <Typography
-                  variant='h4'
-                  sx={{
-                    flexGrow: 1,
-                    // color: theme.palette.text.primary,
-                  }}>
-                  {underScore}
-                </Typography> */}
-              </Box>
-            </IconButton>
-          </Link2>
           <Container maxWidth='sm'>
             <Box sx={{ flexGrow: 1 }} />
             <Box
               sx={{
                 alignItems: 'center',
-                display: { lg: 'flex' },
+                display: { lg: 'flex', sm:'flex', xs:'none' },
               }}>
               {MenuItems.map((item, index) => (
                 <div key={index}>
