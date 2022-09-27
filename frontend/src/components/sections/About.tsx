@@ -3,7 +3,12 @@ import { Box, Container, Typography, Grid } from '@mui/material';
 import theme from '../../theme';
 import Image from 'next/image';
 import { Stack } from '@mui/system';
-import { motion, MotionConfigContext, useAnimation, Variants } from 'framer-motion';
+import {
+  motion,
+  MotionConfigContext,
+  useAnimation,
+  Variants,
+} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
@@ -16,7 +21,6 @@ const aboutVariant: Variants = {
   offscreenPic: {
     scale: 0,
     opacity: 0,
-    y: 0,
   },
   onscreen: {
     scale: 1,
@@ -53,9 +57,8 @@ const aboutVariant: Variants = {
   onscreenPic: {
     scale: 1,
     opacity: 1,
-    y: 0,
     transition: {
-      delay: .9,
+      delay: 0.9,
     },
   },
 };
@@ -69,17 +72,16 @@ function About() {
 
   const [ref, inView] = useInView();
 
-    useEffect(() => {
-      if (inView) {
-        control.start('onscreen');
-        controlP1.start('onscreenP1');
-        controlP2.start('onscreenP2');
-        controlP3.start('onscreenP3');
-        controlPic.start('onscreenPic');
-      }
-    }, [control, inView]);
-  
-  
+  useEffect(() => {
+    if (inView) {
+      control.start('onscreen');
+      controlP1.start('onscreenP1');
+      controlP2.start('onscreenP2');
+      controlP3.start('onscreenP3');
+      controlPic.start('onscreenPic');
+    }
+  }, [control, inView]);
+
   return (
     <Box
       id='about'
@@ -142,12 +144,21 @@ function About() {
               variants={aboutVariant}
               initial='offscreenPic'
               animate={controlPic}>
-              <Box sx={{ marginLeft: '1em' }}>
+              <Box
+                sx={{
+                  marginRight: '1em',
+                  position: 'relative',
+                  height: '25rem',
+                  width: '25rem',
+                  borderRadius: '15px',
+                  overflow: 'hidden',
+                }}>
                 <Image
                   alt='index logo'
-                  src='/face-kid.png'
-                  width={500}
-                  height={500}
+                  src='/paralta.jpeg'
+                  layout='fill'
+                  objectFit='cover'
+                  priority
                 />
               </Box>
             </motion.div>

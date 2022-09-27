@@ -30,6 +30,10 @@
 
 }
 
+.profilepic {
+  border-radius: 10px;
+}
+
 .dev-icons {
   color: #ff6b00;
 }

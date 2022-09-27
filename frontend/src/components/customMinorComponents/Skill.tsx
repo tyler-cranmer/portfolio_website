@@ -3,6 +3,8 @@ import { Box } from '@mui/system';
 import { motion } from 'framer-motion';
 import { Typography} from '@mui/material';
 import theme from '../../theme';
+
+
 type Props = {
   directionLeft?: boolean;
 };
