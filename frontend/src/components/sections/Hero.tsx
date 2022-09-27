@@ -58,23 +58,43 @@ function Hero() {
               maxWidth='md'>
               <Box>
                 <Typography
-                  variant='h5'
                   gutterBottom
-                  sx={{ color: theme.palette.primary.light }}>
+                  sx={{
+                    color: theme.palette.primary.light,
+                    fontSize: {
+                      md: '1.5rem',
+                      sm: '1.25rem',
+                      xs: '1rem',
+                    },
+                  }}>
                   Hi, my name is
                 </Typography>
               </Box>
               <Box>
                 <Typography
-                  sx={{ fontWeight: 500, color: theme.palette.text.primary }}
-                  variant='h1'>
+                  sx={{
+                    fontWeight: 500,
+                    color: theme.palette.text.primary,
+                    fontSize: {
+                      md: '6rem',
+                      sm: '4.5rem',
+                      xs: '2.75rem',
+                    },
+                  }}>
                   Tyler Cranmer.
                 </Typography>
               </Box>
               <Box>
                 <Typography
-                  sx={{ fontWeight: 500, color: theme.palette.text.primary }}
-                  variant='h2'
+                  sx={{
+                    fontWeight: 500,
+                    color: theme.palette.text.primary,
+                    fontSize: {
+                      md: '3.75rem',
+                      sm: '2.75rem',
+                      xs: '2rem',
+                    },
+                  }}
                   gutterBottom>
                   {i_build} {text}
                   <Cursor cursorStyle='_' />
@@ -82,8 +102,14 @@ function Hero() {
               </Box>
               <Box>
                 <Typography
-                  variant='body1'
-                  sx={{ color: theme.palette.text.primary }}
+                  sx={{
+                    color: theme.palette.text.primary,
+                    fontSize: {
+                      md: '1rem',
+                      sm: '.75rem',
+                      xs: '.75rem',
+                    },
+                  }}
                   gutterBottom>
                   {textData.Hero.text}
                 </Typography>

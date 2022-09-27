@@ -60,7 +60,15 @@ function Experience({}: Props) {
                 flexDirection: 'column',
                 alignItems: 'center',
               }}>
-              <Typography variant='h2' sx={{ fontWeight: 'Bold' }}>
+              <Typography
+                sx={{
+                  fontWeight: 'Bold',
+                  fontSize: {
+                    md: '4.68rem',
+                    sm: '3rem',
+                    xs: '2.5rem',
+                  },
+                }}>
                 My Experience
               </Typography>
             </Box>

@@ -92,8 +92,20 @@ function About() {
       }}>
       <Box pt={{ md: 8 }} pb={{ md: 15 }}>
         <Container maxWidth='lg'>
-          <Box sx={{ display: 'flex' }}>
-            <Box sx={{ maxWidth: '50%' }}>
+          <Box
+            sx={{
+              display: {
+                md: 'flex',
+                sm: 'block'
+              },
+              // justifyContent: {
+              //   sm: 'center'
+              // },
+              // alignItems: {
+              //   sm: 'center'
+              // }
+            }}>
+            <Box pr={5}>
               <Stack spacing={3} pr={4}>
                 <motion.div
                   ref={ref}
@@ -101,8 +113,14 @@ function About() {
                   initial='offscreen'
                   animate={control}>
                   <Typography
-                    variant='h2'
-                    sx={{ fontWeight: 'Bold' }}
+                    sx={{
+                      fontWeight: 'Bold',
+                      fontSize: {
+                        md: '4.68rem',
+                        sm: '3rem',
+                        xs: '2.5rem',
+                      },
+                    }}
                     gutterBottom>
                     About Me
                   </Typography>

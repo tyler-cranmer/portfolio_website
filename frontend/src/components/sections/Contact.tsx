@@ -101,7 +101,15 @@ function Contact({ }: Props) {
             variants={contactVariant}
             initial='offscreen'
             animate={control}>
-            <Typography variant='h2' sx={{ fontWeight: 'bold' }}>
+            <Typography
+              sx={{
+                fontWeight: 'bold',
+                fontSize: {
+                  md: '4.68rem',
+                  sm: '3rem',
+                  xs: '2.5rem',
+                },
+              }}>
               Contact
             </Typography>
           </motion.div>
@@ -118,9 +126,7 @@ function Contact({ }: Props) {
             variants={contactVariant}
             initial='offscreen2'
             animate={control3}>
-            <Typography >
-              Have a question or want to work together?
-            </Typography>
+            <Typography>Have a question or want to work together?</Typography>
           </motion.div>
           <motion.div
             variants={contactVariant}

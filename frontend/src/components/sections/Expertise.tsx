@@ -123,11 +123,21 @@ function Expertise({}: Props) {
             animate={control}>
             <Box
               mb={{ xs: 8, sm: 8, md: 22 }}
-              sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <Typography
+                
                 sx={{
                   fontWeight: 'Bold',
-                  fontSize: '75px',
+                  fontSize: {
+                    md: '4.68rem',
+                    sm: '3rem',
+                    xs: '2.5rem'
+                  }
                 }}>
                 Expertise
               </Typography>

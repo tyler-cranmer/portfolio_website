@@ -62,7 +62,15 @@ function Work({}: Props) {
             animate={control}>
             <Box>
               <Typography
-                sx={{ fontWeight: 'Bold', fontSize: '76px' }}
+
+                sx={{
+                  fontWeight: 'Bold',
+                  fontSize: {
+                    md: '4.68rem',
+                    sm: '3rem',
+                    xs: '2.5rem',
+                  },
+                }}
                 gutterBottom>
                 My Work
               </Typography>

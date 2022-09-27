@@ -11,6 +11,8 @@ import Contact from '../components/sections/Contact'
 import Expertise from '../components/sections/Expertise';
 import { Box } from '@mui/material';
 import theme from '../theme';
+
+
 const Home: NextPage = () => {
   return (
     <>
