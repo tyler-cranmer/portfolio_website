@@ -123,7 +123,7 @@ function Expertise({}: Props) {
             animate={control}>
             <Box
               mb={{ xs: 8, sm: 8, md: 22 }}
-              sx={{ display: 'flex', justifyContent: 'center' }}>
+              sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
               <Typography
                 sx={{
                   fontWeight: 'Bold',
@@ -131,6 +131,13 @@ function Expertise({}: Props) {
                 }}>
                 Expertise
               </Typography>
+              <Box
+                sx={{
+                  backgroundColor: 'white',
+                  width: '125px',
+                  height: '3.5px',
+                }}
+              />
             </Box>
           </motion.div>
           <Grid
