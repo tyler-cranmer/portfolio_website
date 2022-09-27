@@ -10,9 +10,11 @@ import {
   Grid,
 } from '@mui/material';
 import theme from '../../theme';
+import Skill from '../customMinorComponents/Skill';
 import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Data from '../../utils/tempData';
 
 function CogsIcon(props: SvgIconProps) {
   return (
@@ -110,9 +112,9 @@ function Expertise({}: Props) {
       sx={{
         backgroundColor: theme.palette.grey[900],
         // overFlow: 'hidden',
-        position: 'relative'
+        position: 'relative',
       }}>
-      <Box pt={{ md: 8}} pb={{ md: 15 }}>
+      <Box pt={{ md: 8 }} pb={{ md: 15 }}>
         <Container>
           <motion.div
             ref={ref}
@@ -127,7 +129,7 @@ function Expertise({}: Props) {
                   fontWeight: 'Bold',
                   fontSize: '75px',
                 }}>
-                My Expertise
+                Expertise
               </Typography>
             </Box>
           </motion.div>
@@ -244,6 +246,64 @@ function Expertise({}: Props) {
               </motion.div>
             </Grid>
           </Grid>
+          <Container maxWidth='md'>
+            <Box
+              mt={10}
+              mb={10}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Typography variant='h5' sx={{ color: 'text.secondary' }}>
+                Skills
+              </Typography>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid
+                container
+                rowSpacing={2}
+                columnSpacing={2}
+                columns={{ xs: 4, sm: 8, md: 12 }}>
+                {Data.icons
+                  ?.slice(0, Data.icons.length / 2)
+                  .map((icon, index) => (
+                    <Grid
+                      item
+                      xs={1}
+                      sm={2}
+                      md={3}
+                      key={index}
+                      sx={{ alignItem: 'center' }}>
+                      <Skill
+                        name={icon.name}
+                        url={icon.url}
+                        skill={icon.level}
+                        directionLeft
+                      />
+                    </Grid>
+                  ))}
+
+                {Data.icons
+                  ?.slice(Data.icons.length / 2, Data.icons.length)
+                  .map((icon, index) => (
+                    <Grid
+                      item
+                      xs={1}
+                      sm={2}
+                      md={3}
+                      key={index}
+                      sx={{ alignItem: 'center' }}>
+                      <Skill
+                        name={icon.name}
+                        url={icon.url}
+                        skill={icon.level}
+                      />
+                    </Grid>
+                  ))}
+              </Grid>
+            </Box>
+          </Container>
         </Container>
       </Box>
     </Box>

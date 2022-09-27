@@ -7,9 +7,12 @@ import theme from '../../theme';
 
 type Props = {
   directionLeft?: boolean;
+  name: string;
+  url: string;
+  skill: string;
 };
 
-function Skill({ directionLeft }: Props) {
+function Skill({ directionLeft, name, url, skill }: Props) {
   return (
     <Box
       sx={{
@@ -21,7 +24,8 @@ function Skill({ directionLeft }: Props) {
         initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
-        src='/index-token.png'
+        src={url}
+        alt={name}
         className='skillsIcon'
       />
       <Box
@@ -34,7 +38,7 @@ function Skill({ directionLeft }: Props) {
             opacity: 0.8,
             transitionDuration: '400ms',
             transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            background: theme.palette.grey[300],
+            background: theme.palette.grey[500],
           },
           height: '8rem',
           width: '8rem',
@@ -47,8 +51,8 @@ function Skill({ directionLeft }: Props) {
             justifyContent: 'center',
             height: '100%',
           }}>
-          <Typography sx={{ color: 'black', fontWeight: 'bold', opacity: 1 }}>
-            100%
+          <Typography  variant='h5' sx={{ color: 'black', fontWeight: 'bold', opacity: 1.5 }}>
+            {skill}
           </Typography>
         </Box>
       </Box>

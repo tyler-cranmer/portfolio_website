@@ -46,7 +46,7 @@ function About2({}: Props) {
                       md={3}
                       key={index}
                       sx={{ alignItem: 'center' }}>
-                      <Skill />
+                      {/* <Skill /> */}
                     </Grid>
                   ))}
                   {Array.from(Array(4)).map((_, index) => (
@@ -57,7 +57,7 @@ function About2({}: Props) {
                       md={3}
                       key={index}
                       sx={{ alignItem: 'center' }}>
-                      <Skill directionLeft />
+                      {/* <Skill directionLeft /> */}
                     </Grid>
                   ))}
                   {Array.from(Array(4)).map((_, index) => (
@@ -68,7 +68,7 @@ function About2({}: Props) {
                       md={3}
                       key={index}
                       sx={{ alignItem: 'center' }}>
-                      <Skill  />
+                      {/* <Skill  /> */}
                     </Grid>
                   ))}
                 </Grid>
