@@ -2,12 +2,12 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default {
   Hero: {
-      text: `I'm a software engineer graduate specializing in building web
+    text: `I'm a software engineer graduate specializing in building web
                 and machine learning applications. Lorem ipsum dolor, sit amet
                 consectetur adipisicing elit. Repellendus, nobis eos? Aliquam
                 accusamus voluptatem, iure ratione neque, saepe magnam fuga,
                 soluta sit illum dignissimos magni iusto rem ab laudantium.
-                Ratione.`
+                Ratione.`,
   },
 
   projects2: [
@@ -98,6 +98,71 @@ export default {
       logo: '/ralphie.png',
       alt: 'ICS logo',
       panel: 'panel3',
+    },
+  ],
+
+  icons: [
+    {
+      name: 'typescript',
+      url: '/tech/typescript.svg',
+      level: '60%',
+    },
+    {
+      name: 'javascript',
+      url: '/tech/javascript.svg',
+      level: '60%',
+    },
+    {
+      name: 'python',
+      url: '/tech/python.svg',
+      level: '80%',
+    },
+    {
+      name: 'nextjs',
+      url: '/tech/next-js.svg',
+      level: '60%',
+    },
+    {
+      name: 'react',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/128px-React-icon.svg.png',
+      level: '60%',
+    },
+    {
+      name: 'mui',
+      url: '/tech/mui.svg',
+      level: '60%',
+    },
+    {
+      name: 'django',
+      url: '/tech/django.svg',
+      level: '50%',
+    },
+    {
+      name: 'pandas',
+      url: '/tech/pandas.svg',
+      level: '75%',
+    },
+    {
+      name: 'numpy',
+      url: '/tech/numpy.svg',
+      level: '75%',
+    },
+    { name: 'postgress', url: '/tech/postgres.svg', level: '50%' },
+    {
+      name: 'graphql',
+      url: '/tech/graphql.svg',
+      level: '50%',
+    },
+    { name: 'solidity', url: '/tech/solidity.svg', level: '80%' },
+    {
+      name: 'ethers',
+      url: '/tech/ethersjs.svg',
+      level: '80%',
+    },
+    {
+      name: 'hardhat',
+      url: '/tech/hardhat.svg',
+      level: '80%',
     },
   ],
 };
