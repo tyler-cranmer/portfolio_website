@@ -1,9 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/system';
 import { motion } from 'framer-motion';
-import { Typography} from '@mui/material';
+import { Typography } from '@mui/material';
 import theme from '../../theme';
-
 
 type Props = {
   directionLeft?: boolean;
@@ -40,8 +39,16 @@ function Skill({ directionLeft, name, url, skill }: Props) {
             transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
             background: theme.palette.grey[500],
           },
-          height: '8rem',
-          width: '8rem',
+          height: {
+            xs: '4rem',
+            sm: '6rem',
+            md: '8rem',
+          },
+          width: {
+            xs: '4rem',
+            sm: '6rem',
+            md: '8rem',
+          },
         }}>
         <Box
           id='2'
@@ -51,7 +58,9 @@ function Skill({ directionLeft, name, url, skill }: Props) {
             justifyContent: 'center',
             height: '100%',
           }}>
-          <Typography  variant='h5' sx={{ color: 'black', fontWeight: 'bold', opacity: 1.5 }}>
+          <Typography
+            variant='h5'
+            sx={{ color: 'black', fontWeight: 'bold', opacity: 1.5 }}>
             {skill}
           </Typography>
         </Box>
