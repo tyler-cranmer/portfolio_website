@@ -6,8 +6,8 @@
 
 @media screen and (min-width: 300px) {
   .skillsIcon {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
@@ -101,7 +101,7 @@
 }
 
 /* Angled div  */
-.background::before,
+/* .background::before,
 .background::after {
   content: '';
   position: absolute;
@@ -121,4 +121,4 @@
   left: 50%;
   transform: skew(0, -8deg);
   z-index: 5;
-}
+} */

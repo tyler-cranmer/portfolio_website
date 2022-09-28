@@ -294,7 +294,6 @@ function Expertise({}: Props) {
                   xs: 'repeat(3, minmax(0, 1fr))',
                   md: 'repeat(4, minmax(0, 1fr))',
                 },
-                // gap: '1.25rem',
                 columnGap: '.5rem',
                 rowGap: '1.25rem',
               }}>

@@ -58,12 +58,12 @@ function Skill({ directionLeft, name, url, skill, inView }: Props) {
             background: theme.palette.grey[500],
           },
           height: {
-            xs: '4rem',
+            xs: '5rem',
             sm: '6rem',
             md: '8rem',
           },
           width: {
-            xs: '4rem',
+            xs: '5rem',
             sm: '6rem',
             md: '8rem',
           },
