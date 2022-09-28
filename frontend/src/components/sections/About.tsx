@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Stack } from '@mui/system';
 import {
   motion,
-  MotionConfigContext,
+
   useAnimation,
   Variants,
 } from 'framer-motion';
@@ -94,13 +94,26 @@ function About() {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: '1fr',
+              md: 'repeat(2, 1fr)',
+            },
             gap: 1,
             gridTemplateRows: 'auto',
-            gridTemplateAreas: ` "header pic" "stack pic" `,
+            gridTemplateAreas: {
+              xs: `"header" "pic" "stack"`,
+              sm: `"header" "pic" "stack"`,
+              md: ` "header pic" "stack pic" `,
+            },
           }}>
           <Box
-            sx={{ gridArea: 'header', display: 'flex', flexDirection: 'flex' }}>
+            sx={{
+              gridArea: 'header',
+              display: 'flex',
+              justifyContent: { xs: 'center', sm: 'center', md: 'none' },
+              alignItems: { xs: 'center',  sm: 'center', md: 'none' },
+            }}>
             <motion.div
               ref={ref}
               variants={aboutVariant}
@@ -114,13 +127,16 @@ function About() {
                     sm: '3rem',
                     xs: '2.5rem',
                   },
+                  alignSelf: 'center',
                 }}>
                 About Me
               </Typography>
             </motion.div>
           </Box>
           <Box sx={{ gridArea: 'stack' }}>
-            <Stack spacing={3} pr={4}>
+            <Stack
+              spacing={{ md: 3, sm: 1, xs: 1 }}
+              sx={{ paddingRight: { md: 4, sm: 0, xs: 0 } }}>
               <motion.div
                 variants={aboutVariant}
                 initial='offscreen'
@@ -129,8 +145,7 @@ function About() {
                   sx={{
                     fontSize: {
                       md: '1rem',
-                      sm: '.75rem',
-                      xs: '.75rem',
+                      sm: '.9rem',
                     },
                   }}
                   gutterBottom>
@@ -148,8 +163,7 @@ function About() {
                   sx={{
                     fontSize: {
                       md: '1rem',
-                      sm: '.75rem',
-                      xs: '.75rem',
+                      sm: '.9rem',
                     },
                   }}
                   gutterBottom>
@@ -167,8 +181,7 @@ function About() {
                   sx={{
                     fontSize: {
                       md: '1rem',
-                      sm: '.75rem',
-                      xs: '.75rem',
+                      sm: '.9rem',
                     },
                   }}
                   gutterBottom>
@@ -200,6 +213,7 @@ function About() {
                   borderRadius: '15px',
                   overflow: 'hidden',
                   marginTop: '1.75em',
+                  margin: 'auto',
                 }}>
                 <Image
                   alt='index logo'
