@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Box } from '@mui/system';
-import { motion } from 'framer-motion';
+import { motion, Variants, useAnimation } from 'framer-motion';
 import { Typography } from '@mui/material';
 import theme from '../../theme';
 
@@ -9,9 +9,27 @@ type Props = {
   name: string;
   url: string;
   skill: string;
+  inView: boolean;
 };
 
-function Skill({ directionLeft, name, url, skill }: Props) {
+function Skill({ directionLeft, name, url, skill, inView }: Props) {
+  const control = useAnimation();
+  const skillVariant: Variants = {
+    offscreen: { x: directionLeft ? -200 : 200, opacity: 0 },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+  useEffect(() => {
+    if (inView) {
+      control.start('onscreen')
+    }
+  }, [control, inView]);
+
   return (
     <Box
       sx={{
@@ -20,9 +38,9 @@ function Skill({ directionLeft, name, url, skill }: Props) {
         justifyContent: 'center',
       }}>
       <motion.img
-        initial={{ x: directionLeft ? -200 : 200, opacity: 0 }}
-        transition={{ duration: 1 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        variants={skillVariant}
+        initial='offscreen'
+        animate={control}
         src={url}
         alt={name}
         className='skillsIcon'

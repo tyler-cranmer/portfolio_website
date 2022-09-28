@@ -99,12 +99,15 @@ type Props = {};
 function Expertise({}: Props) {
   const control = useAnimation();
   const [ref, inView] = useInView();
+  const [sRef, sInView] = useInView();
 
   useEffect(() => {
     if (inView) {
       control.start('onscreen');
     }
   }, [control, inView]);
+
+
 
   return (
     <Box
@@ -130,14 +133,13 @@ function Expertise({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
-                
                 sx={{
                   fontWeight: 'Bold',
                   fontSize: {
                     md: '4.68rem',
                     sm: '3rem',
-                    xs: '2.5rem'
-                  }
+                    xs: '2.5rem',
+                  },
                 }}>
                 Expertise
               </Typography>
@@ -165,7 +167,7 @@ function Expertise({}: Props) {
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: '380px',
+                    maxWidth: { xs: '350px', md: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -200,7 +202,7 @@ function Expertise({}: Props) {
                   elevation={24}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: '380px',
+                    maxWidth: { xs: '350px', md: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -237,7 +239,7 @@ function Expertise({}: Props) {
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: '380px',
+                    maxWidth: { xs: '350px', md: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -263,62 +265,62 @@ function Expertise({}: Props) {
               </motion.div>
             </Grid>
           </Grid>
-          <Container maxWidth='md'>
+          <Container
+            sx={{
+              maxWidth: {
+                xs: 'sm',
+                md: 'md',
+              },
+            }}>
             <Box
               mt={10}
-              mb={10}
+              mb={{ xs: 5, md: 10 }}
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Typography variant='h5' sx={{ color: 'text.secondary' }}>
+              <Typography
+                ref={sRef}
+                variant='h5'
+                sx={{ color: 'text.secondary' }}>
                 Skills
               </Typography>
             </Box>
-            <Box sx={{ flexGrow: 1 }}>
-              <Grid
-                container
-                rowSpacing={2}
-                columnSpacing={2}
-                columns={{ xs: 4, sm: 8, md: 12 }}>
-                {Data.icons
-                  ?.slice(0, Data.icons.length / 2)
-                  .map((icon, index) => (
-                    <Grid
-                      item
-                      xs={1}
-                      sm={2}
-                      md={3}
-                      key={index}
-                      sx={{ alignItem: 'center' }}>
-                      <Skill
-                        name={icon.name}
-                        url={icon.url}
-                        skill={icon.level}
-                        directionLeft
-                      />
-                    </Grid>
-                  ))}
-
-                {Data.icons
-                  ?.slice(Data.icons.length / 2, Data.icons.length)
-                  .map((icon, index) => (
-                    <Grid
-                      item
-                      xs={1}
-                      sm={2}
-                      md={3}
-                      key={index}
-                      sx={{ alignItem: 'center' }}>
-                      <Skill
-                        name={icon.name}
-                        url={icon.url}
-                        skill={icon.level}
-                      />
-                    </Grid>
-                  ))}
-              </Grid>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: 'repeat(3, minmax(0, 1fr))',
+                  md: 'repeat(4, minmax(0, 1fr))',
+                },
+                // gap: '1.25rem',
+                columnGap: '.5rem',
+                rowGap: '1.25rem',
+              }}>
+              {Data.icons
+                ?.slice(0, Data.icons.length / 2)
+                .map((icon, index) => (
+                  <Skill
+                    key={index}
+                    name={icon.name}
+                    url={icon.url}
+                    skill={icon.level}
+                    directionLeft
+                    inView={sInView}
+                  />
+                ))}
+              {Data.icons
+                ?.slice(Data.icons.length / 2, Data.icons.length)
+                .map((icon, index) => (
+                  <Skill
+                    key={index}
+                    name={icon.name}
+                    url={icon.url}
+                    skill={icon.level}
+                    inView={sInView}
+                  />
+                ))}
             </Box>
           </Container>
         </Container>

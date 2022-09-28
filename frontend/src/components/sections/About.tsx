@@ -133,7 +133,7 @@ function About() {
               </Typography>
             </motion.div>
           </Box>
-          <Box sx={{ gridArea: 'stack' }}>
+          <Box sx={{ gridArea: 'stack', marginTop: {xs: 2, md: 'none'} }}>
             <Stack
               spacing={{ md: 3, sm: 1, xs: 1 }}
               sx={{ paddingRight: { md: 4, sm: 0, xs: 0 } }}>

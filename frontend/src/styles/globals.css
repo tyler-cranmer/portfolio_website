@@ -2,8 +2,6 @@
   border: #454f5b solid 1px;
   border-radius: 9999px;
   object-fit: contain;
-  width: 6rem;
-  height: 6rem;
 }
 
 @media screen and (min-width: 300px) {
@@ -20,7 +18,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
   .skillsIcon {
     width: 8rem;
     height: 8rem;
