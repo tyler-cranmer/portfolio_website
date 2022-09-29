@@ -76,15 +76,14 @@ function Expertise({}: Props) {
         // overFlow: 'hidden',
         position: 'relative',
       }}>
-      <Box pt={{ md: 8 }} pb={{ md: 15 }}>
+      <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
           <motion.div
-            ref={ref}
             variants={titleVariant}
             initial='offscreen'
             animate={control}>
             <Box
-              mb={{ xs: 8, sm: 8, md: 22 }}
+              mb={{ xs: 8, sm: 8, md: 20 }}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -103,6 +102,7 @@ function Expertise({}: Props) {
                 Expertise
               </Typography>
               <Box
+                ref={ref}
                 sx={{
                   backgroundColor: 'white',
                   width: '125px',
@@ -217,8 +217,8 @@ function Expertise({}: Props) {
                     Machine Learning
                   </Typography>
                   <Typography variant='body1'>
-                    Experienced in full stack development: Python, Typescript,
-                    Next.js, Django, Flask
+                    Proficient with Data Science and Machine Learning Models using Python, Pandas, Numpy
+                    Sklearn, NLTK, Keras, Tensorflow
                   </Typography>
                 </Paper>
               </motion.div>
@@ -251,6 +251,7 @@ function Expertise({}: Props) {
                 display: 'grid',
                 gridTemplateColumns: {
                   xs: 'repeat(3, minmax(0, 1fr))',
+                  sm: 'repeat(4, minmax(0, 1fr))',
                   md: 'repeat(4, minmax(0, 1fr))',
                 },
                 columnGap: '.5rem',

@@ -3,10 +3,6 @@ import {
   AppBar,
   Box,
   Toolbar,
-  Typography,
-  IconButton,
-  Link as Link2,
-  Button,
 } from '@mui/material';
 import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
@@ -39,7 +35,7 @@ function Navbar() {
               }}>
               {MenuItems.map((item, index) => (
                 <div key={index}>
-                  <Link activeClass='active' to={item.Link} spy={true} smooth={true} offset={0} duration={1000}>
+                  <Link activeClass='active' to={item.Link} spy={true} smooth={true} offset={-96} duration={1000}>
                     <CustomButton  text={item.Name} />
                   </Link>
                 </div>

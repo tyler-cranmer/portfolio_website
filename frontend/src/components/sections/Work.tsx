@@ -13,37 +13,26 @@ import theme from '../../theme';
 import { Container } from '@mui/system';
 import portfolioData from '../../utils/tempData';
 import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-const workVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: 80,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.6,
-    },
-  },
-};
+import { workVariant } from '../../utils/amimationVariants';
 
 type Props = {};
 
 function Work({}: Props) {
   const [tabValue, setTabValue] = useState('Aggregate');
   const control = useAnimation();
+  const control2 = useAnimation();
+  const control3 = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
       control.start('onscreen');
+      control2.start('onscreen2');
+      control3.start('onscreenCards');
     }
-  }, [control, inView]);
+  }, [control, control2, inView]);
 
   return (
     <Box
@@ -53,7 +42,7 @@ function Work({}: Props) {
         overFlow: 'hidden',
         position: 'relative',
       }}>
-      <Box pt={{ md: 10 }} pb={{ md: 10 }}>
+      <Box pt={{ md: 8 }} pb={{ md: 10 }}>
         <Container maxWidth='lg'>
           <motion.div
             ref={ref}
@@ -74,9 +63,14 @@ function Work({}: Props) {
                 My Work
               </Typography>
             </Box>
-
+          </motion.div>
+          <motion.div
+            variants={workVariant}
+            initial='offscreen2'
+            animate={control2}>
             <Grid container>
               {/* Tabs */}
+
               <Grid
                 item
                 xs={12}
@@ -84,7 +78,9 @@ function Work({}: Props) {
                   display: 'flex',
                   alignItems: 'center',
                 }}>
-                <Typography sx={{ paddingBottom: '1em', minWidth: '70px' }}>Filter by:</Typography>
+                <Typography sx={{ paddingBottom: '1em', minWidth: '70px' }}>
+                  Filter by:
+                </Typography>
                 <StyledTabs
                   value={tabValue}
                   onChange={(event: React.SyntheticEvent, newValue) =>
@@ -107,16 +103,16 @@ function Work({}: Props) {
                   ))}
                 </StyledTabs>
               </Grid>
+
               {/* projects */}
               <Grid item xs={12}>
                 <Grid container spacing={2}>
-                  {portfolioData.projects2.map((project, i) => (
-                    <React.Fragment key={i}>
+                  {portfolioData.projects2.map((project, index) => (
+                    <React.Fragment key={index}>
                       {tabValue == project.tag || tabValue == 'Aggregate' ? (
                         <Grid item xs={12} sm={6} md={4}>
-                          <Grow in timeout={1000}>
+                          <Grow appear={true} in timeout={1000}>
                             <Card
-                              key={i}
                               sx={{
                                 backgroundColor: theme.palette.grey[800],
                                 borderRadius: '20px',

@@ -1,3 +1,5 @@
+
+/* Skills Section */
 .skillsIcon {
   border: #454f5b solid 1px;
   border-radius: 9999px;
@@ -25,9 +27,13 @@
   }
 }
 
+/* profile pic in About me */
+
 .profilepic {
   border-radius: 10px;
 }
+
+/* expertise section  */
 
 .dev-icons {
   color: #ff6b00;
@@ -91,6 +97,7 @@
   box-shadow: rgb(0 0 0 / 12%) -20px 20px 40px 0px;
 }
 
+/* Experience link for individual job */
 .websiteLink:hover {
   color: #00ab55;
 }

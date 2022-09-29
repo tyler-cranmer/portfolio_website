@@ -34,7 +34,6 @@ function Hero() {
         sx={{
           top: 0,
           left: 0,
-          height: '100vh',
           width: '100%',
           display: 'flex',
           position: 'fixed',

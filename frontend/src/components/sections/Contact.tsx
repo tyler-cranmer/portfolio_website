@@ -1,5 +1,4 @@
 import { Box, Container, Typography } from '@mui/material';
-import React from 'react';
 import CustomForm from '../customMinorComponents/CustomForm';
 import theme from '../../theme';
 import { motion, useAnimation } from 'framer-motion';
@@ -33,56 +32,60 @@ function Contact({ }: Props) {
         backgroundColor: theme.palette.grey[800],
         overFlow: 'hidden',
         position: 'relative',
-        paddingTop: '12em',
-        paddingBottom: '10em',
       }}>
-      <Container>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
-          <motion.div
-            ref={ref}
-            variants={contactVariant}
-            initial='offscreen'
-            animate={control}>
-            <Typography
-              sx={{
-                fontWeight: 'bold',
-                fontSize: {
-                  md: '4.68rem',
-                  sm: '3rem',
-                  xs: '2.5rem',
-                },
-              }}>
-              Contact
-            </Typography>
-          </motion.div>
-          <motion.div
-            variants={contactVariant}
-            initial='offscreen2'
-            animate={control2}>
-            <Box
-              sx={{ backgroundColor: 'white', width: '115px', height: '3.5px' }}
-              mb={4}
-            />
-          </motion.div>
-          <motion.div
-            variants={contactVariant}
-            initial='offscreen2'
-            animate={control3}>
-            <Typography>Have a question or want to work together?</Typography>
-          </motion.div>
-          <motion.div
-            variants={contactVariant}
-            initial='offscreenForm'
-            animate={control4}>
-            <CustomForm />
-          </motion.div>
-        </Box>
-      </Container>
+      <Box pt={8} pb={10}>
+        <Container>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+            <motion.div
+              ref={ref}
+              variants={contactVariant}
+              initial='offscreen'
+              animate={control}>
+              <Typography
+                sx={{
+                  fontWeight: 'bold',
+                  fontSize: {
+                    md: '4.68rem',
+                    sm: '3rem',
+                    xs: '2.5rem',
+                  },
+                }}>
+                Contact
+              </Typography>
+            </motion.div>
+            <motion.div
+              variants={contactVariant}
+              initial='offscreen2'
+              animate={control2}>
+              <Box
+                sx={{
+                  backgroundColor: 'white',
+                  width: '115px',
+                  height: '3.5px',
+                }}
+                mb={4}
+              />
+            </motion.div>
+            <motion.div
+              variants={contactVariant}
+              initial='offscreen2'
+              animate={control3}>
+              <Typography>Have a question or want to work together?</Typography>
+            </motion.div>
+            <motion.div
+              variants={contactVariant}
+              initial='offscreenForm'
+              animate={control4}>
+              <CustomForm />
+            </motion.div>
+          </Box>
+        </Container>
+      </Box>
     </Box>
   );
 }
