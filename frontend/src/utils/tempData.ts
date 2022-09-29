@@ -95,7 +95,7 @@ export default {
         'Managed the full life-cycle technical recruiting processes for various engineering teams.',
         'Recruited a varitey of candidates including: Web Developers, DevOps Engineers and Cloud Infrastructure Engineers.',
       ],
-      logo: '/ics.png',
+      logo: '/ICS.png',
       alt: 'ICS logo',
       panel: 'panel3',
     },
@@ -124,7 +124,6 @@ export default {
     },
     {
       name: 'React',
-      // url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/128px-React-icon.svg.png',
       url: '/tech/react.svg',
       level: '60%',
     },
