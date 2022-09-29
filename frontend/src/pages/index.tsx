@@ -5,7 +5,6 @@ import Hero from '../components/sections/Hero';
 import Footer from '../layout/Footer';
 import Experience from '../components/sections/Experience';
 import About from '../components/sections/About';
-import About2 from '../components/sections/About2';
 import Work from '../components/sections/Work';
 import Contact from '../components/sections/Contact'
 import Expertise from '../components/sections/Expertise';

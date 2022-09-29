@@ -11,8 +11,9 @@ import {
 } from '@mui/material';
 import theme from '../../theme';
 import Skill from '../customMinorComponents/Skill';
+import Skill2 from '../customMinorComponents/Skill2';
 import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Data from '../../utils/tempData';
 import {
@@ -73,7 +74,7 @@ function Expertise({}: Props) {
       id='expertise'
       sx={{
         backgroundColor: theme.palette.grey[900],
-        // overFlow: 'hidden',
+        overFlow: 'hidden',
         position: 'relative',
       }}>
       <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
@@ -228,7 +229,7 @@ function Expertise({}: Props) {
             sx={{
               maxWidth: {
                 xs: 'sm',
-                md: 'md',
+                md: 'lg',
               },
             }}>
             <Box
@@ -260,7 +261,7 @@ function Expertise({}: Props) {
               {Data.icons
                 ?.slice(0, Data.icons.length / 2)
                 .map((icon, index) => (
-                  <Skill
+                  <Skill2
                     key={index}
                     name={icon.name}
                     url={icon.url}
@@ -272,7 +273,7 @@ function Expertise({}: Props) {
               {Data.icons
                 ?.slice(Data.icons.length / 2, Data.icons.length)
                 .map((icon, index) => (
-                  <Skill
+                  <Skill2
                     key={index}
                     name={icon.name}
                     url={icon.url}

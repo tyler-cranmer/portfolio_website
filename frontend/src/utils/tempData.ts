@@ -103,66 +103,77 @@ export default {
 
   icons: [
     {
-      name: 'typescript',
+      name: 'Typescript',
       url: '/tech/typescript.svg',
       level: '60%',
     },
     {
-      name: 'javascript',
+      name: 'Javascript',
       url: '/tech/javascript.svg',
       level: '60%',
     },
     {
-      name: 'python',
+      name: 'Python',
       url: '/tech/python.svg',
       level: '80%',
     },
     {
-      name: 'nextjs',
+      name: 'Nextjs',
       url: '/tech/next-js.svg',
       level: '60%',
     },
     {
-      name: 'react',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/128px-React-icon.svg.png',
+      name: 'React',
+      // url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/128px-React-icon.svg.png',
+      url: '/tech/react.svg',
       level: '60%',
     },
     {
-      name: 'mui',
+      name: 'Mui',
       url: '/tech/mui.svg',
       level: '60%',
     },
     {
-      name: 'django',
+      name: 'Django',
       url: '/tech/django.svg',
       level: '50%',
     },
     {
-      name: 'pandas',
+      name: 'Pandas',
       url: '/tech/pandas.svg',
       level: '75%',
     },
     {
-      name: 'numpy',
+      name: 'Numpy',
       url: '/tech/numpy.svg',
       level: '75%',
     },
-    { name: 'postgress', url: '/tech/postgres.svg', level: '50%' },
     {
-      name: 'graphql',
+      name: 'TensorFlow',
+      url: '/tech/tensorflow.svg',
+      level: '45%'
+    },
+    { name: 'Postgress', url: '/tech/postgres.svg', level: '50%' },
+    {
+      name: 'Graphql',
       url: '/tech/graphql.svg',
       level: '50%',
     },
-    { name: 'solidity', url: '/tech/solidity.svg', level: '80%' },
+    { name: 'Solidity', url: '/tech/solidity.svg', level: '80%' },
     {
-      name: 'ethers',
+      name: 'Ethers',
       url: '/tech/ethersjs.svg',
       level: '80%',
     },
     {
-      name: 'hardhat',
+      name: 'Hardhat',
       url: '/tech/hardhat.svg',
       level: '80%',
     },
+    {
+      name: 'Git',
+      url: '/tech/git.svg',
+      level: '90%'
+    }
   ],
 };

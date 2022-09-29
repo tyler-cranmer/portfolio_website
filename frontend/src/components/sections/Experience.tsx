@@ -27,7 +27,7 @@ function Experience({}: Props) {
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
       }}>
-      <Box pt={{ md: 8 }} pb={{ md: 45 }} >
+      <Box pt={{ xs: 8 }} pb={{ xs: 25, md: 45 }} >
         <Container maxWidth='md'>
           <motion.div
             ref={ref}

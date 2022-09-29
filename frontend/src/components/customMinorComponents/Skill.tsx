@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import { Box } from '@mui/system';
+import Card from '@mui/material';
 import { motion, Variants, useAnimation } from 'framer-motion';
 import { Typography } from '@mui/material';
 import theme from '../../theme';
