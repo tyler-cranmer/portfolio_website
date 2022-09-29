@@ -1,66 +1,13 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 import CustomForm from '../customMinorComponents/CustomForm';
 import theme from '../../theme';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { contactVariant } from '../../utils/amimationVariants';
 
 type Props = {};
-
-const contactVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    x: -80,
-  },
-
-  offscreen2: {
-    scale: 1,
-    opacity: 0,
-    x: 80,
-  },
-
-  offscreenForm: {
-    scale: 0,
-    opacity:0
-  },
-
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.2,
-    },
-  },
-
-  onscreen2: {
-    scale: 1,
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.5,
-    },
-  },
-
-  onscreen3: {
-    scale: 1,
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.7,
-    },
-  },
-
-  onscreenForm: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      delay: 0.8
-    }
-  }
-};
 
 function Contact({ }: Props) {
   

@@ -59,13 +59,13 @@ function Skill({ directionLeft, name, url, skill, inView }: Props) {
           },
           height: {
             xs: '5rem',
-            sm: '6rem',
-            md: '8rem',
+            sm: '8rem',
+           
           },
           width: {
             xs: '5rem',
-            sm: '6rem',
-            md: '8rem',
+            sm: '8rem',
+
           },
         }}>
         <Box

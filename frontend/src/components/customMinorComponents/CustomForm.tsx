@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box, TextField, Button } from '@mui/material';
 import theme from '../../theme';
+
+
 type Props = {};
 function CustomForm({}: Props) {
   return (
-    <Box mt={5} sx={{ display: 'block', width: '30em' }}>
+    <Box mt={5} sx={{ display: 'block', maxWidth: '30em' }}>
       <Box display={'flex'} sx={{ marginBottom: '.5em' }}>
         <TextField
           fullWidth

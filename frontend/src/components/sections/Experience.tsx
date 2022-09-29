@@ -1,25 +1,11 @@
 import { Box, Container, Typography } from '@mui/material';
 import theme from '../../theme';
 import CustomAccordian from '../customMinorComponents/CustomAccordian';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { experienceVariant } from '../../utils/amimationVariants';
 
-const expVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: 80,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.2,
-    },
-  },
-};
 
 type Props = {};
 
@@ -39,17 +25,18 @@ function Experience({}: Props) {
       className='background'
       sx={{
         backgroundColor: theme.palette.grey[900],
-        overFlow: 'hidden',
+        // overFlow: 'hidden',
         position: 'relative',
       }}>
       <Box
         pt={{ md: 10 }}
         pb={{ md: 15 }}
-        sx={{ zIndex: 10, position: 'relative' }}>
+        // sx={{ zIndex: 10, position: 'relative' }}
+      >
         <Container maxWidth='md'>
           <motion.div
             ref={ref}
-            variants={expVariant}
+            variants={experienceVariant}
             initial='offscreen'
             animate={control}>
             <Box
@@ -65,8 +52,8 @@ function Experience({}: Props) {
                   fontWeight: 'Bold',
                   fontSize: {
                     md: '4.68rem',
-                    sm: '3rem',
-                    xs: '2.5rem',
+                    sm: '3.125rem',
+                    xs: '3.125rem',
                   },
                 }}>
                 My Experience

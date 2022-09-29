@@ -62,13 +62,12 @@ function Work({}: Props) {
             animate={control}>
             <Box>
               <Typography
-
                 sx={{
                   fontWeight: 'Bold',
                   fontSize: {
                     md: '4.68rem',
-                    sm: '3rem',
-                    xs: '2.5rem',
+                    sm: '3.125rem',
+                    xs: '3.125rem',
                   },
                 }}
                 gutterBottom>
@@ -78,13 +77,19 @@ function Work({}: Props) {
 
             <Grid container>
               {/* Tabs */}
-              <Grid item xs={12}>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}>
+                <Typography sx={{ paddingBottom: '1em', minWidth: '70px' }}>Filter by:</Typography>
                 <StyledTabs
                   value={tabValue}
                   onChange={(event: React.SyntheticEvent, newValue) =>
                     setTabValue(newValue)
                   }>
-                  <StyledTab label='Filter by:' value='none' disabled={true} />
                   <StyledTab
                     label='Aggregate'
                     value='Aggregate'
@@ -108,7 +113,7 @@ function Work({}: Props) {
                   {portfolioData.projects2.map((project, i) => (
                     <React.Fragment key={i}>
                       {tabValue == project.tag || tabValue == 'Aggregate' ? (
-                        <Grid item xs={2} sm={4} md={4}>
+                        <Grid item xs={12} sm={6} md={4}>
                           <Grow in timeout={1000}>
                             <Card
                               key={i}

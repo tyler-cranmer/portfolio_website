@@ -19,30 +19,16 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LaunchIcon from '@mui/icons-material/Launch';
 import Image from 'next/image';
 import experienceData from '../../utils/tempData';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { AnimationControls, motion, useAnimation } from 'framer-motion';
+import { accordianVariant } from '../../utils/amimationVariants';
+
 
 type Props = {
   inView: boolean;
 };
 
-const expVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    x: -80,
-  },
-  onscreen: (i: number) => ({
-    scale: 1,
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.6,
-    },
-  }),
-};
-
 function CustomAccordian({ inView }: Props) {
-  const control = useAnimation();
+  const control: AnimationControls = useAnimation();
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange =
@@ -57,253 +43,129 @@ function CustomAccordian({ inView }: Props) {
   }, [control, inView]);
 
   return (
-
-      <div>
-        {experienceData.experience.map((item, index) => (
-          <motion.div
-            className='space'
-            key={index}
-            custom={index}
-            variants={expVariant}
-            initial='offscreen'
-            animate={control}>
-            <Accordion 
-              square={true}
-              expanded={expanded === item.panel}
-              onChange={handleChange(item.panel)}
-              sx={{
-                backgroundColor: 'rgb(33, 43, 54)',
-                borderTopRightRadius: '15px',
-                borderTopLeftRadius: '15px',
-                borderBottomRightRadius: '15px',
-                borderBottomLeftRadius: '15px',
-                padding: '.25em',
-              
-              }}>
-              <AccordionSummary
-                expandIcon={
-                  <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
-                }
-                aria-controls={item.panel + 'content'}
-                id={item.panel + 'header'}>
-                <Box
-                  sx={{
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    paddingRight: '2em',
-                  }}>
-                  <Box sx={{ display: 'flex' }}>
-                    <Typography sx={{ fontWeight: 'bold' }}>
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        paddingLeft: '.25em',
-                        color: theme.palette.primary.main,
-                        fontWeight: 'bold',
-                      }}>
-                      @ {item.company}
-                    </Typography>
-                  </Box>
-                  <Typography sx={{ color: 'text.secondary' }}>
-                    {item.duration}
+    <div>
+      {experienceData.experience.map((item, index) => (
+        <motion.div
+          className='space'
+          key={index}
+          custom={index}
+          variants={accordianVariant}
+          initial='offscreen'
+          animate={control}>
+          <Accordion
+            square={true}
+            expanded={expanded === item.panel}
+            onChange={handleChange(item.panel)}
+            sx={{
+              backgroundColor: 'rgb(33, 43, 54)',
+              borderTopRightRadius: '15px',
+              borderTopLeftRadius: '15px',
+              borderBottomRightRadius: '15px',
+              borderBottomLeftRadius: '15px',
+              padding: '.25em',
+            }}>
+            <AccordionSummary
+              expandIcon={
+                <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
+              }
+              aria-controls={item.panel + 'content'}
+              id={item.panel + 'header'}>
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  paddingRight: '2em',
+                }}>
+                <Box sx={{ display: 'flex' }}>
+                  <Typography sx={{ fontWeight: 'bold' }}>
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      paddingLeft: '.25em',
+                      color: theme.palette.primary.main,
+                      fontWeight: 'bold',
+                    }}>
+                    @ {item.company}
                   </Typography>
                 </Box>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Box>
-                  <Box sx={{ display: 'flex' }}>
-                    <LocationOnIcon
+                <Typography sx={{ color: 'text.secondary' }}>
+                  {item.duration}
+                </Typography>
+              </Box>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Box>
+                <Box sx={{ display: 'flex' }}>
+                  <LocationOnIcon
+                    fontSize='small'
+                    sx={{ color: theme.palette.primary.main }}
+                  />
+                  <Typography ml={1} mr={2}>
+                    {item.location}
+                  </Typography>
+                  <Link
+                    href={item.slug}
+                    color='inherit'
+                    underline='none'
+                    sx={{ display: 'flex' }}>
+                    <LaunchIcon
                       fontSize='small'
                       sx={{ color: theme.palette.primary.main }}
                     />
-                    <Typography ml={1} mr={2}>
-                      {item.location}
+                    <Typography className='websiteLink' ml={1} mr={2}>
+                      {item.website}
                     </Typography>
-                    <Link
-                      href={item.slug}
-                      color='inherit'
-                      underline='none'
-                      sx={{ display: 'flex' }}>
-                      <LaunchIcon
-                        fontSize='small'
-                        sx={{ color: theme.palette.primary.main }}
-                      />
-                      <Typography className='websiteLink' ml={1} mr={2}>
-                        {item.website}
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Grid container spacing={1}>
-                    <Grid item xs={9}>
-                      <List dense>
-                        {item.bullets.map((bullet, index) => (
-                          <ListItem sx={{ paddingLeft: 0 }} key={index}>
-                            <ListItemIcon sx={{ minWidth: '1.75em' }}>
-                              <ArrowRightOutlinedIcon
-                                fontSize='small'
-                                sx={{ color: theme.palette.primary.main }}
-                              />
-                            </ListItemIcon>
-                            <ListItemText
-                              sx={{ fontSize: '.25rem' }}
-                              primary={bullet}
-                            />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-                    <Grid item xs={3}>
-                      <Box
-                        sx={{
-                          height: '100%',
-                          width: '100%',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          padding: '1em',
-                        }}>
-                        <Image
-                          alt={item.alt}
-                          src={item.logo}
-                          width='255'
-                          height='125'
-                        />
-                      </Box>
-                    </Grid>
-                  </Grid>
+                  </Link>
                 </Box>
-              </AccordionDetails>
-            </Accordion>
-          </motion.div>
-        ))}
-      </div>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} sm={9} >
+                    <List dense>
+                      {item.bullets.map((bullet, index) => (
+                        <ListItem sx={{ paddingLeft: 0 }} key={index}>
+                          <ListItemIcon sx={{ minWidth: '1.75em' }}>
+                            <ArrowRightOutlinedIcon
+                              fontSize='small'
+                              sx={{ color: theme.palette.primary.main }}
+                            />
+                          </ListItemIcon>
+                          <ListItemText
+                            sx={{ fontSize: '.25rem' }}
+                            primary={bullet}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Grid>
+                  <Grid item xs={0} sm={3} >
+                    <Box
+                      sx={{
+                        height: '8em',
+                        width: '8em',
+                        margin: 'auto',
+                        position: 'relative',
+                        display: {
+                          xs: 'none',
+                          sm: 'flex'
+                        }
+                      }}>
+                      <Image
+                        alt={item.alt}
+                        src={item.logo}
+                        layout='fill'
+                        objectFit='contain'
+                      />
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Box>
+            </AccordionDetails>
+          </Accordion>
+        </motion.div>
+      ))}
+    </div>
   );
-
-
-
-  // return (
-  //   <>
-  //     {experienceData.experience.map((item, index) => (
-  //       <div key={index}>
-  //         <motion.div
-  //           custom={index}
-  //           variants={expVariant}
-  //           initial='offscreen'
-  //           animate={control}>
-  //           <Accordion
-  //             square={true}
-  //             expanded={expanded === item.panel}
-  //             onChange={handleChange(item.panel)}
-  //             sx={{
-  //               backgroundColor: 'rgb(33, 43, 54)',
-  //               marginBottom: '.5em',
-  //               borderTopRightRadius: '15px',
-  //               borderTopLeftRadius: '15px',
-  //               borderBottomRightRadius: '15px',
-  //               borderBottomLeftRadius: '15px',
-  //               padding: '.25em',
-  //             }}>
-  //             <AccordionSummary
-  //               expandIcon={
-  //                 <ExpandMoreIcon sx={{ color: theme.palette.primary.main }} />
-  //               }
-  //               aria-controls={item.panel + 'content'}
-  //               id={item.panel + 'header'}>
-  //               <Box
-  //                 sx={{
-  //                   width: '100%',
-  //                   display: 'flex',
-  //                   justifyContent: 'space-between',
-  //                   paddingRight: '2em',
-  //                 }}>
-  //                 <Box sx={{ display: 'flex' }}>
-  //                   <Typography sx={{ fontWeight: 'bold' }}>
-  //                     {item.title}
-  //                   </Typography>
-  //                   <Typography
-  //                     sx={{
-  //                       paddingLeft: '.25em',
-  //                       color: theme.palette.primary.main,
-  //                       fontWeight: 'bold',
-  //                     }}>
-  //                     @ {item.company}
-  //                   </Typography>
-  //                 </Box>
-  //                 <Typography sx={{ color: 'text.secondary' }}>
-  //                   {item.duration}
-  //                 </Typography>
-  //               </Box>
-  //             </AccordionSummary>
-  //             <AccordionDetails >
-  //               <Box>
-  //                 <Box sx={{ display: 'flex' }}>
-  //                   <LocationOnIcon
-  //                     fontSize='small'
-  //                     sx={{ color: theme.palette.primary.main }}
-  //                   />
-  //                   <Typography ml={1} mr={2}>
-  //                     {item.location}
-  //                   </Typography>
-  //                   <Link
-  //                     href={item.slug}
-  //                     color='inherit'
-  //                     underline='none'
-  //                     sx={{ display: 'flex' }}>
-  //                     <LaunchIcon
-  //                       fontSize='small'
-  //                       sx={{ color: theme.palette.primary.main }}
-  //                     />
-  //                     <Typography className='websiteLink' ml={1} mr={2}>
-  //                       {item.website}
-  //                     </Typography>
-  //                   </Link>
-  //                 </Box>
-  //                 <Grid container spacing={1}>
-  //                   <Grid item xs={9}>
-  //                     <List dense>
-  //                       {item.bullets.map((bullet, index) => (
-  //                         <ListItem sx={{ paddingLeft: 0 }} key={index}>
-  //                           <ListItemIcon sx={{ minWidth: '1.75em' }}>
-  //                             <ArrowRightOutlinedIcon
-  //                               fontSize='small'
-  //                               sx={{ color: theme.palette.primary.main }}
-  //                             />
-  //                           </ListItemIcon>
-  //                           <ListItemText
-  //                             sx={{ fontSize: '.25rem' }}
-  //                             primary={bullet}
-  //                           />
-  //                         </ListItem>
-  //                       ))}
-  //                     </List>
-  //                   </Grid>
-  //                   <Grid item xs={3}>
-  //                     <Box
-  //                       sx={{
-  //                         height: '100%',
-  //                         width: '100%',
-  //                         display: 'flex',
-  //                         justifyContent: 'center',
-  //                         padding: '1em',
-  //                       }}>
-  //                       <Image
-  //                         alt={item.alt}
-  //                         src={item.logo}
-  //                         width='255'
-  //                         height='125'
-  //                       />
-  //                     </Box>
-  //                   </Grid>
-  //                 </Grid>
-  //               </Box>
-  //             </AccordionDetails>
-  //           </Accordion>
-  //         </motion.div>
-  //       </div>
-  //     ))}
-  //   </>
-  // );
 }
 
 export default CustomAccordian;

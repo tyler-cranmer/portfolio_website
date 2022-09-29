@@ -106,8 +106,8 @@ function Hero() {
                     color: theme.palette.text.primary,
                     fontSize: {
                       md: '1rem',
-                      sm: '.75rem',
-                      xs: '.75rem',
+                      sm: '.9rem',
+                      xs: '.9rem',
                     },
                   }}
                   gutterBottom>

@@ -1,67 +1,16 @@
 import React from 'react';
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import theme from '../../theme';
 import Image from 'next/image';
 import { Stack } from '@mui/system';
 import {
   motion,
-
   useAnimation,
-  Variants,
 } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { aboutVariant } from "../../utils/amimationVariants"
 
-const aboutVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: 80,
-  },
-  offscreenPic: {
-    scale: 0,
-    opacity: 0,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.9,
-    },
-  },
-  onscreenP1: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1,
-    },
-  },
-  onscreenP2: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1.1,
-    },
-  },
-  onscreenP3: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1.2,
-    },
-  },
-  onscreenPic: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      delay: 0.9,
-    },
-  },
-};
 
 function About() {
   const control = useAnimation();
@@ -124,8 +73,8 @@ function About() {
                   fontWeight: 'Bold',
                   fontSize: {
                     md: '4.68rem',
-                    sm: '3rem',
-                    xs: '2.5rem',
+                    sm: '3.125rem',
+                    xs: '3.125rem',
                   },
                   alignSelf: 'center',
                 }}>

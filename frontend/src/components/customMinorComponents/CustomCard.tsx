@@ -17,7 +17,6 @@ function CustomCard({ title, description, tech}: props) {
       <Card
         sx={{
           minWidth: 250,
-          // maxWidth: 250,
           backgroundColor: theme.palette.grey[800],
           paddingRight: '.5em',
           paddingLeft: '.5em',

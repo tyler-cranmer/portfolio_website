@@ -15,6 +15,12 @@ import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Data from '../../utils/tempData';
+import {
+  titleVariant,
+  cardVariant,
+  cardVariant2,
+} from '../../utils/amimationVariants';
+
 
 function CogsIcon(props: SvgIconProps) {
   return (
@@ -46,53 +52,6 @@ function BlockIcon(props: SvgIconProps) {
   );
 }
 
-const titleVariants: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: -80,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1,
-    },
-  },
-};
-
-const cardVariants: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: 80,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1.4,
-    },
-  },
-};
-
-const cardVariants2: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    y: 80,
-  },
-  onscreen: {
-    scale: 1,
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1.2,
-    },
-  },
-};
 
 type Props = {};
 
@@ -118,10 +77,10 @@ function Expertise({}: Props) {
         position: 'relative',
       }}>
       <Box pt={{ md: 8 }} pb={{ md: 15 }}>
-        <Container>
+        <Container maxWidth='lg'>
           <motion.div
             ref={ref}
-            variants={titleVariants}
+            variants={titleVariant}
             initial='offscreen'
             animate={control}>
             <Box
@@ -137,8 +96,8 @@ function Expertise({}: Props) {
                   fontWeight: 'Bold',
                   fontSize: {
                     md: '4.68rem',
-                    sm: '3rem',
-                    xs: '2.5rem',
+                    sm: '3.125rem',
+                    xs: '3.125rem',
                   },
                 }}>
                 Expertise
@@ -160,14 +119,14 @@ function Expertise({}: Props) {
             {/* Blockchain card */}
             <Grid item xs={4}>
               <motion.div
-                variants={cardVariants}
+                variants={cardVariant}
                 initial='offscreen'
                 animate={control}>
                 <Paper
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '350px', md: '380px' },
+                    maxWidth: { xs: '315px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -195,14 +154,14 @@ function Expertise({}: Props) {
             {/* Software Development Card */}
             <Grid item xs={4}>
               <motion.div
-                variants={cardVariants2}
+                variants={cardVariant2}
                 initial='offscreen'
                 animate={control}>
                 <Paper
                   elevation={24}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '350px', md: '380px' },
+                    maxWidth: { xs: '315px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -232,14 +191,14 @@ function Expertise({}: Props) {
             {/* Machine Learning card */}
             <Grid item xs={4}>
               <motion.div
-                variants={cardVariants}
+                variants={cardVariant}
                 initial='offscreen'
                 animate={control}>
                 <Paper
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '350px', md: '380px' },
+                    maxWidth: { xs: '315px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',

@@ -10,6 +10,8 @@ interface StyledTabsProps {
 
 export const StyledTabs = styled((props: StyledTabsProps) => (
   <Tabs
+    variant='scrollable'
+    scrollButtons='auto'
     sx={{ marginBottom: '1em' }}
     {...props}
     TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }}
@@ -39,7 +41,7 @@ export const StyledTab = styled((props: StyledTabProps) => (
   textTransform: 'none',
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(15),
-  marginRight: theme.spacing(1),
+  // marginRight: theme.spacing(1),
   color: 'rgba(255, 255, 255, 0.7)',
   '&.Mui-selected': {
     color: '#fff',
