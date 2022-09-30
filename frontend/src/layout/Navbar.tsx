@@ -8,6 +8,8 @@ import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
 import { Container } from '@mui/system';
 import { Link } from 'react-scroll/modules';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
 
 
 function Navbar() {
@@ -28,18 +30,31 @@ function Navbar() {
         <Toolbar sx={{ height: '6em' }}>
           <Container maxWidth='sm'>
             <Box sx={{ flexGrow: 1 }} />
+
             <Box
               sx={{
                 alignItems: 'center',
-                display: { lg: 'flex', sm:'flex', xs:'none' },
+                display: { lg: 'flex', sm: 'flex', xs: 'none' },
               }}>
               {MenuItems.map((item, index) => (
                 <div key={index}>
-                  <Link activeClass='active' to={item.Link} spy={true} smooth={true} offset={-96} duration={1000}>
-                    <CustomButton  text={item.Name} />
+                  <Link
+                    activeClass='active'
+                    to={item.Link}
+                    spy={true}
+                    smooth={true}
+                    offset={-96}
+                    duration={1000}>
+                    <CustomButton text={item.Name} />
                   </Link>
                 </div>
               ))}
+            </Box>
+            <Box display={{ xs: 'flex', sm:'none' }}
+            justifyContent={{xs: 'flex-end'}}>
+              <IconButton >
+                <MenuIcon fontSize='large' sx={{ color: theme.palette.text.primary }} />
+              </IconButton>
             </Box>
           </Container>
         </Toolbar>
