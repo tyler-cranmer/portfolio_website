@@ -3,14 +3,10 @@ import { Box, Container, Typography } from '@mui/material';
 import theme from '../../theme';
 import Image from 'next/image';
 import { Stack } from '@mui/system';
-import {
-  motion,
-  useAnimation,
-} from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import { aboutVariant } from "../../utils/amimationVariants"
-
+import { aboutVariant } from '../../utils/amimationVariants';
 
 function About() {
   const control = useAnimation();
@@ -146,9 +142,13 @@ function About() {
                 initial='offscreenPic'
                 animate={controlPic}>
                 <Box
+                  marginRight={'1em'}
+                  position='relative'
+                  borderRadius={'15px'}
+                  overflow={'hidden'}
+                  margin={'auto'}
                   sx={{
-                    marginRight: '1em',
-                    position: 'relative',
+                    marginTop: { xs: '1.75em', md: '1.55em' },
                     height: {
                       xs: '15rem',
                       sm: '20rem',
@@ -159,11 +159,6 @@ function About() {
                       sm: '20rem',
                       md: '25rem',
                     },
-                    marginTop: { xs: '1.75em', md: '1.55em' },
-                    borderRadius: '15px',
-                    overflow: 'hidden',
-
-                    margin: 'auto',
                   }}>
                   <Image
                     alt='index logo'
@@ -183,5 +178,3 @@ function About() {
 }
 
 export default About;
-
-

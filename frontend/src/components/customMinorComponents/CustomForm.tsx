@@ -6,7 +6,7 @@ import theme from '../../theme';
 type Props = {};
 function CustomForm({}: Props) {
   return (
-    <Box mt={5} sx={{ display: 'block', maxWidth: '30em' }}>
+    <Box mt={5} sx={{ display: 'block', maxWidth: '35em' }}>
       <Box display={'flex'} sx={{ marginBottom: '.5em' }}>
         <TextField
           fullWidth

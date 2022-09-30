@@ -229,6 +229,7 @@ function Expertise({}: Props) {
             sx={{
               maxWidth: {
                 xs: 'sm',
+                sm: 'sm',
                 md: 'lg',
               },
             }}>

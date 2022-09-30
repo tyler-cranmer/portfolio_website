@@ -19,9 +19,9 @@ type Props = {
 function Skill2({ directionLeft, name, url, skill, inView }: Props) {
   const control = useAnimation();
   const skillVariant: Variants = {
-    offscreen: { x: directionLeft ? -200 : 200, opacity: 0 },
+    offscreen: { y: directionLeft ? -200 : 200, opacity: 0 },
     onscreen: {
-      x: 0,
+      y: 0,
       opacity: 1,
       transition: {
         delay: 1,

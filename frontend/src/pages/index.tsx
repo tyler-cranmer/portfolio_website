@@ -15,22 +15,16 @@ import theme from '../theme';
 const Home: NextPage = () => {
   return (
     <>
-      <Box
-        sx={{
-          padding: 0,
-          margin: 0,
-          backgroundColor: theme.palette.grey[900],
-        }}>
+
         <Navbar />
         <Hero />
         <About />
         <Expertise />
-        {/* <About2/> */}
         <Work />
         <Experience />
         <Contact />
-        <Footer />
-      </Box>
+        {/* <Footer /> */}
+
     </>
   );
 };

@@ -192,13 +192,13 @@ export const contactVariant: Variants = {
   offscreen: {
     scale: 1,
     opacity: 0,
-    x: -80,
+    y: -80,
   },
 
   offscreen2: {
     scale: 1,
     opacity: 0,
-    x: 80,
+    y: 80,
   },
 
   offscreenForm: {
@@ -209,7 +209,7 @@ export const contactVariant: Variants = {
   onscreen: {
     scale: 1,
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.2,
     },
@@ -218,7 +218,7 @@ export const contactVariant: Variants = {
   onscreen2: {
     scale: 1,
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.5,
     },
@@ -227,7 +227,7 @@ export const contactVariant: Variants = {
   onscreen3: {
     scale: 1,
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.7,
     },
