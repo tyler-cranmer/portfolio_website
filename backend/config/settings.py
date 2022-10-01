@@ -48,16 +48,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restframework',
+
+    #3rd part
+    'rest_framework',
     'corsheaders',
 
-# Apps
+    # Apps
     'About.apps.AboutConfig',
 
 ]
 
 # NEED TO WHITE LIST DOMAINS IN PRODUCTION!!!! PLEASE CHANGE!!!!!!
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = True
+CORS_ORIGIN_WHITELIST = [
+    env('LOCAL_HOST_URL'),
+    env('LOCAL_HOST_URL2'),
+    # env('FRONTEND_URL'),
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

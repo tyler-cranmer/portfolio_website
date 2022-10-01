@@ -10,4 +10,4 @@ class About(models.Model):
         verbose_name_plural = 'About'
 
     def __str__(self):
-        return self.descrip
+        return self.description
