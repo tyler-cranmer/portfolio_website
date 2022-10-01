@@ -1,13 +1,10 @@
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 class About(models.Model):
     description = models.CharField(max_length = 1000)
-    # image = models.ImageField()
+    image = models.ImageField(_("Image"), upload_to='image', null=True)
 
-    class Meta:
-        verbose_name = 'About'
-        verbose_name_plural = 'About'
 
     def __str__(self):
         return self.description
