@@ -1,11 +1,10 @@
-import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Container, Typography, Paper } from '@mui/material';
 import theme from '../../theme';
 import Image from 'next/image';
 import { Stack } from '@mui/system';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
 import { aboutVariant } from '../../utils/amimationVariants';
 
 function About() {
@@ -44,44 +43,46 @@ function About() {
               gridTemplateColumns: {
                 xs: '1fr',
                 sm: '1fr',
-                md: 'repeat(2, 1fr)',
+                // md: 'repeat(4, 1fr)',
+                md: 'repeat(3, minmax(0, 1fr))',
+                // grid-template-columns: repeat(3, minmax(0, 1fr));
               },
               gap: 1,
               gridTemplateRows: 'auto',
               gridTemplateAreas: {
-                xs: `"header" "pic" "stack"`,
-                sm: `"header" "pic" "stack"`,
-                md: ` "header pic" "stack pic" `,
+                // xs: `"header" "pic" "stack"`,
+                // sm: `"header" "pic" "stack"`,
+                md: ` "stack stack pic" "stack stack pic" `,
               },
             }}>
-            <Box
-              sx={{
-                gridArea: 'header',
-                display: 'flex',
-                justifyContent: { xs: 'center', md: 'left' },
-              }}>
-              <motion.div
-                ref={ref}
-                variants={aboutVariant}
-                initial='offscreen'
-                animate={control}>
-                <Typography
-                  sx={{
-                    fontWeight: 'Bold',
-                    fontSize: {
-                      md: '4.68rem',
-                      sm: '3.125rem',
-                      xs: '3.125rem',
-                    },
-                  }}>
-                  About Me
-                </Typography>
-              </motion.div>
-            </Box>
             <Box sx={{ gridArea: 'stack', marginTop: { xs: 2, md: 'none' } }}>
-              <Stack
-                spacing={{ md: 3, sm: 1, xs: 1 }}
-                sx={{ paddingRight: { md: 1.5, sm: 0, xs: 0 } }}>
+              <Stack spacing={{ md: 1, sm: 1, xs: 1 }}>
+                <motion.div
+                  ref={ref}
+                  variants={aboutVariant}
+                  initial='offscreen'
+                  animate={control}>
+                  <Typography
+                    color={theme.palette.grey[600]}
+                    sx={{
+                      // fontWeight: 'Bold',
+                      fontSize: {
+                        md: '1.68rem',
+                        sm: '3.125rem',
+                        xs: '3.125rem',
+                      },
+                    }}>
+                    ABOUT
+                  </Typography>
+                </motion.div>
+                <Typography
+                 
+                  sx={{
+                    fontWeight: 600,
+                   variant:{md: 'h2', sm: 'h1'}
+                  }}>
+                  Who I am
+                </Typography>
                 <motion.div
                   variants={aboutVariant}
                   initial='offscreen'
@@ -89,7 +90,7 @@ function About() {
                   <Typography
                     sx={{
                       fontSize: {
-                        md: '1rem',
+                        md: '1.125rem',
                         sm: '.9rem',
                       },
                     }}
@@ -107,7 +108,7 @@ function About() {
                   <Typography
                     sx={{
                       fontSize: {
-                        md: '1rem',
+                        md: '1.125rem',
                         sm: '.9rem',
                       },
                     }}
@@ -125,7 +126,7 @@ function About() {
                   <Typography
                     sx={{
                       fontSize: {
-                        md: '1rem',
+                        md: '1.125rem',
                         sm: '.9rem',
                       },
                     }}
@@ -141,33 +142,33 @@ function About() {
                 variants={aboutVariant}
                 initial='offscreenPic'
                 animate={controlPic}>
-                <Box
-                  marginRight={'1em'}
-                  position='relative'
-                  borderRadius={'15px'}
-                  overflow={'hidden'}
-                  margin={'auto'}
+                <Paper
+                  variant='elevation'
+                  elevation={24}
                   sx={{
-                    marginTop: { xs: '1.75em', md: '1.55em' },
-                    height: {
-                      xs: '15rem',
-                      sm: '20rem',
-                      md: '28rem',
-                    },
-                    width: {
-                      xs: '15rem',
-                      sm: '20rem',
-                      md: '25rem',
-                    },
+                    backgroundColor: theme.palette.grey[800],
+                    padding: '1em',
+                    borderRadius: '15px',
                   }}>
-                  <Image
-                    alt='index logo'
-                    src='/paralta.jpeg'
-                    layout='fill'
-                    objectFit='cover'
-                    priority
-                  />
-                </Box>
+                  <Box
+                    overflow={'hidden'}
+                    borderRadius={'15px'}
+                    position='relative'
+                    height='30em'
+                    width='100%'
+                    margin='auto'
+                    display='flex'
+                    justifyContent={'center'}
+                    alignItems='center'>
+                    <Image
+                      alt='index logo'
+                      src='/paralta.jpeg'
+                      layout='fill'
+                      objectFit='cover'
+                      priority
+                    />
+                  </Box>
+                </Paper>
               </motion.div>
             </Box>
           </Box>
@@ -178,3 +179,33 @@ function About() {
 }
 
 export default About;
+
+
+
+{/* <Box
+  marginRight={'1em'}
+  position='relative'
+  borderRadius={'15px'}
+  overflow={'hidden'}
+  margin={'auto'}
+  sx={{
+    marginTop: { xs: '1.75em', md: '1.55em' },
+    height: {
+      xs: '15rem',
+      sm: '20rem',
+      md: '28rem',
+    },
+    width: {
+      xs: '15rem',
+      sm: '20rem',
+      md: '25rem',
+    },
+  }}>
+  <Image
+    alt='index logo'
+    src='/paralta.jpeg'
+    layout='fill'
+    objectFit='cover'
+    priority
+  />
+</Box>; */}

@@ -25,6 +25,7 @@ const CustomButton = ({ text}: props) => {
         '&:hover': {
           color: theme.palette.grey[500],
         },
+        fontSize:'1em'
       }}>
       {text}
     </Button>

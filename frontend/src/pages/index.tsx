@@ -8,7 +8,6 @@ import About from '../components/sections/About';
 import Work from '../components/sections/Work';
 import Contact from '../components/sections/Contact'
 import Expertise from '../components/sections/Expertise';
-import { Box } from '@mui/material';
 import theme from '../theme';
 
 

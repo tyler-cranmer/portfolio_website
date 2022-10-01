@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {
-  AppBar,
-  Box,
-  Toolbar,
-} from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
 import { Container } from '@mui/system';
 import { Link } from 'react-scroll/modules';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-
 
 function Navbar() {
   const MenuItems = [
@@ -21,21 +16,25 @@ function Navbar() {
     { Name: 'Contact', Link: 'contact' },
   ];
 
-  const name: string = 'TeeWhy.'
-  const underScore: string = '_'
+  const name: string = 'TeeWhy.';
+  const underScore: string = '_';
 
   return (
     <>
       <AppBar sx={{ background: theme.palette.grey[900] }} position='sticky'>
         <Toolbar sx={{ height: '6em' }}>
-          <Container maxWidth='sm'>
+          <Container maxWidth='lg'>
             <Box sx={{ flexGrow: 1 }} />
-
             <Box
-              sx={{
-                alignItems: 'center',
-                display: { lg: 'flex', sm: 'flex', xs: 'none' },
-              }}>
+              display={{
+                lg: 'flex',
+                sm: 'flex',
+                xs: 'none',
+              }}
+              justifyContent={{
+                lg: 'flex-end'
+              }}
+              alignItems='center'>
               {MenuItems.map((item, index) => (
                 <div key={index}>
                   <Link
@@ -50,10 +49,14 @@ function Navbar() {
                 </div>
               ))}
             </Box>
-            <Box display={{ xs: 'flex', sm:'none' }}
-            justifyContent={{xs: 'flex-end'}}>
-              <IconButton >
-                <MenuIcon fontSize='large' sx={{ color: theme.palette.text.primary }} />
+            <Box
+              display={{ xs: 'flex', sm: 'none' }}
+              justifyContent={{ xs: 'flex-end' }}>
+              <IconButton>
+                <MenuIcon
+                  fontSize='large'
+                  sx={{ color: theme.palette.text.primary }}
+                />
               </IconButton>
             </Box>
           </Container>

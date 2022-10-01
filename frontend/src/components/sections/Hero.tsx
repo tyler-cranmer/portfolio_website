@@ -60,7 +60,7 @@ function Hero() {
                       xs: '2.75rem',
                     },
                   }}>
-                  Hi, Im
+                  Hi, I'm
                 </Typography>
                 <Typography
                   color={theme.palette.primary.light}

@@ -1,6 +1,3 @@
-
-
-
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
@@ -50,10 +47,27 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: ['Inter Tight', 'sans-serif'].join(','),
+
     h2: {
-      fontSize: '4.6875rem',
-    }
-  }
+      lineHeight: 1,
+    },
+    h3: {
+      lineHeight: 1,
+    },
+    h4: {
+      fontSize: '2.25rem',
+      lineHeight: 2.5,
+    },
+    h5: {
+      fontSize: '1.875rem',
+      lineHight: 2.25,
+    },
+    h6: {
+      fontSize: '1.5rem',
+      lineHeight: 2,
+    },
+  },
 });
 
 export default theme;
