@@ -26,3 +26,11 @@ python manage.py runserver
 create super user:
 
 python manage.py createsuperuser
+
+
+djangorestframework
+django
+cors-headers
+django-environ
+pillow
+psycopg2  // this is to connect postgress to django
