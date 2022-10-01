@@ -2,10 +2,13 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import theme from '../../theme';
-import { Stack, Container } from '@mui/material';
+import { Stack, Container, IconButton } from '@mui/material';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import textData from '../../utils/tempData';
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function Hero() {
   const [text, count] = useTypewriter({
@@ -21,8 +24,8 @@ function Hero() {
     delaySpeed: 2000,
   });
 
-  const i_build: string = 'I build'
-
+  const i_build: string = 'I build';
+  const name: string = ' Tyler';
   return (
     <Box
       id='hero'
@@ -39,48 +42,32 @@ function Hero() {
           position: 'fixed',
         }}>
         <Container maxWidth='lg'>
-          <Box
-            sx={{
-              // minHeight: '100vh',
-              display: 'flex',
-              alignitems: 'flex-start',
-              flexDirection: 'column',
-              // padding: '0px',
-              // justifyContent: 'center',
-            }}>
+          <Box display='flex' justifyContent='center' alignItems='center'>
             <Stack
-              mt={28}
+              mt={40}
               direction='column'
-              justifyContent='flex-start'
-              alignItems='flex-start'
-              spacing={2}
-              maxWidth='md'>
-              <Box>
-                <Typography
-                  gutterBottom
-                  sx={{
-                    color: theme.palette.primary.light,
-                    fontSize: {
-                      md: '1.5rem',
-                      sm: '1.25rem',
-                      xs: '1rem',
-                    },
-                  }}>
-                  Hi, my name is
-                </Typography>
-              </Box>
-              <Box>
+              justifyContent='center'
+              alignItems='center'
+              spacing={1}>
+              <Box display='flex'>
                 <Typography
                   sx={{
                     fontWeight: 500,
                     color: theme.palette.text.primary,
                     fontSize: {
-                      md: '6rem',
+                      md: '5rem',
                       sm: '4.5rem',
                       xs: '2.75rem',
                     },
                   }}>
-                  Tyler Cranmer.
+                  Hi, Im
+                </Typography>
+                <Typography
+                  color={theme.palette.primary.light}
+                  fontWeight='500'
+                  fontSize={{ md: '5rem', sm: '4.5rem', xs: '2.75rem' }}
+                  pl={2}>
+                  {name}
                 </Typography>
               </Box>
               <Box>
@@ -89,17 +76,20 @@ function Hero() {
                     fontWeight: 500,
                     color: theme.palette.text.primary,
                     fontSize: {
-                      md: '3.75rem',
-                      sm: '2.75rem',
-                      xs: '2rem',
+                      md: '4.5rem',
+                      sm: '4.5rem',
+                      xs: '2.75rem',
                     },
-                  }}
-                  gutterBottom>
+                  }}>
                   {i_build} {text}
                   <Cursor cursorStyle='_' />
                 </Typography>
               </Box>
-              <Box>
+              <Box
+                maxWidth='md'
+                display='flex'
+                justifyContent='center'
+                alignItems={'center'}>
                 <Typography
                   sx={{
                     color: theme.palette.text.primary,
@@ -112,6 +102,21 @@ function Hero() {
                   gutterBottom>
                   {textData.Hero.text}
                 </Typography>
+              </Box>
+              <Box display='flex' justifyContent='space-around'>
+                <IconButton>
+                  <LinkedInIcon fontSize='large' />
+                </IconButton>
+                <IconButton>
+                  <GitHubIcon fontSize='large' />
+                </IconButton>
+
+                <IconButton>
+                  <EmailOutlinedIcon fontSize='large' />
+                </IconButton>
+                <IconButton>
+                  <ArticleOutlinedIcon fontSize='large' />
+                </IconButton>
               </Box>
             </Stack>
           </Box>
