@@ -22,7 +22,6 @@ import {
   cardVariant2,
 } from '../../utils/amimationVariants';
 
-
 function CogsIcon(props: SvgIconProps) {
   return (
     <IconContext.Provider value={{ className: 'cog-icons' }}>
@@ -53,7 +52,6 @@ function BlockIcon(props: SvgIconProps) {
   );
 }
 
-
 type Props = {};
 
 function Expertise({}: Props) {
@@ -66,8 +64,6 @@ function Expertise({}: Props) {
       control.start('onscreen');
     }
   }, [control, inView]);
-
-
 
   return (
     <Box
@@ -92,24 +88,24 @@ function Expertise({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
+                letterSpacing={'.1em'}
+                color={theme.palette.text.secondary}
+                variant='h5'
+                gutterBottom>
+                Skills
+              </Typography>
+              <Typography
+                ref={ref}
                 sx={{
-                  fontWeight: 'Bold',
+                  fontWeight: 600,
                   fontSize: {
-                    md: '4.68rem',
+                    md: '2.5rem',
                     sm: '3.125rem',
                     xs: '3.125rem',
                   },
                 }}>
-                Expertise
+                What I can do
               </Typography>
-              <Box
-                ref={ref}
-                sx={{
-                  backgroundColor: 'white',
-                  width: '125px',
-                  height: '3.5px',
-                }}
-              />
             </Box>
           </motion.div>
           <Grid
@@ -218,8 +214,8 @@ function Expertise({}: Props) {
                     Machine Learning
                   </Typography>
                   <Typography variant='body1'>
-                    Proficient with Data Science and Machine Learning Models using Python, Pandas, Numpy
-                    Sklearn, NLTK, Keras, Tensorflow
+                    Proficient with Data Science and Machine Learning Models
+                    using Python, Pandas, Numpy Sklearn, NLTK, Keras, Tensorflow
                   </Typography>
                 </Paper>
               </motion.div>
@@ -242,10 +238,11 @@ function Expertise({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
+                letterSpacing={'.1em'}
                 ref={sRef}
                 variant='h5'
-                sx={{ color: 'text.secondary' }}>
-                Skills
+                color={theme.palette.text.secondary}>
+                Technologies
               </Typography>
             </Box>
             <Box

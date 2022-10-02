@@ -19,6 +19,7 @@ function Experience({}: Props) {
     }
   }, [control, inView]);
 
+  const subtitle: string = "Where I've Been"
   return (
     <Box
       id='experience'
@@ -27,7 +28,7 @@ function Experience({}: Props) {
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
       }}>
-      <Box pt={{ xs: 8 }} pb={{ xs: 25, md: 45 }} >
+      <Box pt={{ xs: 8 }} pb={{ xs: 25, md: 45 }}>
         <Container maxWidth='md'>
           <motion.div
             ref={ref}
@@ -43,15 +44,22 @@ function Experience({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
+                letterSpacing={'.1em'}
+                variant='h5'
+                color={theme.palette.text.secondary}
+                gutterBottom>
+                Experience
+              </Typography>
+              <Typography
                 sx={{
                   fontWeight: 'Bold',
                   fontSize: {
-                    md: '4.68rem',
+                    md: '2.5rem',
                     sm: '3.125rem',
                     xs: '3.125rem',
                   },
                 }}>
-                My Experience
+                {subtitle}
               </Typography>
             </Box>
           </motion.div>

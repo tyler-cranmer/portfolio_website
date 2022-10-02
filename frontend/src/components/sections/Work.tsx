@@ -34,6 +34,7 @@ function Work({}: Props) {
     }
   }, [control, control2, inView]);
 
+  const subtitle: string = "What I've Built";
   return (
     <Box
       id='work'
@@ -51,16 +52,23 @@ function Work({}: Props) {
             animate={control}>
             <Box>
               <Typography
+                letterSpacing={'.1em'}
+                variant='h5'
+                color={theme.palette.text.secondary}
+                gutterBottom>
+                Portfolio
+              </Typography>
+              <Typography
                 sx={{
-                  fontWeight: 'Bold',
+                  fontWeight: 'bold',
                   fontSize: {
-                    md: '4.68rem',
+                    md: '2.5rem',
                     sm: '3.125rem',
                     xs: '3.125rem',
                   },
                 }}
                 gutterBottom>
-                My Work
+                {subtitle}
               </Typography>
             </Box>
           </motion.div>

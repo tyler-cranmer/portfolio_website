@@ -35,7 +35,7 @@ function About() {
         position: 'relative',
         height: '90vh',
       }}>
-      <Box pt={8}>
+      <Box pt={15}>
         <Container maxWidth='lg'>
           <Box
             sx={{
@@ -55,7 +55,12 @@ function About() {
                 md: ` "stack stack pic" "stack stack pic" `,
               },
             }}>
-            <Box sx={{ gridArea: 'stack', marginTop: { xs: 2, md: 'none' } }}>
+            <Box
+              sx={{
+                gridArea: 'stack',
+                paddingRight: { xs: 2 },
+                marginTop: { xs: 2, md: 'none' },
+              }}>
               <Stack spacing={{ md: 1, sm: 1, xs: 1 }}>
                 <motion.div
                   ref={ref}
@@ -63,9 +68,9 @@ function About() {
                   initial='offscreen'
                   animate={control}>
                   <Typography
-                    color={theme.palette.grey[600]}
+                    color={theme.palette.text.secondary}
                     sx={{
-                      // fontWeight: 'Bold',
+                      letterSpacing: '.1em',
                       fontSize: {
                         md: '1.68rem',
                         sm: '3.125rem',
@@ -76,10 +81,11 @@ function About() {
                   </Typography>
                 </motion.div>
                 <Typography
-                 
                   sx={{
+                    fontSize: {
+                      md: '2.5rem',
+                    },
                     fontWeight: 600,
-                   variant:{md: 'h2', sm: 'h1'}
                   }}>
                   Who I am
                 </Typography>
@@ -180,9 +186,8 @@ function About() {
 
 export default About;
 
-
-
-{/* <Box
+{
+  /* <Box
   marginRight={'1em'}
   position='relative'
   borderRadius={'15px'}
@@ -208,4 +213,5 @@ export default About;
     objectFit='cover'
     priority
   />
-</Box>; */}
+</Box>; */
+}
