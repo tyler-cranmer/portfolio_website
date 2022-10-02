@@ -63,7 +63,7 @@ function Hero() {
                   Hi, I'm
                 </Typography>
                 <Typography
-                  color={theme.palette.primary.light}
+                  color={theme.palette.primary.main}
                   fontWeight='500'
                   fontSize={{ md: '5rem', sm: '4.5rem', xs: '2.75rem' }}
                   pl={2}>
