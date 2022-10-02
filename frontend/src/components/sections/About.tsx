@@ -31,9 +31,8 @@ function About() {
       id='about'
       sx={{
         backgroundColor: theme.palette.grey[900],
-        overFlow: 'hidden',
         position: 'relative',
-        height: '90vh',
+        minHeight: '100vh',
       }}>
       <Box pt={15}>
         <Container maxWidth='lg'>
@@ -43,25 +42,23 @@ function About() {
               gridTemplateColumns: {
                 xs: '1fr',
                 sm: '1fr',
-                // md: 'repeat(4, 1fr)',
                 md: 'repeat(3, minmax(0, 1fr))',
-                // grid-template-columns: repeat(3, minmax(0, 1fr));
               },
               gap: 1,
               gridTemplateRows: 'auto',
               gridTemplateAreas: {
-                // xs: `"header" "pic" "stack"`,
-                // sm: `"header" "pic" "stack"`,
-                md: ` "stack stack pic" "stack stack pic" `,
+                xs: `"stack" "pic"`,
+                sm: `"stack" "pic" `,
+                md: ` "stack stack pic"`,
               },
             }}>
             <Box
               sx={{
                 gridArea: 'stack',
                 paddingRight: { xs: 2 },
-                marginTop: { xs: 2, md: 'none' },
+                marginBottom: { xs: 2, md: 'none' },
               }}>
-              <Stack spacing={{ md: 1, sm: 1, xs: 1 }}>
+              <Stack spacing={{ xs: 1 }}>
                 <motion.div
                   ref={ref}
                   variants={aboutVariant}
@@ -73,8 +70,8 @@ function About() {
                       letterSpacing: '.1em',
                       fontSize: {
                         md: '1.68rem',
-                        sm: '3.125rem',
-                        xs: '3.125rem',
+                        sm: '1.68rem',
+                        xs: '1.68rem',
                       },
                     }}>
                     ABOUT
@@ -84,6 +81,7 @@ function About() {
                   sx={{
                     fontSize: {
                       md: '2.5rem',
+                      xs: '2.5rem',
                     },
                     fontWeight: 600,
                   }}>
@@ -155,21 +153,40 @@ function About() {
                     backgroundColor: theme.palette.grey[800],
                     padding: '1em',
                     borderRadius: '15px',
+                    height: '100%',
+                    width: {
+                      md: '100%',
+                      sm: '50%',
+                    },
                   }}>
                   <Box
                     overflow={'hidden'}
                     borderRadius={'15px'}
-                    position='relative'
-                    height='30em'
-                    width='100%'
-                    margin='auto'
-                    display='flex'
-                    justifyContent={'center'}
-                    alignItems='center'>
+                    // position='relative'
+                    // height='30em'
+                    // width='100%'
+                    // margin='auto'
+                    // display='flex'
+                    // justifyContent={'center'}
+                    // alignItems='center'
+                    // sx={{
+                    //   height: {
+                    //     md: '30rem',
+                    //     sm: '30rem',
+                    //   },
+                    //   width: {
+                    //     md: '100%',
+                    //     sm: '100%'
+                    //   }
+
+                    // }}
+                  >
                     <Image
                       alt='index logo'
                       src='/paralta.jpeg'
-                      layout='fill'
+                      layout='responsive'
+                      height={480}
+                      width={480}
                       objectFit='cover'
                       priority
                     />
