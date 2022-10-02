@@ -54,7 +54,7 @@ function BlockIcon(props: SvgIconProps) {
 
 type Props = {};
 
-function Expertise({}: Props) {
+function Skills({}: Props) {
   const control = useAnimation();
   const [ref, inView] = useInView();
   const [sRef, sInView] = useInView();
@@ -67,7 +67,7 @@ function Expertise({}: Props) {
 
   return (
     <Box
-      id='expertise'
+      id='skills'
       sx={{
         backgroundColor: theme.palette.grey[900],
         overFlow: 'hidden',
@@ -287,4 +287,4 @@ function Expertise({}: Props) {
   );
 }
 
-export default Expertise;
+export default Skills;

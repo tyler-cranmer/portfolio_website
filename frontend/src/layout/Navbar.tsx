@@ -10,8 +10,8 @@ import IconButton from '@mui/material/IconButton';
 function Navbar() {
   const MenuItems = [
     { Name: 'About', Link: 'about' },
-    { Name: 'Expertise', Link: 'expertise' },
-    { Name: 'Work', Link: 'work' },
+    { Name: 'Skills', Link: 'skills' },
+    { Name: 'Projects', Link: 'projects' },
     { Name: 'Experience', Link: 'experience' },
     { Name: 'Contact', Link: 'contact' },
   ];
