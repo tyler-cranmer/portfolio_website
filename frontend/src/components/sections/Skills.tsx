@@ -10,7 +10,7 @@ import {
   Grid,
 } from '@mui/material';
 import theme from '../../theme';
-import Skill2 from '../customMinorComponents/Skill2';
+import Skill from '../customMinorComponents/Skill';
 import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -65,11 +65,11 @@ function Skills({}: Props) {
     }
   }, [control, inView]);
 
-    useEffect(() => {
-      if (sInView) {
-        control2.start('onscreenTech');
-      }
-    }, [control2, sInView]);
+  useEffect(() => {
+    if (sInView) {
+      control2.start('onscreenTech');
+    }
+  }, [control2, sInView]);
 
   return (
     <Box
@@ -282,7 +282,7 @@ function Skills({}: Props) {
               {Data.icons
                 ?.slice(0, Data.icons.length / 2)
                 .map((icon, index) => (
-                  <Skill2
+                  <Skill
                     key={index}
                     name={icon.name}
                     url={icon.url}
@@ -293,7 +293,7 @@ function Skills({}: Props) {
               {Data.icons
                 ?.slice(Data.icons.length / 2, Data.icons.length)
                 .map((icon, index) => (
-                  <Skill2
+                  <Skill
                     key={index}
                     name={icon.name}
                     url={icon.url}

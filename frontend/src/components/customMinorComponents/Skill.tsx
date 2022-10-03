@@ -1,19 +1,21 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/system';
-import Card from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Avatar from '@mui/material/Avatar';
 import { motion, Variants, useAnimation } from 'framer-motion';
 import { Typography } from '@mui/material';
 import theme from '../../theme';
+import Image from 'next/image';
 
 type Props = {
   directionLeft?: boolean;
   name: string;
   url: string;
-  skill: string;
   inView: boolean;
 };
 
-function Skill({ directionLeft, name, url, skill, inView }: Props) {
+function Skill({ directionLeft, name, url, inView }: Props) {
   const control = useAnimation();
   const skillVariant: Variants = {
     offscreen: { x: directionLeft ? -200 : 200, opacity: 0 },
@@ -21,70 +23,65 @@ function Skill({ directionLeft, name, url, skill, inView }: Props) {
       x: 0,
       opacity: 1,
       transition: {
+        delay: 1,
         duration: 1,
       },
     },
   };
   useEffect(() => {
     if (inView) {
-      control.start('onscreen')
+      control.start('onscreen');
     }
   }, [control, inView]);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        position: 'relative',
-        justifyContent: 'center',
-      }}>
-      <motion.img
-        variants={skillVariant}
-        initial='offscreen'
-        animate={control}
-        src={url}
-        alt={name}
-        className='skillsIcon'
-      />
+    <motion.div variants={skillVariant} initial='offscreen' animate={control}>
       <Box
-        id='1'
+        width={1}
+        height={1}
+        component={Card}
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+        boxShadow={0}
+        variant='outlined'
+        borderRadius='20px'
         sx={{
-          position: 'absolute',
-          opacity: 0,
-          borderRadius: '9999px',
+          backgroundColor: 'transparent',
+          border: '#454f5b solid 1px',
+          transition: 'all .2s ease-in-out',
           '&:hover': {
-            opacity: 0.8,
-            transitionDuration: '400ms',
-            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            background: theme.palette.grey[500],
-          },
-          height: {
-            xs: '5rem',
-            sm: '8rem',
-           
-          },
-          width: {
-            xs: '5rem',
-            sm: '8rem',
-
+            transform: `translateY(-${theme.spacing(1)})`,
           },
         }}>
-        <Box
-          id='2'
+        <CardContent
           sx={{
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
           }}>
+          <Box marginBottom={1}>
+            <Box
+              component={Avatar}
+              width={60}
+              height={60}
+              marginBottom={2}
+              variant='rounded'
+              borderRadius={2}
+              position='relative'
+              sx={{ backgroundColor: 'transparent' }}>
+              <Image src={url} layout='fill' objectFit='contain' />
+            </Box>
+          </Box>
           <Typography
-            variant='h5'
-            sx={{ color: 'black', fontWeight: 'bold', opacity: 1.5 }}>
-            {skill}
+            align='center'
+            color={theme.palette.text.primary}
+            fontWeight='bold'>
+            {name}
           </Typography>
-        </Box>
+        </CardContent>
       </Box>
-    </Box>
+    </motion.div>
   );
 }
 
