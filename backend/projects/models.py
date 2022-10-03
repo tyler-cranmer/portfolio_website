@@ -11,6 +11,9 @@ class Tag(models.Model):
 class Technology(models.Model):
     name = models.CharField(max_length=30)
 
+    class Meta:
+        verbose_name_plural = 'Technologies'
+
     def __str__(self):
         return self.name
 
@@ -22,6 +25,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to='image')
     tags = models.ManyToManyField(Tag)
     technologies = models.ManyToManyField(Technology)
+    
     def __str__(self):
         return self.name
 
