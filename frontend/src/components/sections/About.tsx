@@ -41,14 +41,14 @@ function About() {
               display: 'grid',
               gridTemplateColumns: {
                 xs: '1fr',
-                sm: '1fr',
+                sm: 'repeat(2, minmax(0, 1fr))',
                 md: 'repeat(3, minmax(0, 1fr))',
               },
               gap: 1,
               gridTemplateRows: 'auto',
               gridTemplateAreas: {
                 xs: `"stack" "pic"`,
-                sm: `"stack" "pic" `,
+                sm: `"stack stack" "pic pic" `,
                 md: ` "stack stack pic"`,
               },
             }}>
@@ -59,33 +59,35 @@ function About() {
                 marginBottom: { xs: 2, md: 'none' },
               }}>
               <Stack spacing={{ xs: 1 }}>
-                <motion.div
-                  ref={ref}
-                  variants={aboutVariant}
-                  initial='offscreen'
-                  animate={control}>
+                <Box>
+                  <motion.div
+                    ref={ref}
+                    variants={aboutVariant}
+                    initial='offscreen'
+                    animate={control}>
+                    <Typography
+                      color={theme.palette.text.secondary}
+                      sx={{
+                        letterSpacing: '.1em',
+                        lineHeight: 2,
+                        fontSize: {
+                          xs: '1.55rem',
+                        },
+                      }}>
+                      ABOUT
+                    </Typography>
+                  </motion.div>
                   <Typography
-                    color={theme.palette.text.secondary}
                     sx={{
-                      letterSpacing: '.1em',
-                      lineHeight: 2,
+                      fontWeight: 600,
                       fontSize: {
-                        xs: '1.55rem',
+                        md: '2.5rem',
+                        xs: '3.125rem',
                       },
                     }}>
-                    ABOUT
+                    Who I am
                   </Typography>
-                </motion.div>
-                <Typography
-                  sx={{
-                    fontWeight: 600,
-                    fontSize: {
-                      md: '2.5rem',
-                      xs: '3.125rem',
-                    },
-                  }}>
-                  Who I am
-                </Typography>
+                </Box>
                 <motion.div
                   variants={aboutVariant}
                   initial='offscreen'
@@ -140,7 +142,7 @@ function About() {
                 </motion.div>
               </Stack>
             </Box>
-            <Box sx={{ gridArea: 'pic' }}>
+            <Box sx={{ gridArea: 'pic', margin: { xs: '0 auto' } }}>
               <motion.div
                 variants={aboutVariant}
                 initial='offscreenPic'
@@ -155,24 +157,19 @@ function About() {
                     height: '100%',
                     width: {
                       md: '100%',
-                      sm: '50%',
+                      sm: '100%',
                     },
                   }}>
-                  <Box
-                    overflow={'hidden'}
-                    borderRadius={'15px'}
-                    height='100%'
-                    width='100%'>
+
                     <Image
                       alt='index logo'
                       src='/paralta.jpeg'
-                      layout='responsive'
-                      height={480}
-                      width={480}
-                      objectFit='cover'
+                      layout='intrinsic'
+                      height={425}
+                      width={325}
                       priority
+                      className='profilepic'
                     />
-                  </Box>
                 </Paper>
               </motion.div>
             </Box>

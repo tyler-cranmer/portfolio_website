@@ -17,17 +17,10 @@ function PersonalCard({}: Props) {
         padding: '1.5em',
         borderRadius: '15px',
       }}>
-      <Box
-        position={'relative'}
-        display='flex'
-        sx={{
-          borderRadius: '15px',
-          marginBottom: '1em',
-        }}>
         <Box
           borderRadius={'15px'}
           overflow={'hidden'}
-          sx={{ height: '100%', width: '100%' }}>
+          sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
           <Image
             alt='index logo'
             src='/paralta.jpeg'
@@ -36,7 +29,6 @@ function PersonalCard({}: Props) {
             width={250}
             priority
           />
-        </Box>
       </Box>
       <Box pb={15}>
         {/* Name */}
