@@ -127,7 +127,7 @@ function Projects({}: Props) {
                             <Card
                               sx={{
                                 backgroundColor: theme.palette.grey[800],
-                                borderRadius: '20px',
+                                borderRadius: {xs:'20px'}
                               }}>
                               <CardActionArea>
                                 <Box sx={{ overflow: 'hidden' }}>

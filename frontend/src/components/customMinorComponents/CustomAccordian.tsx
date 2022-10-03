@@ -58,10 +58,10 @@ function CustomAccordian({ inView }: Props) {
             onChange={handleChange(item.panel)}
             sx={{
               backgroundColor: 'rgb(33, 43, 54)',
-              borderTopRightRadius: '15px',
-              borderTopLeftRadius: '15px',
-              borderBottomRightRadius: '15px',
-              borderBottomLeftRadius: '15px',
+              borderTopRightRadius: '20px',
+              borderTopLeftRadius: '20px',
+              borderBottomRightRadius: '20px',
+              borderBottomLeftRadius: '20px',
               padding: '.25em',
             }}>
             <AccordionSummary

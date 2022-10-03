@@ -153,7 +153,7 @@ function About() {
                   sx={{
                     backgroundColor: theme.palette.grey[800],
                     padding: '1em',
-                    borderRadius: '15px',
+                    borderRadius: '20px',
                     height: '100%',
                     width: {
                       md: '100%',

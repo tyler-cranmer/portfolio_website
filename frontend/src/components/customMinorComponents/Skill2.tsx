@@ -12,16 +12,15 @@ type Props = {
   directionLeft?: boolean;
   name: string;
   url: string;
-  skill: string;
   inView: boolean;
 };
 
-function Skill2({ directionLeft, name, url, skill, inView }: Props) {
+function Skill2({ directionLeft, name, url, inView }: Props) {
   const control = useAnimation();
   const skillVariant: Variants = {
-    offscreen: { y: directionLeft ? -200 : 200, opacity: 0 },
+    offscreen: { x: directionLeft ? -200 : 200, opacity: 0 },
     onscreen: {
-      y: 0,
+      x: 0,
       opacity: 1,
       transition: {
         delay: 1,
@@ -46,17 +45,20 @@ function Skill2({ directionLeft, name, url, skill, inView }: Props) {
         alignItems='center'
         boxShadow={0}
         variant='outlined'
-        borderRadius={2}
-        sx={{ backgroundColor: 'transparent', border: '#454f5b solid 1px' }}>
+        borderRadius='20px'
+        sx={{
+          backgroundColor: 'transparent',
+          border: '#454f5b solid 1px',
+          transition: 'all .2s ease-in-out',
+          '&:hover': {
+            transform: `translateY(-${theme.spacing(1)})`,
+          },
+        }}>
         <CardContent
           sx={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            transition: 'all .2s ease-in-out',
-            '&:hover': {
-              transform: `translateY(-${theme.spacing(1)})`,
-            },
           }}>
           <Box marginBottom={1}>
             <Box

@@ -15,10 +15,10 @@ function PersonalCard({}: Props) {
         display: 'flex',
         flexDirection: 'column',
         padding: '1.5em',
-        borderRadius: '15px',
+        borderRadius: '20px',
       }}>
         <Box
-          borderRadius={'15px'}
+          borderRadius={'20px'}
           overflow={'hidden'}
           sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
           <Image

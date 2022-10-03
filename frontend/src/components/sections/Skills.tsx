@@ -69,8 +69,8 @@ function Skills({}: Props) {
       id='skills'
       sx={{
         backgroundColor: theme.palette.grey[900],
-        overFlow: 'hidden',
         position: 'relative',
+        overflowX: 'hidden',
       }}>
       <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
@@ -96,7 +96,7 @@ function Skills({}: Props) {
                 }}
                 color={theme.palette.text.secondary}
                 gutterBottom>
-               SKILLS
+                SKILLS
               </Typography>
               <Typography
                 ref={ref}
@@ -251,6 +251,7 @@ function Skills({}: Props) {
             <Box
               sx={{
                 display: 'grid',
+
                 gridTemplateColumns: {
                   xs: 'repeat(3, minmax(0, 1fr))',
                   sm: 'repeat(4, minmax(0, 1fr))',
@@ -266,7 +267,6 @@ function Skills({}: Props) {
                     key={index}
                     name={icon.name}
                     url={icon.url}
-                    skill={icon.level}
                     directionLeft
                     inView={sInView}
                   />
@@ -278,7 +278,6 @@ function Skills({}: Props) {
                     key={index}
                     name={icon.name}
                     url={icon.url}
-                    skill={icon.level}
                     inView={sInView}
                   />
                 ))}
