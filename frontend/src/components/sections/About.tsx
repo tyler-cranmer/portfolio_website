@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Box, Container, Typography, Paper } from '@mui/material';
 import theme from '../../theme';
 import Image from 'next/image';
@@ -12,6 +12,7 @@ function About() {
   const controlP1 = useAnimation();
   const controlP2 = useAnimation();
   const controlP3 = useAnimation();
+  const controlP4 = useAnimation();
   const controlPic = useAnimation();
 
   const [ref, inView] = useInView();
@@ -22,6 +23,7 @@ function About() {
       controlP1.start('onscreenP1');
       controlP2.start('onscreenP2');
       controlP3.start('onscreenP3');
+      controlP4.start('onscreenP4');
       controlPic.start('onscreenPic');
     }
   }, [control, inView]);
@@ -77,35 +79,23 @@ function About() {
                       ABOUT
                     </Typography>
                   </motion.div>
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: {
-                        md: '2.5rem',
-                        xs: '3.125rem',
-                      },
-                    }}>
-                    Who I am
-                  </Typography>
+                  <motion.div
+                    ref={ref}
+                    variants={aboutVariant}
+                    initial='offscreen'
+                    animate={controlP1}>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        fontSize: {
+                          md: '2.5rem',
+                          xs: '3.125rem',
+                        },
+                      }}>
+                      Who I am
+                    </Typography>
+                  </motion.div>
                 </Box>
-                <motion.div
-                  variants={aboutVariant}
-                  initial='offscreen'
-                  animate={controlP1}>
-                  <Typography
-                    sx={{
-                      fontSize: {
-                        md: '1.125rem',
-                        sm: '.9rem',
-                      },
-                    }}
-                    gutterBottom>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat alias quisquam unde sed vitae, error cumque eveniet
-                    qui, atque deleniti repellendus voluptates maiores, delectus
-                    soluta! Quis dolor inventore quibusdam alias?
-                  </Typography>
-                </motion.div>
                 <motion.div
                   variants={aboutVariant}
                   initial='offscreen'
@@ -128,6 +118,24 @@ function About() {
                   variants={aboutVariant}
                   initial='offscreen'
                   animate={controlP3}>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        md: '1.125rem',
+                        sm: '.9rem',
+                      },
+                    }}
+                    gutterBottom>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat alias quisquam unde sed vitae, error cumque eveniet
+                    qui, atque deleniti repellendus voluptates maiores, delectus
+                    soluta! Quis dolor inventore quibusdam alias?
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  variants={aboutVariant}
+                  initial='offscreen'
+                  animate={controlP4}>
                   <Typography
                     sx={{
                       fontSize: {
@@ -160,16 +168,15 @@ function About() {
                       sm: '100%',
                     },
                   }}>
-
-                    <Image
-                      alt='index logo'
-                      src='/paralta.jpeg'
-                      layout='intrinsic'
-                      height={425}
-                      width={325}
-                      priority
-                      className='profilepic'
-                    />
+                  <Image
+                    alt='index logo'
+                    src='/paralta.jpeg'
+                    layout='intrinsic'
+                    height={425}
+                    width={325}
+                    priority
+                    className='profilepic'
+                  />
                 </Paper>
               </motion.div>
             </Box>

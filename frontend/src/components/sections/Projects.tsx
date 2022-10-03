@@ -24,15 +24,17 @@ function Projects({}: Props) {
   const control = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
+  const control4 = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
       control.start('onscreen');
       control2.start('onscreen2');
-      control3.start('onscreenCards');
+      control3.start('onscreen3');
+      control4.start('onscreenCards');
     }
-  }, [control, control2, inView]);
+  }, [control, control2, control3, inView]);
 
   const subtitle: string = "What I've Built";
   return (
@@ -45,12 +47,12 @@ function Projects({}: Props) {
       }}>
       <Box pt={{ md: 8 }} pb={{ md: 10 }}>
         <Container maxWidth='lg'>
-          <motion.div
-            ref={ref}
-            variants={workVariant}
-            initial='offscreen'
-            animate={control}>
-            <Box>
+          <Box>
+            <motion.div
+              ref={ref}
+              variants={workVariant}
+              initial='offscreen'
+              animate={control}>
               <Typography
                 sx={{
                   letterSpacing: '.1em',
@@ -63,6 +65,12 @@ function Projects({}: Props) {
                 gutterBottom>
                 PROJECTS
               </Typography>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              variants={workVariant}
+              initial='offscreen'
+              animate={control2}>
               <Typography
                 sx={{
                   fontWeight: 600,
@@ -74,12 +82,13 @@ function Projects({}: Props) {
                 gutterBottom>
                 {subtitle}
               </Typography>
-            </Box>
-          </motion.div>
+            </motion.div>
+          </Box>
+
           <motion.div
             variants={workVariant}
             initial='offscreen2'
-            animate={control2}>
+            animate={control3}>
             <Grid container>
               {/* Tabs */}
 
@@ -127,7 +136,7 @@ function Projects({}: Props) {
                             <Card
                               sx={{
                                 backgroundColor: theme.palette.grey[800],
-                                borderRadius: {xs:'20px'}
+                                borderRadius: { xs: '20px' },
                               }}>
                               <CardActionArea>
                                 <Box sx={{ overflow: 'hidden' }}>
@@ -152,8 +161,7 @@ function Projects({}: Props) {
                                   }}>
                                   <Typography
                                     sx={{ fontWeight: 600 }}
-                                    variant='h6'
-                                    >
+                                    variant='h6'>
                                     {project.title}
                                   </Typography>
                                   <Typography variant='body1' gutterBottom>

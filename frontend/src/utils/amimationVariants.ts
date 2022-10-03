@@ -17,7 +17,7 @@ export const aboutVariant: Variants = {
     y: 0,
     transition: {
       delay: 0.9,
-      duration: .5,
+      duration: 0.5,
     },
   },
   onscreenP1: {
@@ -26,7 +26,7 @@ export const aboutVariant: Variants = {
     y: 0,
     transition: {
       delay: 1,
-      duration: .5,
+      duration: 0.5,
     },
   },
   onscreenP2: {
@@ -35,7 +35,7 @@ export const aboutVariant: Variants = {
     y: 0,
     transition: {
       delay: 1.1,
-      duration: .5,
+      duration: 0.5,
     },
   },
   onscreenP3: {
@@ -44,7 +44,16 @@ export const aboutVariant: Variants = {
     y: 0,
     transition: {
       delay: 1.2,
-      duration: .5,
+      duration: 0.5,
+    },
+  },
+  onscreenP4: {
+    scale: 1,
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1.3,
+      duration: 0.5,
     },
   },
   onscreenPic: {
@@ -52,25 +61,41 @@ export const aboutVariant: Variants = {
     opacity: 1,
     transition: {
       delay: 0.9,
-      duration: .5,
+      duration: 0.5,
     },
   },
 };
 
-// Expertise Section
+// Skills Section
 export const titleVariant: Variants = {
   offscreen: {
     scale: 1,
     opacity: 0,
+    y: 80,
+  },
+
+  offscreenSubtitle: {
+    scale: 1,
+    opacity: 0,
     y: -80,
   },
+
   onscreen: {
     scale: 1,
     opacity: 1,
     y: 0,
     transition: {
-      delay: .8,
+      delay: 0.8,
       duration: 0.5,
+    },
+  },
+
+  onscreenTech: {
+    scale: 1,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: .5,
     },
   },
 };
@@ -107,24 +132,7 @@ export const cardVariant2: Variants = {
   },
 };
 
-// Accordian Section
-export const accordianVariant: Variants = {
-  offscreen: {
-    scale: 1,
-    opacity: 0,
-    x: -80,
-  },
-  onscreen: (i: number) => ({
-    scale: 1,
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.6,
-    },
-  }),
-};
-
-// Work Section
+// Projects Section
 export const workVariant: Variants = {
   offscreen: {
     scale: 1,
@@ -152,9 +160,18 @@ export const workVariant: Variants = {
   onscreen2: {
     scale: 1,
     opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.7,
+      duration: 0.5,
+    },
+  },
+  onscreen3: {
+    scale: 1,
+    opacity: 1,
     x: 0,
     transition: {
-      delay: 0.6,
+      delay: 0.7,
       duration: 0.5,
     },
   },
@@ -176,7 +193,22 @@ export const experienceVariant: Variants = {
     opacity: 0,
     y: 80,
   },
+
+  offscreenSubtitle: {
+    scale: 1,
+    opacity: 0,
+    y: -80,
+  },
   onscreen: {
+    scale: 1,
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.5,
+    },
+  },
+  onscreenSubtitle: {
     scale: 1,
     opacity: 1,
     y: 0,
@@ -187,18 +219,41 @@ export const experienceVariant: Variants = {
   },
 };
 
+
+// Accordian Section
+export const accordianVariant: Variants = {
+  offscreen: {
+    scale: 1,
+    opacity: 0,
+    x: -80,
+  },
+  onscreen: (i: number) => ({
+    scale: 1,
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.6,
+    },
+  }),
+};
+
 // Contact Section
 export const contactVariant: Variants = {
-  offscreen: {
+  offscreenTitle: {
     scale: 1,
     opacity: 0,
     y: -80,
   },
 
-  offscreen2: {
+  offscreenSubtitle: {
     scale: 1,
     opacity: 0,
     y: 80,
+  },
+
+  offscreenPersonal: {
+    scale: 0,
+    opacity: 0,
   },
 
   offscreenForm: {
@@ -206,30 +261,33 @@ export const contactVariant: Variants = {
     opacity: 0,
   },
 
-  onscreen: {
+  onscreenTitle: {
     scale: 1,
     opacity: 1,
     y: 0,
     transition: {
       delay: 0.2,
+      duration: 0.5,
     },
   },
 
-  onscreen2: {
+  onscreenSubtitle: {
     scale: 1,
     opacity: 1,
     y: 0,
     transition: {
       delay: 0.5,
+      duration: 0.5,
     },
   },
 
-  onscreen3: {
+  onscreenPersonal: {
     scale: 1,
     opacity: 1,
     y: 0,
     transition: {
       delay: 0.7,
+      duration: 0.5,
     },
   },
 
@@ -238,6 +296,7 @@ export const contactVariant: Variants = {
     opacity: 1,
     transition: {
       delay: 0.8,
+      duration: 0.5,
     },
   },
 };

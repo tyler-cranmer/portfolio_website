@@ -55,6 +55,7 @@ type Props = {};
 
 function Skills({}: Props) {
   const control = useAnimation();
+  const control2 = useAnimation();
   const [ref, inView] = useInView();
   const [sRef, sInView] = useInView();
 
@@ -63,6 +64,12 @@ function Skills({}: Props) {
       control.start('onscreen');
     }
   }, [control, inView]);
+
+    useEffect(() => {
+      if (sInView) {
+        control2.start('onscreenTech');
+      }
+    }, [control2, inView]);
 
   return (
     <Box
@@ -74,18 +81,18 @@ function Skills({}: Props) {
       }}>
       <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
-          <motion.div
-            variants={titleVariant}
-            initial='offscreen'
-            animate={control}>
-            <Box
-              mb={{ xs: 8, sm: 8, md: 20 }}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
+          <Box
+            mb={{ xs: 8, sm: 8, md: 20 }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <motion.div
+              variants={titleVariant}
+              initial='offscreen'
+              animate={control}>
               <Typography
                 sx={{
                   letterSpacing: '.1em',
@@ -98,6 +105,11 @@ function Skills({}: Props) {
                 gutterBottom>
                 SKILLS
               </Typography>
+            </motion.div>
+            <motion.div
+              variants={titleVariant}
+              initial='offscreenSubtitle'
+              animate={control}>
               <Typography
                 ref={ref}
                 sx={{
@@ -109,8 +121,9 @@ function Skills({}: Props) {
                 }}>
                 What I can do
               </Typography>
-            </Box>
-          </motion.div>
+            </motion.div>
+          </Box>
+
           <Grid
             container
             columns={{ xs: 4, sm: 4, md: 12 }}
@@ -233,6 +246,7 @@ function Skills({}: Props) {
               },
             }}>
             <Box
+              ref={sRef}
               mt={10}
               mb={{ xs: 5, md: 10 }}
               sx={{
@@ -240,13 +254,17 @@ function Skills({}: Props) {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Typography
-                letterSpacing={'.1em'}
-                ref={sRef}
-                variant='h5'
-                color={theme.palette.text.secondary}>
-                Technologies
-              </Typography>
+              <motion.div
+                variants={titleVariant}
+                initial='offscreenSubtitle'
+                animate={control2}>
+                <Typography
+                  letterSpacing={'.1em'}
+                  variant='h5'
+                  color={theme.palette.text.secondary}>
+                  Technologies
+                </Typography>
+              </motion.div>
             </Box>
             <Box
               sx={{

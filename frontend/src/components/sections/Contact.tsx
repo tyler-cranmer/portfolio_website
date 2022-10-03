@@ -19,9 +19,9 @@ function Contact({}: Props) {
 
   useEffect(() => {
     if (inView) {
-      control.start('onscreen');
-      control2.start('onscreen2');
-      control3.start('onscreen3');
+      control.start('onscreenTitle');
+      control2.start('onscreenSubtitle');
+      control3.start('onscreenPersonal');
       control4.start('onscreenForm');
     }
   }, [control, control2, control3, control4, inView]);
@@ -37,7 +37,7 @@ function Contact({}: Props) {
           <motion.div
             ref={ref}
             variants={contactVariant}
-            initial='offscreen'
+            initial='offscreenTitle'
             animate={control}>
             <Typography
               color={theme.palette.text.secondary}
@@ -51,6 +51,11 @@ function Contact({}: Props) {
               gutterBottom>
               CONTACT
             </Typography>
+          </motion.div>
+          <motion.div
+            variants={contactVariant}
+            initial='offscreenSubtitle'
+            animate={control2}>
             <Typography
               sx={{
                 fontSize: {
@@ -80,10 +85,20 @@ function Contact({}: Props) {
               },
             }}>
             <Box gridArea='contact'>
-              <PersonalCard />
+              <motion.div
+                variants={contactVariant}
+                initial='offscreenPersonal'
+                animate={control3}>
+                <PersonalCard />
+              </motion.div>
             </Box>
             <Box gridArea='form'>
-              <CustomForm />
+              <motion.div
+                variants={contactVariant}
+                initial='offscreenForm'
+                animate={control4}>
+                <CustomForm />
+              </motion.div>
             </Box>
           </Box>
         </Container>

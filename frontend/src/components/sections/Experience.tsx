@@ -11,11 +11,13 @@ type Props = {};
 
 function Experience({}: Props) {
   const control = useAnimation();
+
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
       control.start('onscreen');
+
     }
   }, [control, inView]);
 
@@ -30,19 +32,19 @@ function Experience({}: Props) {
       }}>
       <Box pt={{ xs: 8 }} pb={{ xs: 25, md: 45 }}>
         <Container maxWidth='md'>
-          <motion.div
-            ref={ref}
-            variants={experienceVariant}
-            initial='offscreen'
-            animate={control}>
-            <Box
-              mb={2.5}
-              pb={2.5}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}>
+          <Box
+            mb={2.5}
+            pb={2.5}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+            <motion.div
+              ref={ref}
+              variants={experienceVariant}
+              initial='offscreen'
+              animate={control}>
               <Typography
                 sx={{
                   letterSpacing: '.1em',
@@ -55,6 +57,12 @@ function Experience({}: Props) {
                 gutterBottom>
                 EXPERIENCE
               </Typography>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              variants={experienceVariant}
+              initial='offscreenSubtitle'
+              animate={control}>
               <Typography
                 sx={{
                   fontWeight: 600,
@@ -65,8 +73,9 @@ function Experience({}: Props) {
                 }}>
                 {subtitle}
               </Typography>
-            </Box>
-          </motion.div>
+            </motion.div>
+          </Box>
+
           <CustomAccordian inView={inView} />
         </Container>
       </Box>
