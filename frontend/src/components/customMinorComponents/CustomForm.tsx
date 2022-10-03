@@ -34,7 +34,7 @@ function CustomForm({}: Props) {
       <TextField
         fullWidth
         multiline
-        rows={20}
+        rows={19}
         id='filled-basic'
         label='Message'
         variant='filled'

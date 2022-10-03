@@ -43,17 +43,17 @@ function PersonalCard({}: Props) {
         {/* Name */}
         <Typography
           variant='h5'
-          sx={{ fontWeight: 'bold', marginBottom: '.25rem' }}>
+          sx={{ fontWeight: 600, marginBottom: '.25rem' }}>
           Tyler Cranmer
         </Typography>
-        <Typography  variant='subtitle1' gutterBottom>
+        <Typography variant='subtitle1' gutterBottom>
           Software Engineer
         </Typography>
-        <Typography>Have a question or want to work together?</Typography>
+        <Typography variant='body2'>
+          Have a question or want to work together?
+        </Typography>
       </Box>
-      <Typography >
-        Connect:
-      </Typography>
+      <Typography>Connect:</Typography>
       <Box display='flex' justifyContent='space-around' margin='auto'>
         <IconButton>
           <LinkedInIcon
