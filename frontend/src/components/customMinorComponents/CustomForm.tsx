@@ -20,15 +20,23 @@ function CustomForm({}: Props) {
           id='filled-basic'
           variant='filled'
           label='Name'
+          color='secondary'
           sx={{ marginRight: '.5em' }}
         />
-        <TextField fullWidth id='filled-basic' label='Email' variant='filled' />
+        <TextField
+          fullWidth
+          id='filled-basic'
+          label='Email'
+          variant='filled'
+          color='secondary'
+        />
       </Box>
       <TextField
         fullWidth
         id='filled-basic'
         label='Subject'
         variant='filled'
+        color='secondary'
         sx={{ marginBottom: '.5em' }}
       />
       <TextField
@@ -38,7 +46,8 @@ function CustomForm({}: Props) {
         id='filled-basic'
         label='Message'
         variant='filled'
-        sx={{ marginBottom: '.5em', rows:{md:15} }}
+        color='secondary'
+        sx={{ marginBottom: '.5em', rows: { md: 15 } }}
       />
       <Button fullWidth variant='contained' size='large'>
         Submit

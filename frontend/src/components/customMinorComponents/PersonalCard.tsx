@@ -11,7 +11,6 @@ function PersonalCard({}: Props) {
   return (
     <Paper
       sx={{
-        gridArea: 'contact',
         backgroundColor: theme.palette.grey[900],
         display: 'flex',
         flexDirection: 'column',

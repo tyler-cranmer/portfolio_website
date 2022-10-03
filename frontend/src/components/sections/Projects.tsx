@@ -146,11 +146,14 @@ function Projects({}: Props) {
                                     />
                                   </motion.div>
                                 </Box>
-                                <CardContent>
+                                <CardContent
+                                  sx={{
+                                    backgroundColor: theme.palette.grey[800],
+                                  }}>
                                   <Typography
-                                    sx={{ fontWeight: 'bold' }}
+                                    sx={{ fontWeight: 600 }}
                                     variant='h6'
-                                    gutterBottom>
+                                    >
                                     {project.title}
                                   </Typography>
                                   <Typography variant='body1' gutterBottom>
@@ -158,6 +161,7 @@ function Projects({}: Props) {
                                   </Typography>
                                   {project.tech.map((item, index) => (
                                     <Typography
+                                      color={theme.palette.primary.main}
                                       key={index}
                                       variant='caption'
                                       pr={1.5}

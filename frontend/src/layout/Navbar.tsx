@@ -6,6 +6,11 @@ import { Container } from '@mui/system';
 import { Link } from 'react-scroll/modules';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+
+
+
 
 function Navbar() {
   const MenuItems = [
@@ -21,6 +26,7 @@ function Navbar() {
 
   return (
     <>
+
       <AppBar sx={{ background: theme.palette.grey[900] }} position='sticky'>
         <Toolbar sx={{ height: '6em' }}>
           <Container maxWidth='lg'>

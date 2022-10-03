@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { IconContext } from 'react-icons/lib';
 import {
   Box,
@@ -10,7 +10,6 @@ import {
   Grid,
 } from '@mui/material';
 import theme from '../../theme';
-import Skill from '../customMinorComponents/Skill';
 import Skill2 from '../customMinorComponents/Skill2';
 import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import { useTheme } from '@mui/material/styles';
+import theme from '../../theme';
 
 type props = {
 
@@ -8,24 +8,27 @@ type props = {
 
 }
 
-const CustomButton = ({ text}: props) => {
-  const theme = useTheme();
-
+const CustomButton = ({ text }: props) => {
+  
   return (
     <Button
       color='primary'
       variant='text'
+      disableRipple={true}
+  
       sx={{
         color: theme.palette.text.primary,
         mx: 0.25,
         // marginLeft: '15px',
         '&:active': {
-          color: theme.palette.primary.main,
+          color: theme.palette.text.secondary,
         },
         '&:hover': {
-          color: theme.palette.grey[500],
+          color: theme.palette.text.secondary,
+          background: 'none'
         },
-        fontSize:'1em'
+        fontSize: '1em',
+        letterSpacing: '.1em',
       }}>
       {text}
     </Button>

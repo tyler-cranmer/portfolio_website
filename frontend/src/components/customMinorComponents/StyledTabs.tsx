@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
+
 interface StyledTabsProps {
   children?: React.ReactNode;
   value: string;
@@ -41,15 +42,11 @@ export const StyledTab = styled((props: StyledTabProps) => (
   textTransform: 'none',
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(15),
-  // marginRight: theme.spacing(1),
-  color: 'rgba(255, 255, 255, 0.7)',
+  color: '#fff',
   '&.Mui-selected': {
-    color: '#fff',
+    color: theme.palette.text.secondary,
   },
   '&.Mui-focusVisible': {
     backgroundColor: 'rgba(100, 95, 228, 0.32)',
-  },
-  '&.Mui-disabled': {
-    color: '#fff',
   },
 }));
