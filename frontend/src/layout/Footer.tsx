@@ -27,7 +27,7 @@ function Footer() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          minHeight: '20vh',
+          minHeight: '15vh',
           backgroundColor: theme.palette.grey[900],
           overFlow: 'hidden',
           position: 'relative',
@@ -40,47 +40,11 @@ function Footer() {
             mt: 'auto',
             display: 'flex',
           }}>
-          <Container maxWidth='sm'>
+          <Container >
             <Copyright />
             <Typography variant='body2'>built by Tyler Cranmer</Typography>
           </Container>
-          <Container>
-            <Box display={'flex'}  >
-              <IconButton>
-                <GitHubIcon
-                  fontSize='large'
-                  sx={{
-                    color: theme.palette.text.primary,
-                    '&:hover': {
-                      color: theme.palette.grey[500],
-                    },
-                  }}
-                />
-              </IconButton>
-              <IconButton>
-                <LinkedInIcon
-                  fontSize='large'
-                  sx={{
-                    color: theme.palette.text.primary,
-                    '&:hover': {
-                      color: theme.palette.grey[500],
-                    },
-                  }}
-                />
-              </IconButton>
-              <IconButton>
-                <TwitterIcon
-                  fontSize='large'
-                  sx={{
-                    color: theme.palette.text.primary,
-                    '&:hover': {
-                      color: theme.palette.grey[500],
-                    },
-                  }}
-                />
-              </IconButton>
-            </Box>
-          </Container>
+         
         </Box>
       </Box>
     </>

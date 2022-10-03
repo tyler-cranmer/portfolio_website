@@ -1,15 +1,11 @@
-import { Box, Container, Typography, Paper, IconButton } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import CustomForm from '../customMinorComponents/CustomForm';
 import theme from '../../theme';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { contactVariant } from '../../utils/amimationVariants';
-import Image from 'next/image';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PersonalCard from '../customMinorComponents/PersonalCard';
 
 type Props = {};
 
@@ -34,7 +30,6 @@ function Contact({}: Props) {
       id='contact'
       sx={{
         backgroundColor: theme.palette.grey[800],
-        overFlow: 'hidden',
         position: 'relative',
       }}>
       <Box pt={8} pb={10}>
@@ -45,20 +40,24 @@ function Contact({}: Props) {
             initial='offscreen'
             animate={control}>
             <Typography
-              letterSpacing={'.1em'}
-              variant='h5'
               color={theme.palette.text.secondary}
+              sx={{
+                letterSpacing: '.1em',
+                lineHeight: 2,
+                fontSize: {
+                  xs: '1.55rem',
+                },
+              }}
               gutterBottom>
-              Contact
+              CONTACT
             </Typography>
             <Typography
               sx={{
-                fontWeight: 'bold',
                 fontSize: {
                   md: '2.5rem',
-                  sm: '3.125rem',
                   xs: '3.125rem',
                 },
+                fontWeight: 600,
               }}
               gutterBottom>
               Get In Touch
@@ -67,80 +66,25 @@ function Contact({}: Props) {
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
-              gap: 8,
+              gridTemplateColumns: {
+                sxs: '1fr',
+                sm: 'repeat(3, minmax(0, 1fr))',
+                md: 'repeat(3, minmax(0, 1fr))',
+              },
+              gap: { xs: 8, sm: 2, md: 8 },
               gridTemplateRows: 'auto',
               gridTemplateAreas: {
-                // xs: `"header" "pic" "stack"`,
-                // sm: `"header" "pic" "stack"`,
-                md: ` "contact contact form form form " `,
+                xs: `"contact" "form"`,
+                sm: ` "contact form form" `,
+                md: ` "contact form form" `,
               },
             }}>
-            <Paper
-              sx={{
-                gridArea: 'contact',
-                backgroundColor: theme.palette.grey[900],
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '1.5em',
-                borderRadius: '15px',
-                minHeight: '35em',
-              }}>
-              <Box
-                position={'relative'}
-                display='flex'
-                width='100%'
-                height='100%'
-                minHeight='15em'
-                sx={{
-                  borderRadius: '15px',
-                  marginBottom: '1em',
-                }}>
-                <div>
-                  <Image
-                    alt='index logo'
-                    src='/paralta.jpeg'
-                    layout='fill'
-                    objectFit='cover'
-                    priority
-                  />
-                </div>
-              </Box>
-              <Box pb={15}>
-                {/* Name */}
-                <Typography gutterBottom variant='h5' sx={{ fontWeight: 'bold' }}>
-                  Tyler Cranmer
-                </Typography>
-                <Typography>Software Developer</Typography>
-                <Typography>
-                  Have a question or want to work together?
-                </Typography>
-              </Box>
-              <Typography>Connect with me</Typography>
-              <Box display='flex' justifyContent='space-around'>
-                <IconButton>
-                  <LinkedInIcon fontSize='large' />
-                </IconButton>
-                <IconButton>
-                  <GitHubIcon fontSize='large' />
-                </IconButton>
-
-                <IconButton>
-                  <EmailOutlinedIcon fontSize='large' />
-                </IconButton>
-                <IconButton>
-                  <ArticleOutlinedIcon fontSize='large' />
-                </IconButton>
-              </Box>
-            </Paper>
-            <Paper
-              sx={{
-                gridArea: 'form',
-                padding: '1em',
-                borderRadius: '15px',
-              }}>
+            <Box gridArea='contact'>
+              <PersonalCard />
+            </Box>
+            <Box gridArea='form'>
               <CustomForm />
-            </Paper>
+            </Box>
           </Box>
         </Container>
       </Box>

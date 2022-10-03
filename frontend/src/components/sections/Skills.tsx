@@ -88,11 +88,16 @@ function Skills({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
-                letterSpacing={'.1em'}
+                sx={{
+                  letterSpacing: '.1em',
+                  lineHeight: 2,
+                  fontSize: {
+                    xs: '1.55rem',
+                  },
+                }}
                 color={theme.palette.text.secondary}
-                variant='h5'
                 gutterBottom>
-                Skills
+               SKILLS
               </Typography>
               <Typography
                 ref={ref}
@@ -100,7 +105,6 @@ function Skills({}: Props) {
                   fontWeight: 600,
                   fontSize: {
                     md: '2.5rem',
-                    sm: '3.125rem',
                     xs: '3.125rem',
                   },
                 }}>

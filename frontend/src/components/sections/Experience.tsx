@@ -44,18 +44,22 @@ function Experience({}: Props) {
                 alignItems: 'center',
               }}>
               <Typography
-                letterSpacing={'.1em'}
-                variant='h5'
+                sx={{
+                  letterSpacing: '.1em',
+                  lineHeight: 2,
+                  fontSize: {
+                    xs: '1.55rem',
+                  },
+                }}
                 color={theme.palette.text.secondary}
                 gutterBottom>
-                Experience
+                EXPERIENCE
               </Typography>
               <Typography
                 sx={{
-                  fontWeight: 'Bold',
+                  fontWeight: 600,
                   fontSize: {
                     md: '2.5rem',
-                    sm: '3.125rem',
                     xs: '3.125rem',
                   },
                 }}>

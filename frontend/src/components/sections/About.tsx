@@ -68,10 +68,9 @@ function About() {
                     color={theme.palette.text.secondary}
                     sx={{
                       letterSpacing: '.1em',
+                      lineHeight: 2,
                       fontSize: {
-                        md: '1.68rem',
-                        sm: '1.68rem',
-                        xs: '1.68rem',
+                        xs: '1.55rem',
                       },
                     }}>
                     ABOUT
@@ -79,11 +78,11 @@ function About() {
                 </motion.div>
                 <Typography
                   sx={{
+                    fontWeight: 600,
                     fontSize: {
                       md: '2.5rem',
-                      xs: '2.5rem',
+                      xs: '3.125rem',
                     },
-                    fontWeight: 600,
                   }}>
                   Who I am
                 </Typography>
@@ -162,25 +161,8 @@ function About() {
                   <Box
                     overflow={'hidden'}
                     borderRadius={'15px'}
-                    // position='relative'
-                    // height='30em'
-                    // width='100%'
-                    // margin='auto'
-                    // display='flex'
-                    // justifyContent={'center'}
-                    // alignItems='center'
-                    // sx={{
-                    //   height: {
-                    //     md: '30rem',
-                    //     sm: '30rem',
-                    //   },
-                    //   width: {
-                    //     md: '100%',
-                    //     sm: '100%'
-                    //   }
-
-                    // }}
-                  >
+                    height='100%'
+                    width='100%'>
                     <Image
                       alt='index logo'
                       src='/paralta.jpeg'

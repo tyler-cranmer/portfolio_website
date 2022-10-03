@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import { Box, TextField, Button, Paper } from '@mui/material';
 import theme from '../../theme';
 
 
 type Props = {};
 function CustomForm({}: Props) {
   return (
-    <Box mt={5} sx={{ display: 'block', maxWidth: '35em' }}>
+    <Paper
+      sx={{
+        borderRadius: '15px',
+        backgroundColor: theme.palette.grey[900],
+        padding: '1.5em',
+        height: '100%',
+        width: '100%',
+      }}>
       <Box display={'flex'} sx={{ marginBottom: '.5em' }}>
         <TextField
           fullWidth
@@ -27,16 +34,16 @@ function CustomForm({}: Props) {
       <TextField
         fullWidth
         multiline
-        rows={4}
+        rows={20}
         id='filled-basic'
         label='Message'
         variant='filled'
-        sx={{ marginBottom: '.5em' }}
+        sx={{ marginBottom: '.5em', rows:{md:15} }}
       />
       <Button fullWidth variant='contained' size='large'>
         Submit
       </Button>
-    </Box>
+    </Paper>
   );
 }
 
