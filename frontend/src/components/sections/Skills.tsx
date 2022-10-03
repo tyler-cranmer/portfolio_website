@@ -69,7 +69,7 @@ function Skills({}: Props) {
       if (sInView) {
         control2.start('onscreenTech');
       }
-    }, [control2, inView]);
+    }, [control2, sInView]);
 
   return (
     <Box
@@ -116,7 +116,8 @@ function Skills({}: Props) {
                   fontWeight: 600,
                   fontSize: {
                     md: '2.5rem',
-                    xs: '3.125rem',
+                    sm: '3.125rem',
+                    xs: '3rem',
                   },
                 }}>
                 What I can do
@@ -139,7 +140,7 @@ function Skills({}: Props) {
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '315px', sm: '380px' },
+                    maxWidth: { xs: '355px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -174,7 +175,7 @@ function Skills({}: Props) {
                   elevation={24}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '315px', sm: '380px' },
+                    maxWidth: { xs: '355px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',
@@ -211,7 +212,7 @@ function Skills({}: Props) {
                   elevation={6}
                   sx={{
                     padding: '70px 40px 0px',
-                    maxWidth: { xs: '315px', sm: '380px' },
+                    maxWidth: { xs: '355px', sm: '380px' },
                     minHeight: '440px',
                     backgroundColor: 'rgb(33, 43, 54)',
                     textAlign: 'center',

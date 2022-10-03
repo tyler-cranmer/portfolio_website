@@ -60,7 +60,8 @@ function Contact({}: Props) {
               sx={{
                 fontSize: {
                   md: '2.5rem',
-                  xs: '3.125rem',
+                  sm: '3.125rem',
+                  xs: '3rem',
                 },
                 fontWeight: 600,
               }}

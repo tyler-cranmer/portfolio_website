@@ -30,7 +30,7 @@ function Experience({}: Props) {
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
       }}>
-      <Box pt={{ xs: 8 }} pb={{ xs: 25, md: 45 }}>
+      <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 15, sm: 25, md: 45 }}>
         <Container maxWidth='md'>
           <Box
             mb={2.5}
@@ -68,7 +68,8 @@ function Experience({}: Props) {
                   fontWeight: 600,
                   fontSize: {
                     md: '2.5rem',
-                    xs: '3.125rem',
+                    sm: '3.125rem',
+                    xs: '3rem',
                   },
                 }}>
                 {subtitle}

@@ -36,7 +36,7 @@ function About() {
         position: 'relative',
         minHeight: '100vh',
       }}>
-      <Box pt={15}>
+      <Box pt={15} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
           <Box
             sx={{
@@ -89,7 +89,8 @@ function About() {
                         fontWeight: 600,
                         fontSize: {
                           md: '2.5rem',
-                          xs: '3.125rem',
+                          sm: '3.125rem',
+                          xs: '3rem',
                         },
                       }}>
                       Who I am

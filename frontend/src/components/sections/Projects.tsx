@@ -45,7 +45,7 @@ function Projects({}: Props) {
         overFlow: 'hidden',
         position: 'relative',
       }}>
-      <Box pt={{ md: 8 }} pb={{ md: 10 }}>
+      <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
           <Box>
             <motion.div
@@ -76,7 +76,8 @@ function Projects({}: Props) {
                   fontWeight: 600,
                   fontSize: {
                     md: '2.5rem',
-                    xs: '3.125rem',
+                    sm: '3.125rem',
+                    xs: '3rem',
                   },
                 }}
                 gutterBottom>
