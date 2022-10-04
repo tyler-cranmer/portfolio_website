@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Experience
+from .models import Experience, Bullet
 from .serializers import ExperienceSerializer
 # Create your views here.
 
