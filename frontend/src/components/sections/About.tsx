@@ -34,9 +34,8 @@ function About() {
       sx={{
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
-        minHeight: '100vh',
       }}>
-      <Box pt={15} pb={{ xs: 8, sm: 10, md: 15 }}>
+      <Box pt={10} pb={{ xs: 8, sm: 10, md: 15}}>
         <Container maxWidth='lg'>
           <Box
             sx={{

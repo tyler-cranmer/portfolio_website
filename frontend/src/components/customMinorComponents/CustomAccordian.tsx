@@ -46,11 +46,12 @@ function CustomAccordian({ inView }: Props) {
     }
   }, [control, inView]);
 
+
   return (
     <div>
       {data
-        .slice(0)
-        .reverse()
+        // .slice(0)
+        // .reverse()
         .map((item, index) => (
           <motion.div
             className='space'

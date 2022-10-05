@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { IconContext } from 'react-icons/lib';
 import { TechData } from '../../../types';
 import {
@@ -20,7 +20,6 @@ import {
   cardVariant,
   cardVariant2,
 } from '../../utils/amimationVariants';
-
 import { useAxios } from '../../hooks/useAxios';
 
 function CogsIcon(props: SvgIconProps) {
@@ -119,7 +118,6 @@ function Skills({}: Props) {
               initial='offscreenSubtitle'
               animate={control}>
               <Typography
-                ref={ref}
                 sx={{
                   fontWeight: 600,
                   fontSize: {
@@ -134,6 +132,7 @@ function Skills({}: Props) {
           </Box>
 
           <Grid
+            ref={ref}
             container
             columns={{ xs: 4, sm: 4, md: 12 }}
             columnSpacing={{ sm: 10, md: 10 }}
@@ -287,17 +286,15 @@ function Skills({}: Props) {
                 columnGap: '.5rem',
                 rowGap: '1.25rem',
               }}>
-              {data
-                ?.slice(data.length / 2, data.length)
-                .map((item) => (
-                  <Skill
-                    key={item.id}
-                    name={item.name}
-                    url={item.icon}
-                    directionLeft
-                    inView={sInView}
-                  />
-                ))}
+              {data?.slice(0, data.length / 2).map((item) => (
+                <Skill
+                  key={item.id}
+                  name={item.name}
+                  url={item.icon}
+                  directionLeft
+                  inView={sInView}
+                />
+              ))}
 
               {data?.slice(data.length / 2, data.length).map((item) => (
                 <Skill
