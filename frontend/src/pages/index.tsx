@@ -8,7 +8,7 @@ import About from '../components/sections/About';
 import Projects from '../components/sections/Projects';
 import Contact from '../components/sections/Contact';
 import Skills from '../components/sections/Skills';
-import SideBar from '../layout/sideBar';
+import SideBar from '../layout/SideBar';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <Skills />
       <Projects />
       <Experience />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </>
   );
