@@ -8,8 +8,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PersonIcon from '@mui/icons-material/Person';
-import FolderIcon from '@mui/icons-material/Folder';
-import WorkIcon from '@mui/icons-material/Work';
+import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import Divider from '@mui/material/Divider';
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { Link } from 'react-scroll/modules';
@@ -100,7 +100,7 @@ const SideBar = ({ open, onClose }: Props) => {
               duration={1000}>
               <ListItemButton>
                 <ListItemIcon>
-                  <FolderIcon color='primary' />
+                  <FolderOutlinedIcon color='primary' />
                 </ListItemIcon>
                 <ListItemText primary='Projects' color='primary' />
               </ListItemButton>
@@ -115,7 +115,7 @@ const SideBar = ({ open, onClose }: Props) => {
               duration={1000}>
               <ListItemButton>
                 <ListItemIcon>
-                  <WorkIcon color='primary' />
+                  <WorkOutlineIcon color='primary' />
                 </ListItemIcon>
                 <ListItemText primary='Experience' color='primary' />
               </ListItemButton>
