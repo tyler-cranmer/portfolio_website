@@ -1,40 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-import DevicesIcon from '@mui/icons-material/Devices';
-import EmailIcon from '@mui/icons-material/EmailOutlined';
-import HomeIcon from '@mui/icons-material/HomeOutlined';
-import InfoIcon from '@mui/icons-material/InfoOutlined';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ListIcon from '@mui/icons-material/FormatListBulleted';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import SchoolIcon from '@mui/icons-material/School';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
-import CustomButton2 from '../components/customMinorComponents/CustomButton2';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import TerminalRoundedIcon from '@mui/icons-material/TerminalRounded';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PersonIcon from '@mui/icons-material/Person';
+import FolderIcon from '@mui/icons-material/Folder';
+import WorkIcon from '@mui/icons-material/Work';
+import Divider from '@mui/material/Divider';
+import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Link } from 'react-scroll/modules';
 
-// Font Awesome Icons
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// library.add(faGraduationCap);
 
-// import CustomButton from '../components/CustomButton';
+
 type Props = {
   open: boolean;
   onClose: () => void;
 };
 
-const SideBar = ( {open, onClose } :Props) => {
+const SideBar = ({ open, onClose }: Props) => {
   const theme = useTheme();
+
+  const MenuItems = [
+    { Name: 'About', Link: 'about' },
+    { Name: 'Skills', Link: 'skills' },
+    { Name: 'Projects', Link: 'projects' },
+    { Name: 'Experience', Link: 'experience' },
+    { Name: 'Contact', Link: 'contact' },
+  ];
+  
 
   return (
     <React.Fragment>
@@ -47,93 +44,98 @@ const SideBar = ( {open, onClose } :Props) => {
           '& .MuiPaper-root': {
             width: '100%',
             maxWidth: 280,
+            backgroundColor: theme.palette.grey[900],
           },
         }}>
         <Box sx={{ height: '100%', padding: 1 }}>
-          <Box width={1} paddingX={2} paddingY={1}>
-            <Link href='/' style={{ textDecoration: 'none' }}>
-              <IconButton size='large' disabled>
-                <Avatar
-                  variant='rounded'
-                  sx={{
-                    backgroundColor: theme.palette.primary.main,
-                    height: 52,
-                    width: 52,
-                    marginRight: '15px',
-                  }}>
-                  <SchoolIcon
-                    style={{
-
-                      height: 30,
-                      width: 30,
-                    }}
-                  />
-                </Avatar>
-                <Typography
-                  variant='h3'
-                  component='div'
-                  color={theme.palette.text.primary}
-                //   fontFamily='"Love Ya Like A Sister", cursive'
-                //   fontWeight='bold'
-                //   textDecoration='none'
-                  flexGrow={1}>
-                  Bob's Programming Academy
-                </Typography>
-              </IconButton>
+          <Box
+            width={1}
+            paddingX={1}
+            paddingY={1}
+            display={'flex'}
+            justifyContent={'flex-end'}>
+            <IconButton onClick={() => onClose()}>
+              <ChevronLeftIcon color='primary' fontSize='large' />
+            </IconButton>
+          </Box>
+          <Divider />
+          <List>
+            {/* ABOUT */}
+            <Link
+              activeClass='active'
+              to='about'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <PersonIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='About' color='primary' />
+              </ListItemButton>
             </Link>
-          </Box>
-          <Box paddingX={2} paddingY={2}>
-            <CustomButton2 href='#home' icon={<HomeIcon />} text='Home' />
-            <Box paddingY={1}>
-              <CustomButton2 href='#about' icon={<InfoIcon />} text='About' />
-            </Box>
-            <Box paddingY={1}>
-              <CustomButton2
-                href='#projects'
-                icon={<ListIcon />}
-                text='Projects'
-              />
-            </Box>
-            <Box paddingY={1}>
-              <CustomButton2
-                href='#technologies'
-                icon={<DevicesIcon />}
-                text='Technologies'
-              />
-            </Box>
-            <Box paddingY={1}>
-              <CustomButton2
-                href='#contact'
-                icon={<EmailIcon />}
-                text='CONTACT'
-              />
-            </Box>
-            <Box>
-              <Stack direction='row' spacing={1}>
-                <IconButton
-                  aria-label='YouTube'
-                  color='primary'
-                  href='#'
-                  target='_blank'>
-                  <YouTubeIcon fontSize='large' />
-                </IconButton>
-                <IconButton
-                  aria-label='LinkedIn'
-                  color='primary'
-                  href='#'
-                  target='_blank'>
-                  <LinkedInIcon fontSize='large' />
-                </IconButton>
-                <IconButton
-                  aria-label='Instagram'
-                  color='primary'
-                  href='#'
-                  target='_blank'>
-                  <InstagramIcon fontSize='large' />
-                </IconButton>
-              </Stack>
-            </Box>
-          </Box>
+            {/* SKILL */}
+            <Link
+              activeClass='active'
+              to='skills'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <TerminalRoundedIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='Skill' color='primary' />
+              </ListItemButton>
+            </Link>
+            {/* PROJECTS */}
+            <Link
+              activeClass='active'
+              to='projects'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <FolderIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='Projects' color='primary' />
+              </ListItemButton>
+            </Link>
+            {/* EXPERIENCE */}
+            <Link
+              activeClass='active'
+              to='experience'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <WorkIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='Experience' color='primary' />
+              </ListItemButton>
+            </Link>
+            {/* CONTACT */}
+            <Link
+              activeClass='active'
+              to='contact'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <MailOutlineIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='Contact' color='primary' />
+              </ListItemButton>
+            </Link>
+          </List>
         </Box>
       </Drawer>
     </React.Fragment>

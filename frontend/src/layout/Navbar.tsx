@@ -6,7 +6,6 @@ import { Container } from '@mui/system';
 import { Link } from 'react-scroll/modules';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 
 type Props = {
@@ -35,12 +34,11 @@ function Navbar({onSidebarOpen}: Props) {
             <Box sx={{ flexGrow: 1 }} />
             <Box
               display={{
-                lg: 'flex',
                 sm: 'flex',
                 xs: 'none',
               }}
               justifyContent={{
-                lg: 'flex-end'
+                sm: 'flex-end'
               }}
               alignItems='center'>
               {MenuItems.map((item, index) => (
