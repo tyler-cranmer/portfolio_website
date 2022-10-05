@@ -9,10 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 
+type Props = {
+  onSidebarOpen: () => void;
+};
 
 
-
-function Navbar() {
+function Navbar({onSidebarOpen}: Props) {
   const MenuItems = [
     { Name: 'About', Link: 'about' },
     { Name: 'Skills', Link: 'skills' },
@@ -58,7 +60,7 @@ function Navbar() {
             <Box
               display={{ xs: 'flex', sm: 'none' }}
               justifyContent={{ xs: 'flex-end' }}>
-              <IconButton>
+              <IconButton onClick={() => onSidebarOpen()}>
                 <MenuIcon
                   fontSize='large'
                   sx={{ color: theme.palette.text.primary }}
