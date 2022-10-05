@@ -63,16 +63,19 @@ INSTALLED_APPS = [
 
 # NEED TO WHITE LIST DOMAINS IN PRODUCTION!!!! PLEASE CHANGE!!!!!!
 # CORS_ORIGIN_WHITELIST = True
-CORS_ORIGIN_WHITELIST = [
+CORS_ALLOWED_ORIGINS = [
+    # 'http://localhost:3000',
+    # 'http://localhost:8000'
     env('LOCAL_HOST_URL'),
     env('LOCAL_HOST_URL2'),
     # env('FRONTEND_URL'),
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons/lib';
+import { TechData } from '../../../types';
 import {
   Box,
   Container,
@@ -14,12 +15,13 @@ import Skill from '../customMinorComponents/Skill';
 import { FaCogs, FaCubes, FaCode } from 'react-icons/fa';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Data from '../../utils/tempData';
 import {
   titleVariant,
   cardVariant,
   cardVariant2,
 } from '../../utils/amimationVariants';
+
+import { useAxios } from '../../hooks/useAxios';
 
 function CogsIcon(props: SvgIconProps) {
   return (
@@ -54,6 +56,11 @@ function BlockIcon(props: SvgIconProps) {
 type Props = {};
 
 function Skills({}: Props) {
+  const [loading, data, error, request] = useAxios<TechData>({
+    method: 'GET',
+    url: 'http://127.0.0.1:8000/technologies/',
+  });
+
   const control = useAnimation();
   const control2 = useAnimation();
   const [ref, inView] = useInView();
@@ -70,6 +77,7 @@ function Skills({}: Props) {
       control2.start('onscreenTech');
     }
   }, [control2, sInView]);
+
 
   return (
     <Box
@@ -279,27 +287,26 @@ function Skills({}: Props) {
                 columnGap: '.5rem',
                 rowGap: '1.25rem',
               }}>
-              {Data.icons
-                ?.slice(0, Data.icons.length / 2)
-                .map((icon, index) => (
+              {data
+                ?.slice(data.length / 2, data.length)
+                .map((item) => (
                   <Skill
-                    key={index}
-                    name={icon.name}
-                    url={icon.url}
+                    key={item.id}
+                    name={item.name}
+                    url={item.icon}
                     directionLeft
                     inView={sInView}
                   />
                 ))}
-              {Data.icons
-                ?.slice(Data.icons.length / 2, Data.icons.length)
-                .map((icon, index) => (
-                  <Skill
-                    key={index}
-                    name={icon.name}
-                    url={icon.url}
-                    inView={sInView}
-                  />
-                ))}
+
+              {data?.slice(data.length / 2, data.length).map((item) => (
+                <Skill
+                  key={item.id}
+                  name={item.name}
+                  url={item.icon}
+                  inView={sInView}
+                />
+              ))}
             </Box>
           </Container>
         </Container>
