@@ -44,7 +44,7 @@ function Hero() {
         <Container maxWidth='lg'>
           <Box display='flex' justifyContent='center' alignItems='center'>
             <Stack
-              mt={40}
+              mt={{ xs: 30, sm: 40 }}
               direction='column'
               justifyContent='center'
               alignItems='center'

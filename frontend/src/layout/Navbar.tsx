@@ -6,13 +6,14 @@ import { Container } from '@mui/system';
 import { Link } from 'react-scroll/modules';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 
+type Props = {
+  onSidebarOpen: () => void;
+};
 
 
-
-function Navbar() {
+function Navbar({onSidebarOpen}: Props) {
   const MenuItems = [
     { Name: 'About', Link: 'about' },
     { Name: 'Skills', Link: 'skills' },
@@ -33,12 +34,11 @@ function Navbar() {
             <Box sx={{ flexGrow: 1 }} />
             <Box
               display={{
-                lg: 'flex',
                 sm: 'flex',
                 xs: 'none',
               }}
               justifyContent={{
-                lg: 'flex-end'
+                sm: 'flex-end'
               }}
               alignItems='center'>
               {MenuItems.map((item, index) => (
@@ -58,7 +58,7 @@ function Navbar() {
             <Box
               display={{ xs: 'flex', sm: 'none' }}
               justifyContent={{ xs: 'flex-end' }}>
-              <IconButton>
+              <IconButton onClick={() => onSidebarOpen()}>
                 <MenuIcon
                   fontSize='large'
                   sx={{ color: theme.palette.text.primary }}
