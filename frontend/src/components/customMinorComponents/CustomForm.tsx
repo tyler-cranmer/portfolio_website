@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { TextField, Button, Paper, Grid } from '@mui/material';
 import theme from '../../theme';
-
+import { FormData } from '../../../types';
+import axios from 'axios';
+import { useAxios } from '../../hooks/useAxios';
 type Props = {};
 function CustomForm({}: Props) {
   const [name, setName] = useState('');
@@ -12,6 +14,20 @@ function CustomForm({}: Props) {
   const [emailError, setEmailError] = useState(false);
   const [subjectError, setSubjectError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+  const [postError, setPostError] = useState('');
+  const [loading, data, error, request] = useAxios<FormData>(
+    {
+      method: 'POST',
+      url: 'http://127.0.0.1:8000/contact/',
+      data: {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      },
+    },
+    false
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,7 +54,8 @@ function CustomForm({}: Props) {
     }
 
     if (name && email && subject && message) {
-      console.log(name, email, subject, message);
+      request();
+      console.log(`data: ${data}\n error: ${error}`);
     }
   };
 
@@ -58,12 +75,12 @@ function CustomForm({}: Props) {
               onChange={(e) => setName(e.target.value)}
               fullWidth
               required
-              id='filled-basic'
               variant='outlined'
               label='Name'
               color='secondary'
               error={nameError}
-              sx={{ marginRight: '.5em', name: 'name' }}
+              value={name}
+              sx={{ marginRight: '.5em' }}
             />
           </Grid>{' '}
           <Grid xs={12} sm={6} item>
@@ -71,13 +88,12 @@ function CustomForm({}: Props) {
               onChange={(e) => setEmail(e.target.value)}
               fullWidth
               required
-              id='filled-basic'
               label='Email'
               type='email'
               variant='outlined'
               color='secondary'
               error={emailError}
-              sx={{ name: 'email' }}
+              value={email}
             />
           </Grid>
           <Grid xs={12} item>
@@ -85,12 +101,12 @@ function CustomForm({}: Props) {
               onChange={(e) => setSubject(e.target.value)}
               fullWidth
               required
-              id='filled-basic'
               label='Subject'
               variant='outlined'
               color='secondary'
               error={subjectError}
-              sx={{ marginBottom: '.5em', name: 'subject' }}
+              value={subject}
+              sx={{ marginBottom: '.5em' }}
             />
           </Grid>
           <Grid xs={12} item>
@@ -100,12 +116,12 @@ function CustomForm({}: Props) {
               required
               multiline
               minRows={19}
-              id='filled-basic'
               label='Message'
               variant='outlined'
               color='secondary'
               error={messageError}
-              sx={{ marginBottom: '.5em', name: 'message' }}
+              value={message}
+              sx={{ marginBottom: '.5em' }}
             />
           </Grid>
           <Grid xs={12} item>

@@ -36,3 +36,10 @@ export type ProjectTech = {
   id: number;
   name: string;
 };
+
+export type FormData = {
+  user_name: string;
+  user_email: string;
+  user_subject: string;
+  user_message: string;
+};

@@ -1,18 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
- 
-/**
- * 
- * @param config : AxiosRequestConfig object
- * @param loadOnStart : boolean
- * @returns : array[loading, data, error, request]
- * 
- * 
- */
 
-
-
-export const useAxios = <T>(
+export const usePostAxios = <T>(
   config: AxiosRequestConfig<any>,
   loadOnStart: boolean = true
 ): [boolean, T[], string, () => void] => {

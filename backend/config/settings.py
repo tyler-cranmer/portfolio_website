@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'technologies.apps.TechnologiesConfig',
     'projects.apps.ProjectsConfig',
     'experience.apps.ExperienceConfig',
+    'contact.apps.ContactConfig',
 
 ]
 
