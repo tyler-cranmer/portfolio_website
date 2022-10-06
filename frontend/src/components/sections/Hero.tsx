@@ -13,14 +13,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Hero() {
   const [text, count] = useTypewriter({
     words: [
-      'things for the internet.',
-      'web3 Dapps.',
-      'smart contracts.',
+      'web3 dapps.',
       'machine learning models.',
+      'things for the internet.',
     ],
-    // loop: 3,
-    loop: true,
-    // onLoopDone: () => console.log(`loop completed after 3 runs.`),
+    loop: 1,
+    // loop: true,
+    onLoopDone: () => console.log(`loop completed after 3 runs.`),
     delaySpeed: 2000,
   });
 

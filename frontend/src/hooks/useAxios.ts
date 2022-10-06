@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
+
+
 export const useAxios = <T>(
   config: AxiosRequestConfig<any>,
   loadOnStart: boolean = true
