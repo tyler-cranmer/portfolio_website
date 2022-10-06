@@ -1,4 +1,3 @@
-
 // API Types
 
 export type TechData = {
@@ -22,7 +21,7 @@ export type ExperienceData = {
 
 export type BulletData = {
   bullet: string;
-}
+};
 
 export type ProjectData = {
   id: number;
@@ -37,9 +36,7 @@ export type ProjectTech = {
   name: string;
 };
 
-export type FormData = {
-  user_name: string;
-  user_email: string;
-  user_subject: string;
-  user_message: string;
+export interface FormData {
+  success: boolean;
+  message: string;
 };

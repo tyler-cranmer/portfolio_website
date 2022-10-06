@@ -36,6 +36,7 @@ export const useAxios = <T>(
       .then((response) => {
         setError('');
         setData(response.data);
+        console.log("Axios response:", response.data);
       })
       .catch((error) => {
         setError(error.message);

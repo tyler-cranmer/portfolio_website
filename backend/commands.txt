@@ -34,3 +34,8 @@ cors-headers
 django-environ
 pillow
 psycopg2  // this is to connect postgress to django
+
+
+
+#running email test server
+python -m smtpd -n -c DebuggingServer localhost:1025

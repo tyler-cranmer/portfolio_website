@@ -1,12 +1,13 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
+import { FormData } from '../../types';
 
 export const usePostAxios = <T>(
   config: AxiosRequestConfig<any>,
   loadOnStart: boolean = true
 ): [boolean, T[], string, () => void] => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<Array<T>>([]);
+  const [data, setData] = useState<Array<T>>({});
   const [error, setError] = useState('');
 
   useEffect(() => {

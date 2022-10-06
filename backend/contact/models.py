@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.mail import send_mail
 # Create your models here.
 
 
@@ -16,4 +16,9 @@ class Contact(models.Model):
     def __str__(self) -> str:
         return f'{self.name}, {self.email}, {self.time}'
 
+    # def save(self):
+    #     send_mail(
+
+    #     )
+    #     return super().save()
     
