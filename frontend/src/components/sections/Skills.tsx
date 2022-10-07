@@ -85,6 +85,7 @@ function Skills({}: Props) {
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
         overflowX: 'hidden',
+        borderTop: '.5px solid #949494',
       }}>
       <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>

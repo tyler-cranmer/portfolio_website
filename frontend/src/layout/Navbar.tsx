@@ -27,8 +27,14 @@ function Navbar({onSidebarOpen}: Props) {
 
   return (
     <>
-
-      <AppBar sx={{ background: theme.palette.grey[900] }} position='sticky'>
+      <AppBar
+        variant='outlined'
+        sx={{
+          background: 'rgba(22, 28, 36, .7)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '.5px solid #949494',
+        }}
+        position='sticky'>
         <Toolbar sx={{ height: '6em' }}>
           <Container maxWidth='lg'>
             <Box sx={{ flexGrow: 1 }} />
@@ -38,7 +44,7 @@ function Navbar({onSidebarOpen}: Props) {
                 xs: 'none',
               }}
               justifyContent={{
-                sm: 'flex-end'
+                sm: 'flex-end',
               }}
               alignItems='center'>
               {MenuItems.map((item, index) => (

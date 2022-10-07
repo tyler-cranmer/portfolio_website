@@ -44,6 +44,7 @@ function Projects({}: Props) {
         backgroundColor: theme.palette.grey[900],
         overFlow: 'hidden',
         position: 'relative',
+        borderTop: '.5px solid #949494',
       }}>
       <Box pt={{ xs: 6, sm: 6, md: 8 }} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>

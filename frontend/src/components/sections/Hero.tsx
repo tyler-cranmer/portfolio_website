@@ -17,9 +17,9 @@ function Hero() {
       'machine learning models.',
       'things for the internet.',
     ],
-    loop: 1,
-    // loop: true,
-    onLoopDone: () => console.log(`loop completed after 3 runs.`),
+    // loop: 1,
+    loop: true,
+    // onLoopDone: () => console.log(`loop completed after 3 runs.`),
     delaySpeed: 2000,
   });
 
@@ -29,7 +29,7 @@ function Hero() {
     <Box
       id='hero'
       sx={{
-        backgroundColor: theme.palette.grey[700],
+        backgroundColor: theme.palette.grey[900],
         height: '100vh',
       }}>
       <Box
@@ -104,16 +104,48 @@ function Hero() {
               </Box>
               <Box display='flex' justifyContent='space-around'>
                 <IconButton href='https://www.linkedin.com/in/georgetylercranmer/'>
-                  <LinkedInIcon fontSize='large' />
+                  <LinkedInIcon
+                    fontSize='large'
+                    sx={{
+                      color: theme.palette.text.primary,
+                      '&:hover': {
+                        color: theme.palette.text.secondary,
+                      },
+                    }}
+                  />
                 </IconButton>
                 <IconButton href='https://github.com/tyler-cranmer/'>
-                  <GitHubIcon fontSize='large' />
+                  <GitHubIcon
+                    fontSize='large'
+                    sx={{
+                      color: theme.palette.text.primary,
+                      '&:hover': {
+                        color: theme.palette.text.secondary,
+                      },
+                    }}
+                  />
                 </IconButton>
                 <IconButton>
-                  <EmailOutlinedIcon fontSize='large' />
+                  <EmailOutlinedIcon
+                    fontSize='large'
+                    sx={{
+                      color: theme.palette.text.primary,
+                      '&:hover': {
+                        color: theme.palette.text.secondary,
+                      },
+                    }}
+                  />
                 </IconButton>
                 <IconButton>
-                  <ArticleOutlinedIcon fontSize='large' />
+                  <ArticleOutlinedIcon
+                    fontSize='large'
+                    sx={{
+                      color: theme.palette.text.primary,
+                      '&:hover': {
+                        color: theme.palette.text.secondary,
+                      },
+                    }}
+                  />
                 </IconButton>
               </Box>
             </Stack>

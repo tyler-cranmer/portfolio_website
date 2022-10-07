@@ -65,7 +65,7 @@ function CustomAccordian({ inView }: Props) {
               expanded={expanded === `panel${index}`}
               onChange={handleChange(`panel${index}`)}
               sx={{
-                backgroundColor: 'rgb(33, 43, 54)',
+                backgroundColor: theme.palette.grey[800],
                 borderTopRightRadius: '20px',
                 borderTopLeftRadius: '20px',
                 borderBottomRightRadius: '20px',

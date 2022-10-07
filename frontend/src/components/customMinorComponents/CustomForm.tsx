@@ -107,10 +107,11 @@ function CustomForm({}: Props) {
       <Paper
         sx={{
           borderRadius: '20px',
-          backgroundColor: theme.palette.grey[900],
+          backgroundColor: theme.palette.grey[800],
           padding: '1.5em',
           height: '100%',
           width: '100%',
+          position: 'relative'
         }}>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={1}>
@@ -159,7 +160,7 @@ function CustomForm({}: Props) {
                 fullWidth
                 required
                 multiline
-                minRows={19}
+                rows={18.5}
                 label='Message'
                 variant='outlined'
                 color='secondary'

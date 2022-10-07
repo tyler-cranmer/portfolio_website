@@ -29,8 +29,9 @@ function Contact({}: Props) {
     <Box
       id='contact'
       sx={{
-        backgroundColor: theme.palette.grey[800],
+        backgroundColor: theme.palette.grey[900],
         position: 'relative',
+        borderTop: '.5px solid #949494',
       }}>
       <Box pt={8} pb={10}>
         <Container>

@@ -129,3 +129,8 @@
   transform: skew(0, -8deg);
   z-index: 5;
 } */
+
+
+.globalBackground{
+  background-color: #161C24;
+}
