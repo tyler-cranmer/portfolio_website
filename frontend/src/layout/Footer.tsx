@@ -31,6 +31,7 @@ function Footer() {
           backgroundColor: theme.palette.grey[900],
           overFlow: 'hidden',
           position: 'relative',
+          borderTop: '.5px solid #949494',
         }}>
         <Box
           component='footer'
@@ -40,11 +41,10 @@ function Footer() {
             mt: 'auto',
             display: 'flex',
           }}>
-          <Container >
+          <Container>
             <Copyright />
             <Typography variant='body2'>built by Tyler Cranmer</Typography>
           </Container>
-         
         </Box>
       </Box>
     </>
