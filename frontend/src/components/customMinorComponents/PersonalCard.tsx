@@ -17,18 +17,18 @@ function PersonalCard({}: Props) {
         padding: '1.5em',
         borderRadius: '20px',
       }}>
-        <Box
-          borderRadius={'20px'}
-          overflow={'hidden'}
-          sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
-          <Image
-            alt='index logo'
-            src='/paralta.jpeg'
-            layout='responsive'
-            height={295}
-            width={250}
-            priority
-          />
+      <Box
+        borderRadius={'20px'}
+        overflow={'hidden'}
+        sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
+        <Image
+          alt='index logo'
+          src='/paralta.jpeg'
+          layout='responsive'
+          height={295}
+          width={250}
+          priority
+        />
       </Box>
       <Box pb={15}>
         {/* Name */}
@@ -46,7 +46,7 @@ function PersonalCard({}: Props) {
       </Box>
       <Typography>Connect:</Typography>
       <Box display='flex' justifyContent='space-around' margin='auto'>
-        <IconButton>
+        <IconButton href='https://www.linkedin.com/in/georgetylercranmer/'>
           <LinkedInIcon
             fontSize='large'
             sx={{
@@ -57,7 +57,7 @@ function PersonalCard({}: Props) {
             }}
           />
         </IconButton>
-        <IconButton>
+        <IconButton href='https://github.com/tyler-cranmer/'>
           <GitHubIcon
             fontSize='large'
             sx={{
@@ -68,7 +68,7 @@ function PersonalCard({}: Props) {
             }}
           />
         </IconButton>
-        <IconButton>
+        <IconButton href='https://twitter.com/tyler_cranmer/'>
           <TwitterIcon
             fontSize='large'
             sx={{

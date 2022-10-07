@@ -103,13 +103,12 @@ function Hero() {
                 </Typography>
               </Box>
               <Box display='flex' justifyContent='space-around'>
-                <IconButton>
+                <IconButton href='https://www.linkedin.com/in/georgetylercranmer/'>
                   <LinkedInIcon fontSize='large' />
                 </IconButton>
-                <IconButton>
+                <IconButton href='https://github.com/tyler-cranmer/'>
                   <GitHubIcon fontSize='large' />
                 </IconButton>
-
                 <IconButton>
                   <EmailOutlinedIcon fontSize='large' />
                 </IconButton>
