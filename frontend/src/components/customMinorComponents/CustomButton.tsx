@@ -15,7 +15,7 @@ const CustomButton = ({ text }: props) => {
       color='primary'
       variant='text'
       disableRipple={true}
-  
+      className='nav-button'
       sx={{
         color: theme.palette.text.primary,
         mx: 0.25,

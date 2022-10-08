@@ -107,30 +107,10 @@
   margin-bottom: 0.5em;
 }
 
-/* Angled div  */
-/* .background::before,
-.background::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #161c24;
-  bottom: 0;
-}
-
-.background::before {
-  right: 50%;
-  transform: skew(0, 8deg);
-  z-index: 5;
-}
-
-.background::after {
-  left: 50%;
-  transform: skew(0, -8deg);
-  z-index: 5;
-} */
-
-
 .globalBackground{
   background-color: #161C24;
+}
+
+a:link {
+  text-decoration: none;
 }

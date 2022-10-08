@@ -1,5 +1,7 @@
 // API Types
 
+import { StyledTags } from "@emotion/styled";
+
 export type TechData = {
   id: number;
   name: string;
@@ -25,14 +27,19 @@ export type BulletData = {
 
 export type ProjectData = {
   id: number;
-  image: string;
-  title: string;
+  name: string;
   description: string;
-  tech: ProjectTech;
+  link: string;
+  image: string;
+  tags: Tags[];
+  technologies: ProjectTech[];
 };
 
+export interface Tags {
+  name: string
+}
+
 export type ProjectTech = {
-  id: number;
   name: string;
 };
 

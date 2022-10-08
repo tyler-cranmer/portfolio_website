@@ -8,24 +8,31 @@ import {
   CardMedia,
   CardContent,
   Grow,
+  Chip
 } from '@mui/material';
 import theme from '../../theme';
 import { Container } from '@mui/system';
-import portfolioData from '../../utils/tempData';
 import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { workVariant } from '../../utils/amimationVariants';
+import { useAxios } from '../../hooks/useAxios';
+import { ProjectData, Tags } from '../../../types';
 
 type Props = {};
 
 function Projects({}: Props) {
   const [tabValue, setTabValue] = useState('Aggregate');
+    const [loading, data, error, request] = useAxios<ProjectData>({
+      method: 'GET',
+      url: 'http://127.0.0.1:8000/projects/',
+    });
   const control = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
   const control4 = useAnimation();
   const [ref, inView] = useInView();
+
 
   useEffect(() => {
     if (inView) {
@@ -37,6 +44,13 @@ function Projects({}: Props) {
   }, [control, control2, control3, inView]);
 
   const subtitle: string = "What I've Built";
+
+  let categories: string[][] = [];
+  data.map((item) => {
+    let tagNames = item.tags.map((tag) => tag.name);
+    categories.push(tagNames);
+  });
+
   return (
     <Box
       id='projects'
@@ -114,13 +128,11 @@ function Projects({}: Props) {
                     value='Aggregate'
                     disabled={false}
                   />
-                  {[
-                    ...new Set(portfolioData.projects2.map((item) => item.tag)),
-                  ].map((tag, index) => (
+                  {[...new Set(categories.flat())].map((name, index) => (
                     <StyledTab
                       key={index}
-                      label={tag}
-                      value={tag}
+                      label={name}
+                      value={name}
                       disabled={false}
                     />
                   ))}
@@ -130,17 +142,19 @@ function Projects({}: Props) {
               {/* projects */}
               <Grid item xs={12}>
                 <Grid container spacing={2}>
-                  {portfolioData.projects2.map((project, index) => (
+                  {data.map((project, index) => (
                     <React.Fragment key={index}>
-                      {tabValue == project.tag || tabValue == 'Aggregate' ? (
+                      {tabValue == project.tags[0].name ||
+                      (project.tags[1] && tabValue == project.tags[1].name) ||
+                      tabValue == 'Aggregate' ? (
                         <Grid item xs={12} sm={6} md={4}>
                           <Grow appear={true} in timeout={1000}>
-                            <Card
-                              sx={{
-                                backgroundColor: theme.palette.grey[800],
-                                borderRadius: { xs: '20px' },
-                              }}>
-                              <CardActionArea>
+                            <a href={project.link}>
+                              <Card
+                                sx={{
+                                  backgroundColor: theme.palette.grey[800],
+                                  borderRadius: { xs: '20px' },
+                                }}>
                                 <Box sx={{ overflow: 'hidden' }}>
                                   <motion.div
                                     whileHover={{
@@ -153,7 +167,7 @@ function Projects({}: Props) {
                                       component='img'
                                       height='260'
                                       image={project.image}
-                                      alt={project.title}
+                                      alt={project.name}
                                     />
                                   </motion.div>
                                 </Box>
@@ -162,26 +176,29 @@ function Projects({}: Props) {
                                     backgroundColor: theme.palette.grey[800],
                                   }}>
                                   <Typography
-                                    sx={{ fontWeight: 600 }}
-                                    variant='h6'>
-                                    {project.title}
+                                    sx={{ fontWeight: 700 }}
+                                    variant='subtitle1'>
+                                    {project.name}
                                   </Typography>
-                                  <Typography variant='body1' gutterBottom>
+                                  <Typography
+                                    variant='body2'
+                                    color={theme.palette.text.secondary}
+                                    gutterBottom>
                                     {project.description}
                                   </Typography>
-                                  {project.tech.map((item, index) => (
-                                    <Typography
-                                      color={theme.palette.primary.main}
+                                  {project.technologies.map((item, index) => (
+                                    <Chip
                                       key={index}
-                                      variant='caption'
-                                      pr={1.5}
-                                      pt={2}>
-                                      {item}
-                                    </Typography>
+                                      label={item.name}
+                                      variant='outlined'
+                                      color='primary'
+                                      size='small'
+                                      sx={{ m: 0.5 }}
+                                    />
                                   ))}
                                 </CardContent>
-                              </CardActionArea>
-                            </Card>
+                              </Card>
+                            </a>
                           </Grow>
                         </Grid>
                       ) : null}

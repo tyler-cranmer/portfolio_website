@@ -44,7 +44,10 @@ export const StyledTab = styled((props: StyledTabProps) => (
   fontSize: theme.typography.pxToRem(15),
   color: '#fff',
   '&.Mui-selected': {
-    color: theme.palette.text.secondary,
+    color: theme.palette.primary.main,
+  },
+  '&:Hover': {
+    opacity: .5,
   },
   '&.Mui-focusVisible': {
     backgroundColor: 'rgba(100, 95, 228, 0.32)',

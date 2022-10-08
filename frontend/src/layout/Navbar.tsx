@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { AppBar, Box, Toolbar } from '@mui/material';
 import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
@@ -29,6 +29,7 @@ function Navbar({onSidebarOpen}: Props) {
     <>
       <AppBar
         variant='outlined'
+        elevation={0}
         sx={{
           background: 'rgba(22, 28, 36, .7)',
           backdropFilter: 'blur(20px)',
@@ -50,7 +51,6 @@ function Navbar({onSidebarOpen}: Props) {
               {MenuItems.map((item, index) => (
                 <div key={index}>
                   <Link
-                    activeClass='active'
                     to={item.Link}
                     spy={true}
                     smooth={true}
