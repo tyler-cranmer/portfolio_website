@@ -38,12 +38,12 @@ function Hero() {
           left: 0,
           width: '100%',
           display: 'flex',
-          position: 'fixed',
+          position: { sm: 'fixed' },
         }}>
         <Container maxWidth='lg'>
           <Box display='flex' justifyContent='center' alignItems='center'>
             <Stack
-              mt={{ xs: 30, sm: 40 }}
+              mt={{ xs: 14, sm: 40 }}
               direction='column'
               justifyContent='center'
               alignItems='center'
