@@ -123,11 +123,13 @@ function Projects({}: Props) {
                     value='Aggregate'
                     disabled={false}
                   />
-                  {[...new Set(Data.projects.tag)].map((name, index) => (
+                  {[
+                    ...new Set(Data.projects.map((item) => item.tag)),
+                  ].map((tag, index) => (
                     <StyledTab
                       key={index}
-                      label={name}
-                      value={name}
+                      label={tag}
+                      value={tag}
                       disabled={false}
                     />
                   ))}
@@ -137,7 +139,7 @@ function Projects({}: Props) {
               {/* projects */}
               <Grid item xs={12}>
                 <Grid container spacing={2}>
-                  {data.map((project, index) => (
+                  {Data.projects.map((project, index) => (
                     <React.Fragment key={index}>
                       {tabValue == project.tags[0].name ||
                       (project.tags[1] && tabValue == project.tags[1].name) ||
