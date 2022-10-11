@@ -16,17 +16,12 @@ import { StyledTabs, StyledTab } from '../customMinorComponents/StyledTabs';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { workVariant } from '../../utils/amimationVariants';
-import { useAxios } from '../../hooks/useAxios';
-import { ProjectData, Tags } from '../../../types';
+import Data from '../../utils/data';
 
 type Props = {};
 
 function Projects({}: Props) {
   const [tabValue, setTabValue] = useState('Aggregate');
-    const [loading, data, error, request] = useAxios<ProjectData>({
-      method: 'GET',
-      url: 'http://127.0.0.1:8000/projects/',
-    });
   const control = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
@@ -45,11 +40,11 @@ function Projects({}: Props) {
 
   const subtitle: string = "What I've Built";
 
-  let categories: string[][] = [];
-  data.map((item) => {
-    let tagNames = item.tags.map((tag) => tag.name);
-    categories.push(tagNames);
-  });
+  // let categories: string[][] = [];
+  // Data.projects.map((item) => {
+  //   let tagNames = item.tags.map((tag) => tag.name);
+  //   categories.push(tagNames);
+  // });
 
   return (
     <Box
@@ -128,7 +123,7 @@ function Projects({}: Props) {
                     value='Aggregate'
                     disabled={false}
                   />
-                  {[...new Set(categories.flat())].map((name, index) => (
+                  {[...new Set(Data.projects.tag)].map((name, index) => (
                     <StyledTab
                       key={index}
                       label={name}

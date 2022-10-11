@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import theme from '../../theme';
 import { Stack, Container, IconButton } from '@mui/material';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import textData from '../../utils/tempData';
+import textData from '../../utils/data';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';

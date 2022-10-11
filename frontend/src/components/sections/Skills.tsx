@@ -20,7 +20,7 @@ import {
   cardVariant,
   cardVariant2,
 } from '../../utils/amimationVariants';
-import { useAxios } from '../../hooks/useAxios';
+import Data from "../../utils/data"
 
 function CogsIcon(props: SvgIconProps) {
   return (
@@ -55,10 +55,6 @@ function BlockIcon(props: SvgIconProps) {
 type Props = {};
 
 function Skills({}: Props) {
-  const [loading, data, error, request] = useAxios<TechData>({
-    method: 'GET',
-    url: 'http://127.0.0.1:8000/technologies/',
-  });
 
   const control = useAnimation();
   const control2 = useAnimation();
@@ -287,24 +283,28 @@ function Skills({}: Props) {
                 columnGap: '.5rem',
                 rowGap: '1.25rem',
               }}>
-              {data?.slice(0, data.length / 2).map((item) => (
-                <Skill
-                  key={item.id}
-                  name={item.name}
-                  url={item.icon}
-                  directionLeft
-                  inView={sInView}
-                />
-              ))}
+              {Data.icons
+                ?.slice(0, Data.icons.length / 2)
+                .map((item, index) => (
+                  <Skill
+                    key={index}
+                    name={item.name}
+                    url={item.url}
+                    directionLeft
+                    inView={sInView}
+                  />
+                ))}
 
-              {data?.slice(data.length / 2, data.length).map((item) => (
-                <Skill
-                  key={item.id}
-                  name={item.name}
-                  url={item.icon}
-                  inView={sInView}
-                />
-              ))}
+              {Data.icons
+                ?.slice(Data.icons.length / 2, Data.icons.length)
+                .map((item, index) => (
+                  <Skill
+                    key={index}
+                    name={item.name}
+                    url={item.url}
+                    inView={sInView}
+                  />
+                ))}
             </Box>
           </Container>
         </Container>

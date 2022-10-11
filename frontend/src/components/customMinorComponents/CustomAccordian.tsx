@@ -20,8 +20,10 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import Image from 'next/image';
 import { AnimationControls, motion, useAnimation } from 'framer-motion';
 import { accordianVariant } from '../../utils/amimationVariants';
-import { ExperienceData} from '../../../types';
-import { useAxios } from '../../hooks/useAxios';
+import Data from "../../utils/data";
+import data from '../../utils/data';
+
+
 
 type Props = {
   inView: boolean;
@@ -30,10 +32,7 @@ type Props = {
 function CustomAccordian({ inView }: Props) {
   const control: AnimationControls = useAnimation();
   const [expanded, setExpanded] = useState<string | false>(false);
-    const [loading, data, error, request] = useAxios<ExperienceData>({
-      method: 'GET',
-      url: 'http://127.0.0.1:8000/experience/',
-    });
+
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -49,7 +48,7 @@ function CustomAccordian({ inView }: Props) {
 
   return (
     <div>
-      {data
+      {Data.experience
         .map((item, index) => (
           <motion.div
             className='space'
@@ -138,7 +137,7 @@ function CustomAccordian({ inView }: Props) {
                             </ListItemIcon>
                             <ListItemText
                               sx={{ fontSize: '.25rem' }}
-                              primary={item.bullet}
+                              primary={item}
                             />
                           </ListItem>
                         ))}
