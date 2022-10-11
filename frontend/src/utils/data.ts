@@ -33,7 +33,7 @@ export default {
         'Convolution neural network for classifying NFT pictures into their respected collection.',
       link: '/project/Machine=Learning.png',
       image: 'http://127.0.0.1:8000/media/image/Machine-Learning.png',
-      tag: "Macgube Learning",
+      tag: "Machine Learning",
       tech: ['Python', "Pillow", "TensorFlow", "Keras"]
     },
 

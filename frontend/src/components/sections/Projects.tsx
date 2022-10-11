@@ -135,14 +135,15 @@ function Projects({}: Props) {
                   ))}
                 </StyledTabs>
               </Grid>
-
+{/* {portfolioData.projects2.map((project, index) => (
+                    <React.Fragment key={index}>
+                      {tabValue == project.tag || tabValue == 'Aggregate' ? ( */}
               {/* projects */}
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   {Data.projects.map((project, index) => (
                     <React.Fragment key={index}>
-                      {tabValue == project.tags[0].name ||
-                      (project.tags[1] && tabValue == project.tags[1].name) ||
+                      {tabValue == project.tag ||
                       tabValue == 'Aggregate' ? (
                         <Grid item xs={12} sm={6} md={4}>
                           <Grow appear={true} in timeout={1000}>
@@ -164,7 +165,7 @@ function Projects({}: Props) {
                                       component='img'
                                       height='260'
                                       image={project.image}
-                                      alt={project.name}
+                                      alt={project.title}
                                     />
                                   </motion.div>
                                 </Box>
@@ -175,7 +176,7 @@ function Projects({}: Props) {
                                   <Typography
                                     sx={{ fontWeight: 700 }}
                                     variant='subtitle1'>
-                                    {project.name}
+                                    {project.title}
                                   </Typography>
                                   <Typography
                                     variant='body2'
@@ -183,10 +184,10 @@ function Projects({}: Props) {
                                     gutterBottom>
                                     {project.description}
                                   </Typography>
-                                  {project.technologies.map((item, index) => (
+                                  {project.tech.map((item, index) => (
                                     <Chip
                                       key={index}
-                                      label={item.name}
+                                      label={item}
                                       variant='outlined'
                                       color='primary'
                                       size='small'
