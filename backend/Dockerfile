@@ -1,25 +1,19 @@
-FROM python:3.10-alpine
-
-ENV PATH="/scripts:${PATH}"
-
-COPY ./requirements.txt /requirements.txt
-RUN apk add --update --no-cache --virtual .tmp gcc libc-dev linux-headers
-RUN pip install -r /requirements.txt
-RUN apk del .tmp
+FROM python:3.10-slim-buster
+ENV PYTHONBUFFERED 1
+ENV PYTHONDONTWEITEBYTECODE 1
+RUN pip install --upgrade pip
 
 RUN mkdir /app
-COPY ./backend /app
+COPY . /app
 WORKDIR /app
-COPY ./scripts /scripts
 
-RUN chmod +x /scripts/*
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
-RUN mkdir -p vol/web/media
-RUN mkdir -p vol/web/static
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN adduser -D user
-RUN chown -R user:user /vol 
-RUN chmod -R 755 /vol/web
-USER user
-
-CMD ["entrypoint.sh"]
+RUN python manage.py makemigrations
+RUN python manage.py migrate
