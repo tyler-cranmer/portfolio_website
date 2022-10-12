@@ -21,11 +21,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', include('About.urls')),
-    path('technologies/', include('technologies.urls')),
-    path('projects/', include('projects.urls')),
-    path('experience/', include('experience.urls')),
-    path('contact/', include('contact.urls'))
+    path('api/about/', include('About.urls')),
+    path('api/technologies/', include('technologies.urls')),
+    path('api/projects/', include('projects.urls')),
+    path('api/experience/', include('experience.urls')),
+    path('api/contact/', include('contact.urls'))
 ]
 
 if settings.DEBUG:
