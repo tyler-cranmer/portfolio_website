@@ -57,7 +57,7 @@ type Props = {};
 function Skills({}: Props) {
   const [loading, data, error, request] = useAxios<TechData>({
     method: 'GET',
-    url: 'http://127.0.0.1:8000/api/technologies/',
+    url: 'https://portfolio-backend-teewhy.herokuapp.com/api/technologies/',
   });
 
   const control = useAnimation();

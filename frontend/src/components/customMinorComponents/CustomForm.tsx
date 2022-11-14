@@ -76,7 +76,7 @@ function CustomForm({}: Props) {
       setOpenSnack(false);
       SetResponseMessage('');
       axios
-        .post('http://127.0.0.1:8000/contact/', {
+        .post('https://portfolio-backend-teewhy.herokuapp.com/api/contact/', {
           name: name,
           email: email,
           subject: subject,

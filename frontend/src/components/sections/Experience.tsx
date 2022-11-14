@@ -5,8 +5,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { experienceVariant } from '../../utils/amimationVariants';
-import { ExperienceData, BulletData } from '../../../types';
-import { useAxios } from '../../hooks/useAxios';
+
 
 type Props = {};
 

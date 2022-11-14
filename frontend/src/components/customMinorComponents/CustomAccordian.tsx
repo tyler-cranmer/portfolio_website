@@ -32,7 +32,7 @@ function CustomAccordian({ inView }: Props) {
   const [expanded, setExpanded] = useState<string | false>(false);
   const [loading, data, error, request] = useAxios<ExperienceData>({
     method: 'GET',
-    url: 'http://127.0.0.1:8000/api/experience/',
+    url: 'https://portfolio-backend-teewhy.herokuapp.com/api/experience/',
   });
 
   const handleChange =
