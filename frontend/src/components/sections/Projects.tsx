@@ -25,7 +25,7 @@ function Projects({}: Props) {
   const [tabValue, setTabValue] = useState('Aggregate');
     const [loading, data, error, request] = useAxios<ProjectData>({
       method: 'GET',
-      url: 'http://127.0.0.1:8000/projects/',
+      url: 'http://127.0.0.1:8000/api/projects/',
     });
   const control = useAnimation();
   const control2 = useAnimation();
