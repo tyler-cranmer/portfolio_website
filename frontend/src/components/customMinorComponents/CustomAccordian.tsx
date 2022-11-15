@@ -35,9 +35,6 @@ function CustomAccordian({ inView }: Props) {
     url: 'https://portfolio-backend-teewhy.herokuapp.com/api/experience/',
   });
 
-  for (let i: number = 0; i < data.length; i++){
-    console.log(data[i].logo)
-  }
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
