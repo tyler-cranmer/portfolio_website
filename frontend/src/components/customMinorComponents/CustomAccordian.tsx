@@ -159,9 +159,8 @@ function CustomAccordian({ inView }: Props) {
                         src={item.logo}
                         layout='fill'
                         objectFit='contain'
+                        priority
                       />
-                      {item.logo}
-                      
                     </Box>
                   </Grid>
                 </Grid>
