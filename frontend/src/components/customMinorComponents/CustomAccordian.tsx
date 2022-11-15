@@ -160,6 +160,7 @@ function CustomAccordian({ inView }: Props) {
                         layout='fill'
                         objectFit='contain'
                       />
+                      {item.logo}
                       
                     </Box>
                   </Grid>
