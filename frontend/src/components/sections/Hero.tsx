@@ -7,7 +7,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import textData from '../../utils/tempData';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import { Link } from 'react-scroll/modules';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function Hero() {
@@ -17,9 +17,8 @@ function Hero() {
       'machine learning models.',
       'things for the internet.',
     ],
-    // loop: 1,
-    loop: true,
-    // onLoopDone: () => console.log(`loop completed after 3 runs.`),
+    loop: 2,
+    // loop: true,
     delaySpeed: 2000,
   });
 
@@ -125,28 +124,25 @@ function Hero() {
                     }}
                   />
                 </IconButton>
-                <IconButton>
-                  <EmailOutlinedIcon
-                    fontSize='large'
-                    sx={{
-                      color: theme.palette.text.primary,
-                      '&:hover': {
-                        color: theme.palette.text.secondary,
-                      },
-                    }}
-                  />
-                </IconButton>
-                <IconButton>
-                  <ArticleOutlinedIcon
-                    fontSize='large'
-                    sx={{
-                      color: theme.palette.text.primary,
-                      '&:hover': {
-                        color: theme.palette.text.secondary,
-                      },
-                    }}
-                  />
-                </IconButton>
+                <Link
+                  activeClass='active'
+                  to='contact'
+                  spy={true}
+                  smooth={true}
+                  offset={-96}
+                  duration={1000}>
+                  <IconButton>
+                    <EmailOutlinedIcon
+                      fontSize='large'
+                      sx={{
+                        color: theme.palette.text.primary,
+                        '&:hover': {
+                          color: theme.palette.text.secondary,
+                        },
+                      }}
+                    />
+                  </IconButton>
+                </Link>
               </Box>
             </Stack>
           </Box>

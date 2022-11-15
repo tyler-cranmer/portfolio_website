@@ -1,4 +1,3 @@
-import React, { useState, useEffect} from 'react';
 import { AppBar, Box, Toolbar } from '@mui/material';
 import theme from '../theme';
 import CustomButton from '../components/customMinorComponents/CustomButton';
