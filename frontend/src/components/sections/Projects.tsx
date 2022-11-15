@@ -46,6 +46,7 @@ function Projects({}: Props) {
   const subtitle: string = "What I've Built";
 
   let categories: string[][] = [];
+  
   data.map((item) => {
     let tagNames = item.tags.map((tag) => tag.name);
     categories.push(tagNames);
