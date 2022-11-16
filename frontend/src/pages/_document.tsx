@@ -8,8 +8,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <title>teewhy.xyz</title>
         <Head>
+          <title>teewhy.xyz</title>
           {/* PWA primary color */}
           <meta name='theme-color' content={theme.palette.grey[900]} />
           <link rel='shortcut icon' href='/icons8-code-67.png' />
