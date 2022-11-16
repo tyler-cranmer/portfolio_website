@@ -55,7 +55,7 @@ function Hero() {
                     fontSize: {
                       md: '5rem',
                       sm: '4.5rem',
-                      xs: '2.25rem',
+                      xs: '2.75rem',
                     },
                   }}>
                   Hi, I'm
@@ -63,7 +63,7 @@ function Hero() {
                 <Typography
                   color={theme.palette.primary.main}
                   fontWeight='500'
-                  fontSize={{ md: '5rem', sm: '4.5rem', xs: '2.25rem' }}
+                  fontSize={{ md: '5rem', sm: '4.5rem', xs: '2.75rem' }}
                   pl={2}>
                   {name}
                 </Typography>
@@ -76,7 +76,7 @@ function Hero() {
                     fontSize: {
                       md: '4.5rem',
                       sm: '4.5rem',
-                      xs: '2.25rem',
+                      xs: '2.75rem',
                     },
                   }}>
                   {i_build} {text}
