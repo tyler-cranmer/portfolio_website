@@ -31,7 +31,7 @@ function PersonalCard({}: Props) {
           priority
         />
       </Box>
-      <Box pb={13.2}>
+      <Box pb={13.5}>
         {/* Name */}
         <Typography
           variant='h5'
