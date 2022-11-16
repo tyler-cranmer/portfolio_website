@@ -50,7 +50,7 @@ const SideBar = ({ open, onClose }: Props) => {
             display={'flex'}
             justifyContent={'flex-end'}>
             <IconButton onClick={() => onClose()}>
-              <ChevronLeftIcon color='primary' fontSize='large' />
+              <ChevronLeftIcon color='secondary' fontSize='large' />
             </IconButton>
           </Box>
           <Divider />
