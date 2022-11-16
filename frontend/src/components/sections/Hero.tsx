@@ -14,9 +14,9 @@ import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 function Hero() {
   const [text, count] = useTypewriter({
     words: [
-      'web3 dapps.',
+      'apps for the internet.',
       'machine learning models.',
-      'things for the internet.',
+      'things for the future.'
     ],
     loop: 3,
     delaySpeed: 2000,
