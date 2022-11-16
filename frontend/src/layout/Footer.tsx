@@ -43,7 +43,7 @@ function Footer() {
           }}>
           <Container>
             <Copyright />
-            <Typography variant='body2'>built by Tyler Cranmer with Next.js & Django</Typography>
+            <Typography variant='body2'>Built by Tyler Cranmer with Next.js & Django</Typography>
           </Container>
         </Box>
       </Box>

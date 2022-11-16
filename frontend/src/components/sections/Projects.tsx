@@ -8,7 +8,7 @@ import {
   CardMedia,
   CardContent,
   Grow,
-  Chip
+  Chip,
 } from '@mui/material';
 import theme from '../../theme';
 import { Container } from '@mui/system';
@@ -23,16 +23,15 @@ type Props = {};
 
 function Projects({}: Props) {
   const [tabValue, setTabValue] = useState('Aggregate');
-    const [loading, data, error, request] = useAxios<ProjectData>({
-      method: 'GET',
-      url: 'https://portfolio-backend-teewhy.herokuapp.com/api/projects/',
-    });
+  const [loading, data, error, request] = useAxios<ProjectData>({
+    method: 'GET',
+    url: 'https://portfolio-backend-teewhy.herokuapp.com/api/projects/',
+  });
   const control = useAnimation();
   const control2 = useAnimation();
   const control3 = useAnimation();
   const control4 = useAnimation();
   const [ref, inView] = useInView();
-
 
   useEffect(() => {
     if (inView) {
@@ -46,7 +45,7 @@ function Projects({}: Props) {
   const subtitle: string = "What I've Built";
 
   let categories: string[][] = [];
-  
+
   data.map((item) => {
     let tagNames = item.tags.map((tag) => tag.name);
     categories.push(tagNames);
@@ -166,7 +165,7 @@ function Projects({}: Props) {
                                     }}>
                                     <CardMedia
                                       component='img'
-                                      height='260'
+                                      height='230'
                                       image={project.image}
                                       alt={project.name}
                                     />

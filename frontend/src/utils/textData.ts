@@ -6,9 +6,9 @@ export default {
 
   About: {
     textOne:
-      'Hi, my name is Tyler Cranmer and some of you might know me as TeeWhy. I am a software engineer building applications typically on MacBook Pro from Denver, Colorado. I’m not your typical engineer and becoming one wasn’t always a linear progression. ',
+      'Hi, my name is Tyler Cranmer and some of you might know me as TeeWhy. I am a software engineer usually building applications on MacBook Pro from Denver, Colorado. I’m not your typical engineer and becoming one wasn’t always a linear progression. ',
     textTwo:
-      'I started my career in tech as a recruiter for an outside recruitment agency and as I was developing my skills as an effective recruiter, I quickly realized again that I wanted to be the one building software rather than finding people to build software.',
+      'I started my career in tech as a recruiter for an outside recruitment agency and as I was developing my skills as an effective recruiter, I quickly realized that I wanted to be the one building software rather than finding people to build software.',
     textThree:
       'It was at that point I decided to enroll back in school and start taking computer science courses. Fast forward a few years and surviving a pandemic, I was able to finish my degree in Applied Computer Science at the University of Colorado, Boulder.',
   },

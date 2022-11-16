@@ -44,7 +44,7 @@ function Navbar({onSidebarOpen}: Props) {
                 xs: 'none',
               }}
               justifyContent={{
-                sm: 'flex-end',
+                sm: 'center',
               }}
               alignItems='center'>
               {MenuItems.map((item, index) => (

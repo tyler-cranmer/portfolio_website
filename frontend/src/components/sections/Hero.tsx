@@ -9,6 +9,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Link } from 'react-scroll/modules';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 
 function Hero() {
   const [text, count] = useTypewriter({
@@ -142,6 +143,17 @@ function Hero() {
                     />
                   </IconButton>
                 </Link>
+                <IconButton>
+                  <ArticleOutlinedIcon
+                    fontSize='large'
+                    sx={{
+                      color: theme.palette.text.primary,
+                      '&:hover': {
+                        color: theme.palette.text.secondary,
+                      },
+                    }}
+                  />
+                </IconButton>
               </Box>
             </Stack>
           </Box>
