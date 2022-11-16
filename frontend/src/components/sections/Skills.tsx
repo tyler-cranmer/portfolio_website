@@ -21,6 +21,7 @@ import {
   cardVariant2,
 } from '../../utils/amimationVariants';
 import { useAxios } from '../../hooks/useAxios';
+import textData from '../../utils/textData';
 
 function CogsIcon(props: SvgIconProps) {
   return (
@@ -164,11 +165,10 @@ function Skills({}: Props) {
                     />
                   </span>
                   <Typography mb={2} variant='h6'>
-                    Blockchain
+                    {textData.Skill.cardOneName}
                   </Typography>
                   <Typography variant='body1'>
-                    Experienced web3 developer: Solidity, Typescript, Ether.js,
-                    hardhat, graph protocol.
+                    {textData.Skill.cardOneText}
                   </Typography>
                 </Paper>
               </motion.div>
@@ -201,11 +201,10 @@ function Skills({}: Props) {
                     />
                   </span>
                   <Typography mb={2} variant='h6'>
-                    Software Development
+                    {textData.Skill.cardTwoName}
                   </Typography>
                   <Typography variant='body1'>
-                    Experienced in full stack development: Python, Typescript,
-                    Next.js, Django, Flask
+                    {textData.Skill.cardTwoText}
                   </Typography>
                 </Paper>
               </motion.div>
@@ -236,11 +235,10 @@ function Skills({}: Props) {
                     />
                   </span>
                   <Typography mb={2} variant='h6'>
-                    Machine Learning
+                    {textData.Skill.cardThreeName}
                   </Typography>
                   <Typography variant='body1'>
-                    Proficient with Data Science and Machine Learning Models
-                    using Python, Pandas, Numpy Sklearn, NLTK, Keras, Tensorflow
+                    {textData.Skill.cardThreeText}
                   </Typography>
                 </Paper>
               </motion.div>

@@ -145,6 +145,21 @@ function About() {
                     {textData.About.textThree}
                   </Typography>
                 </motion.div>
+                <motion.div
+                  variants={aboutVariant}
+                  initial='offscreen'
+                  animate={controlP4}>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        md: '1.125rem',
+                        sm: '.9rem',
+                      },
+                    }}
+                    gutterBottom>
+                    {textData.About.textFour}
+                  </Typography>
+                </motion.div>
               </Stack>
             </Box>
             <Box sx={{ gridArea: 'pic', margin: { xs: '0 auto' } }}>
