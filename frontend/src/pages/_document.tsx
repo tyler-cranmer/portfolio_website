@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           <meta name='theme-color' content={theme.palette.grey[900]} />
-          <link rel='shortcut icon' href='/favicon.ico' />
+          <link rel='shortcut icon' href='/icons8-code-67.png' />
           <link
             rel='stylesheet'
             href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
