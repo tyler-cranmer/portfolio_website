@@ -14,6 +14,7 @@ type Props = {
 
 function Navbar({onSidebarOpen}: Props) {
   const MenuItems = [
+    { Name: 'Home', Link: 'hero' },
     { Name: 'About', Link: 'about' },
     { Name: 'Skills', Link: 'skills' },
     { Name: 'Projects', Link: 'projects' },

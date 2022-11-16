@@ -18,7 +18,7 @@ function Hero() {
       'machine learning models.',
       'things for the internet.',
     ],
-    loop: 2,
+    loop: 3,
     delaySpeed: 2000,
   });
 

@@ -10,11 +10,15 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PersonIcon from '@mui/icons-material/Person';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import HomeIcon from '@mui/icons-material/Home';
 import Divider from '@mui/material/Divider';
-import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from '@mui/material';
 import { Link } from 'react-scroll/modules';
-
-
 
 type Props = {
   open: boolean;
@@ -23,15 +27,6 @@ type Props = {
 
 const SideBar = ({ open, onClose }: Props) => {
   const theme = useTheme();
-
-  const MenuItems = [
-    { Name: 'About', Link: 'about' },
-    { Name: 'Skills', Link: 'skills' },
-    { Name: 'Projects', Link: 'projects' },
-    { Name: 'Experience', Link: 'experience' },
-    { Name: 'Contact', Link: 'contact' },
-  ];
-  
 
   return (
     <React.Fragment>
@@ -59,7 +54,23 @@ const SideBar = ({ open, onClose }: Props) => {
             </IconButton>
           </Box>
           <Divider />
+
           <List>
+            {/* HOME */}
+            <Link
+              activeClass='active'
+              to='hero'
+              spy={true}
+              smooth={true}
+              offset={-96}
+              duration={1000}>
+              <ListItemButton>
+                <ListItemIcon>
+                  <HomeIcon color='primary' />
+                </ListItemIcon>
+                <ListItemText primary='Home' color='primary' />
+              </ListItemButton>
+            </Link>
             {/* ABOUT */}
             <Link
               activeClass='active'
