@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
+        <title>teewhy.xyz</title>
         <Head>
           {/* PWA primary color */}
           <meta name='theme-color' content={theme.palette.grey[900]} />
