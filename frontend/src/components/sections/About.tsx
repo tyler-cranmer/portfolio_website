@@ -6,6 +6,8 @@ import { Stack } from '@mui/system';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { aboutVariant } from '../../utils/amimationVariants';
+import textData from '../../utils/textData';
+
 
 function About() {
   const control = useAnimation();
@@ -35,7 +37,7 @@ function About() {
         backgroundColor: theme.palette.grey[900],
         position: 'relative',
         borderTop: '.5px solid #949494',
-        height: {md: '80vh'}
+        height: { md: '80vh' },
       }}>
       <Box pt={10} pb={{ xs: 8, sm: 10, md: 15 }}>
         <Container maxWidth='lg'>
@@ -110,10 +112,7 @@ function About() {
                       },
                     }}
                     gutterBottom>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat alias quisquam unde sed vitae, error cumque eveniet
-                    qui, atque deleniti repellendus voluptates maiores, delectus
-                    soluta! Quis dolor inventore quibusdam alias?
+                    {textData.About.textOne}
                   </Typography>
                 </motion.div>
                 <motion.div
@@ -128,10 +127,7 @@ function About() {
                       },
                     }}
                     gutterBottom>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Placeat alias quisquam unde sed vitae, error cumque eveniet
-                    qui, atque deleniti repellendus voluptates maiores, delectus
-                    soluta! Quis dolor inventore quibusdam alias?
+                    {textData.About.textTwo}
                   </Typography>
                 </motion.div>
                 <motion.div
@@ -146,8 +142,7 @@ function About() {
                       },
                     }}
                     gutterBottom>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Error magnam sint similique?
+                    {textData.About.textThree}
                   </Typography>
                 </motion.div>
               </Stack>

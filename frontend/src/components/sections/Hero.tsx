@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import theme from '../../theme';
 import { Stack, Container, IconButton } from '@mui/material';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import textData from '../../utils/tempData';
+import textData from '../../utils/textData';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Link } from 'react-scroll/modules';
@@ -18,7 +18,6 @@ function Hero() {
       'things for the internet.',
     ],
     loop: 2,
-    // loop: true,
     delaySpeed: 2000,
   });
 
