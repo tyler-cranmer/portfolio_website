@@ -110,12 +110,3 @@ function Contact({}: Props) {
 }
 
 export default Contact;
-
-// <motion.div
-//   variants={contactVariant}
-//   initial='offscreenForm'
-//   animate={control4}>
-//   <CustomForm />
-// </motion.div>;
-
-// grid-template-columns: repeat(5, minmax(0, 1fr))

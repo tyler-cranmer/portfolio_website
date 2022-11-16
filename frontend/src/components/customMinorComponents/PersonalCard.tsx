@@ -23,14 +23,15 @@ function PersonalCard({}: Props) {
         sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
         <Image
           alt='index logo'
-          src='/paralta.jpeg'
+          src='/profile_pic.JPG'
+          objectFit='cover'
           layout='responsive'
-          height={295}
-          width={250}
+          height={425}
+          width={350}
           priority
         />
       </Box>
-      <Box pb={15}>
+      <Box pb={13.2}>
         {/* Name */}
         <Typography
           variant='h5'

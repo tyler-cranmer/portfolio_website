@@ -162,7 +162,7 @@ function About() {
                 </motion.div>
               </Stack>
             </Box>
-            <Box sx={{ gridArea: 'pic', margin: { xs: '0 auto' } }}>
+            <Box sx={{ gridArea: 'pic', margin: { xs: '0 auto', sm: '.75em auto 0 auto' } }}>
               <motion.div
                 variants={aboutVariant}
                 initial='offscreenPic'
@@ -182,7 +182,8 @@ function About() {
                   }}>
                   <Image
                     alt='index logo'
-                    src='/paralta.jpeg'
+                    src='/profile_pic.JPG'
+                    objectFit='contain'
                     layout='intrinsic'
                     height={425}
                     width={325}
@@ -200,33 +201,3 @@ function About() {
 }
 
 export default About;
-
-{
-  /* <Box
-  marginRight={'1em'}
-  position='relative'
-  borderRadius={'15px'}
-  overflow={'hidden'}
-  margin={'auto'}
-  sx={{
-    marginTop: { xs: '1.75em', md: '1.55em' },
-    height: {
-      xs: '15rem',
-      sm: '20rem',
-      md: '28rem',
-    },
-    width: {
-      xs: '15rem',
-      sm: '20rem',
-      md: '25rem',
-    },
-  }}>
-  <Image
-    alt='index logo'
-    src='/paralta.jpeg'
-    layout='fill'
-    objectFit='cover'
-    priority
-  />
-</Box>; */
-}
