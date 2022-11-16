@@ -22,13 +22,13 @@ function PersonalCard({}: Props) {
         overflow={'hidden'}
         sx={{ height: '100%', width: '100%', marginBottom: '1em' }}>
         <Image
-          alt='index logo'
+          alt='profile pic'
           src='/profile_pic.JPG'
           objectFit='cover'
           layout='responsive'
           height={425}
           width={350}
-          priority
+        
         />
       </Box>
       <Box pb={13.5}>

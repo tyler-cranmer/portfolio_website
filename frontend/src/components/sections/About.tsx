@@ -181,13 +181,13 @@ function About() {
                     },
                   }}>
                   <Image
-                    alt='index logo'
+                    alt='profile pic'
                     src='/profile_pic.JPG'
                     objectFit='contain'
                     layout='intrinsic'
                     height={425}
                     width={325}
-                    priority
+          
                     className='profilepic'
                   />
                 </Paper>
