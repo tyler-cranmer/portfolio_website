@@ -24,6 +24,6 @@ export default {
       'Experienced in full stack development: Python, Typescript, Next.js, Django, Flask.',
     cardThreeName: 'Machine Learning',
     cardThreeText:
-      'Proficient with Data Science and Machine Learning Models using Python, Pandas, Numpy, Scikit-learn, NLTK, Keras and Tensorflow.',
+      'Proficient in Data Science and Machine Learning Models using Python, Pandas, Numpy, Scikit-learn, NLTK, Keras and Tensorflow.',
   },
 };
