@@ -143,7 +143,7 @@ function Hero() {
                     />
                   </IconButton>
                 </Link>
-                <IconButton href='./TC_SE_Resume1.pdf'>
+                <IconButton href='./tc_se_resume.pdf'>
                   <ArticleOutlinedIcon
                     fontSize='large'
                     sx={{
