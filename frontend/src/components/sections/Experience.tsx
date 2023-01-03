@@ -76,7 +76,6 @@ function Experience({}: Props) {
               </Typography>
             </motion.div>
           </Box>
-
           <CustomAccordian inView={inView} />
         </Container>
       </Box>

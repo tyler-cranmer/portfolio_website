@@ -45,9 +45,9 @@ function CodeIcon(props: SvgIconProps) {
 
 function BlockIcon(props: SvgIconProps) {
   return (
-    <IconContext.Provider value={{ className: 'block-icons' }}>
+    <IconContext.Provider value={{ color: '#1878fe' }}>
       <SvgIcon {...props}>
-        <FaCubes className='block-icons' />
+        <FaCubes />
       </SvgIcon>
     </IconContext.Provider>
   );
@@ -190,8 +190,8 @@ function Skills({}: Props) {
                     borderRadius: '20px',
                     margin: 'auto',
                     marginTop: { xs: 0, sm: 0, md: -10 },
-                  }}
-                  className='cardCenter css-avmrvc'>
+                    boxShadow: 'rgb(0 0 0 / 40%) -40px 40px 80px 0px',
+                  }}>
                   <span className='spanIcon code-avmrvc'>
                     <CodeIcon
                       sx={{
