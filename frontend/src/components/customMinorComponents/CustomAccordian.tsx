@@ -35,6 +35,8 @@ function CustomAccordian({ inView }: Props) {
     url: 'https://portfolio-backend-teewhy.herokuapp.com/api/experience/',
   });
 
+  const sortedData = data?.sort((a, b) => b.id - a.id);
+
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
@@ -48,7 +50,7 @@ function CustomAccordian({ inView }: Props) {
 
   return (
     <div>
-      {data.map((item, index) => (
+      {sortedData.map((item, index) => (
         <motion.div
           className='space'
           key={index}
@@ -159,6 +161,7 @@ function CustomAccordian({ inView }: Props) {
                         src={item.logo}
                         layout='fill'
                         objectFit='contain'
+                        style={{ borderRadius: '15%' }}
                         priority
                       />
                     </Box>
